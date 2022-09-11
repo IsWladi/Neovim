@@ -1,5 +1,37 @@
+
+call plug#begin()
+
+  Plug 'https://github.com/github/copilot.vim'
+
+" Colorscheme
+  Plug 'joshdick/onedark.vim'
+
+  " LSP Support
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
+
+  " Autocompletion
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-nvim-lua'
+
+  " Snippets
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'rafamadriz/friendly-snippets'
+
+  " LSP Setup
+  Plug 'VonHeikemen/lsp-zero.nvim'
+
+call plug#end()
+
+try
+  
 set title  " Muestra el nombre del archivo en la ventana de la terminal
-set number  " Muestra los números de las líneas
+	set number  " Muestra los números de las líneas
 set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
 
 set nowrap  " No dividir la línea si es muy larga
@@ -21,24 +53,23 @@ set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúscu
 
 set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y español
 
-"set termguicolors   Activa true colors en la terminal
-"set background=dark   Fondo del tema: light o dark
-"colorscheme zellner   Nombre del tema
+set signcolumn=yes
+set termguicolors
+colorscheme onedark
 
 
-call plug#begin()
+catch
+  " do nothing
+endtry
 
-Plug 'https://github.com/github/copilot.vim'
+lua <<EOF
+local lsp = require('lsp-zero')
 
-"lsp para instalar servidores para diferentes lenguajes de programación
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+lsp.preset('recommended')
+lsp.setup()
+EOF
 
-call plug#end()
-
-"configurar lsp
-
-
+"Configuración para LSP y autocompletado copiada de https://dev.to/vonheikemen/configurando-el-cliente-lsp-nativo-de-neovim-en-2022-la-manera-facil-3c17
 
 
 
