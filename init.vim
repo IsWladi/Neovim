@@ -27,5 +27,34 @@ set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y españ
 
 
 call plug#begin()
+
 Plug 'https://github.com/github/copilot.vim'
+
+"lsp para instalar servidores para diferentes lenguajes de programación
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
 call plug#end()
+
+"configurar lsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
