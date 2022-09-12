@@ -1,34 +1,20 @@
 
 call plug#begin()
-
+  
+  "coc para autocompletado
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "github copilot
   Plug 'https://github.com/github/copilot.vim'
 
 " Colorscheme
   Plug 'joshdick/onedark.vim'
-
-  " LSP Support
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/mason.nvim'
-  Plug 'williamboman/mason-lspconfig.nvim'
-
-  " Autocompletion
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'saadparwaiz1/cmp_luasnip'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-nvim-lua'
-
-  " Snippets
-  Plug 'L3MON4D3/LuaSnip'
-  Plug 'rafamadriz/friendly-snippets'
-
-  " LSP Setup
-  Plug 'VonHeikemen/lsp-zero.nvim'
+  
+  "autocompletar parentesis
+  Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 
-try
+
   
 set title  " Muestra el nombre del archivo en la ventana de la terminal
 	set number  " Muestra los números de las líneas
@@ -58,16 +44,11 @@ set termguicolors
 colorscheme onedark
 
 
-catch
-  " do nothing
-endtry
-
-lua <<EOF
-local lsp = require('lsp-zero')
-
-lsp.preset('recommended')
-lsp.setup()
+"activar autopair
+lua << EOF
+require("nvim-autopairs").setup {}
 EOF
+
 
 "Configuración para LSP y autocompletado copiada de https://dev.to/vonheikemen/configurando-el-cliente-lsp-nativo-de-neovim-en-2022-la-manera-facil-3c17
 
