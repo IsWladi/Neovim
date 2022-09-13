@@ -1,6 +1,7 @@
 
 call plug#begin()
-  
+  "plugin para usar git
+  Plug 'tpope/vim-fugitive'
   "coc para autocompletado
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "github copilot
@@ -11,11 +12,14 @@ call plug#begin()
   
   "autocompletar parentesis
   Plug 'windwp/nvim-autopairs'
+  
+  "diseño barrita de abajo
+  Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
 
-  
+set encoding=utf-8 " Encoding
 set title  " Muestra el nombre del archivo en la ventana de la terminal
 	set number  " Muestra los números de las líneas
 set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
@@ -49,8 +53,14 @@ lua << EOF
 require("nvim-autopairs").setup {}
 EOF
 
+"config airline
+let g:airline_powerline_fonts = 1
 
-"Configuración para LSP y autocompletado copiada de https://dev.to/vonheikemen/configurando-el-cliente-lsp-nativo-de-neovim-en-2022-la-manera-facil-3c17
+"mapping 
+
+"para autocompletado COC, cuidado porque quiza me interfiere con otro comando
+:imap ii <Esc>
+:imap yy <C-y>
 
 
 
