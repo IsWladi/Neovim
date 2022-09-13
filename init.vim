@@ -1,7 +1,13 @@
 
 call plug#begin()
+  "Plug para ver que lineas tienen cambios en git
+  Plug 'mhinz/vim-signify'
   "plugin para usar git
-  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive' " Los comandos de git en vim empiezan con :Git
+  "complemento para vim-fugitive
+  Plug 'tpope/vim-rhubarb' "GBrowse para abrir el repositorio en github  
+  "plugin para ver los commits de git
+  Plug 'junegunn/gv.vim' " :GV para ver los commits
   "coc para autocompletado
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "github copilot
@@ -57,6 +63,7 @@ EOF
 let g:airline_powerline_fonts = 1
 
 "mapping 
+let mapleader = "," " Mapear la tecla <leader> a la coma
 
 "para autocompletado COC, cuidado porque quiza me interfiere con otro comando
 :imap ii <Esc>
