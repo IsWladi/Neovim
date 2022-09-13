@@ -59,9 +59,6 @@ lua << EOF
 require("nvim-autopairs").setup {}
 EOF
 
-"config airline
-let g:airline_powerline_fonts = 1
-
 "mapping 
 let mapleader = "," " Mapear la tecla <leader> a la coma
 
