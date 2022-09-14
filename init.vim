@@ -21,7 +21,7 @@ call plug#begin()
   
   "diseño barrita de abajo
   Plug 'vim-airline/vim-airline'
-
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 
