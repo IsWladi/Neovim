@@ -21,6 +21,8 @@ call plug#begin()
   
   "diseño barrita de abajo
   Plug 'vim-airline/vim-airline'
+  
+  "en teoria ayuda para colorear el codigo, pero no me funciono muy bien 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
