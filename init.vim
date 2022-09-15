@@ -1,8 +1,7 @@
 call plug#begin()
-  "telescope it's for find files 
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim' , { 'tag': '0.1.0' }
-
+ 
+  "identacion
+  Plug 'lukas-reineke/indent-blankline.nvim'
   "Plug para ver que lineas tienen cambios en git
   Plug 'mhinz/vim-signify'
   "plugin para usar git
@@ -27,9 +26,13 @@ call plug#begin()
   
   "en teoria ayuda para colorear el codigo, pero no me funciono muy bien 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  
+  "navegar por archivos con telescope
+  
 call plug#end()
 
-
+set relativenumber
+set clipboard+=unnamedplus "copiar y pegar con el portapapeles del sistema operativo
 set encoding=utf-8 " Encoding
 set title  " Muestra el nombre del archivo en la ventana de la terminal
 	set number  " Muestra los números de las líneas
