@@ -1,5 +1,8 @@
-
 call plug#begin()
+  "telescope it's for find files 
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim' , { 'tag': '0.1.0' }
+
   "Plug para ver que lineas tienen cambios en git
   Plug 'mhinz/vim-signify'
   "plugin para usar git
@@ -67,9 +70,6 @@ let mapleader = "," " Mapear la tecla <leader> a la coma
 "para autocompletado COC, cuidado porque quiza me interfiere con otro comando
 :imap ii <Esc>
 :imap yy <C-y>
-
-
-
 
 
 
