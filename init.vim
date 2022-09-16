@@ -27,7 +27,10 @@ call plug#begin()
   "en teoria ayuda para colorear el codigo, pero no me funciono muy bien 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   
-  "navegar por archivos con telescope
+  "navegar por archivos con nvimtree
+  Plug 'nvim-neo-tree/neo-tree.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'MunifTanjim/nui.nvim'
   
 call plug#end()
 
