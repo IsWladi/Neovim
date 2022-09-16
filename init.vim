@@ -77,8 +77,11 @@ let mapleader = "," " Mapear la tecla <leader> a la coma
 :imap ii <Esc>
 :imap yy <C-y>
 
+"make a cmap for the comand ':Neotree' to open the tree in home
+"nnoremap <leader>t :Neotree left<CR>
 
-
+"make a cmap for the comand ':Neotree filesystem reveal left' to open the tree in the current directory
+nnoremap <leader>tf :Neotree filesystem reveal right<CR>
 
 
 
