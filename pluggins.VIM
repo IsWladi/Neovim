@@ -17,7 +17,7 @@ call plug#begin()
 
 " Colorscheme
   Plug 'joshdick/onedark.vim'
-  
+  Plug 'EdenEast/nightfox.nvim'
   "autocompletar parentesis
   Plug 'windwp/nvim-autopairs'
   
@@ -32,7 +32,5 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'MunifTanjim/nui.nvim'
   
-  "para correr test en neovim
-  Plug 'klen/nvim-test'
   
 call plug#end()

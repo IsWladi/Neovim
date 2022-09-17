@@ -31,7 +31,7 @@ nnoremap <leader>gc :Git commit -m
 nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git pull
 nnoremap <leader>gd :Git diff<CR>
-nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>gs :G<CR> 
 nnoremap <leader>gf :Git fetch<CR>
 
 "maps para copilot

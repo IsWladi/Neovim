@@ -31,7 +31,7 @@ set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y españ
 
 set signcolumn=yes
 set termguicolors
-colorscheme onedark
+colorscheme nightfox
 
 
 
