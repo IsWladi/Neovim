@@ -73,16 +73,16 @@ EOF
 "mapping 
 let mapleader = "," " Mapear la tecla <leader> a la coma
 
-"para autocompletado COC, cuidado porque quiza me interfiere con otro comando
+"para autocompletado 
 :imap ii <Esc>
 :imap yy <C-y>
 
-"make a cmap for the comand ':Neotree' to open the tree in home
-"nnoremap <leader>t :Neotree left<CR>
+"para NeoTree
+nnoremap <leader>t :Neotree filesystem reveal right<CR>
 
-"make a cmap for the comand ':Neotree filesystem reveal left' to open the tree in the current directory
-nnoremap <leader>tf :Neotree filesystem reveal right<CR>
-
+"para usar git en nvim
+nnoremap <leader>gv :GV<CR>
+nnoremap <leader>gb :GBrowse<CR>
 
 
 
