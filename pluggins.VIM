@@ -32,4 +32,7 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'MunifTanjim/nui.nvim'
   
+  "para correr test en neovim
+  Plug 'klen/nvim-test'
+  
 call plug#end()
