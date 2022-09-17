@@ -27,7 +27,7 @@ nnoremap <leader>t :Neotree filesystem reveal right<CR>
 nnoremap <leader>gv :GV<CR>
 nnoremap <leader>gb :GBrowse<CR>
 nnoremap <leader>ga :Git add
-nnoremap <leader>gc :Git commit -m "" 
+nnoremap <leader>gc :Git commit m" 
 nnoremap <leader>gp :Git push
 nnoremap <leader>gl :Git pull
 nnoremap <leader>gd :Git diff<CR>
