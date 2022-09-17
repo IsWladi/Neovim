@@ -19,3 +19,18 @@ nnoremap <leader>t :Neotree filesystem reveal right<CR>
 "para usar git en nvim
 nnoremap <leader>gv :GV<CR>
 nnoremap <leader>gb :GBrowse<CR>
+map para resetear configuracion de nvim
+nnoremap <leader>r :so %<CR>
+
+"maps para copilot
+"
+"sugerencia anterior 
+imap hh <M-[>
+"siguiente sugerencia
+imap jj <M-]>
+"denegar sugerencia
+imap kk <C-]>
+
+
+
+
