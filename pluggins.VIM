@@ -18,6 +18,7 @@ call plug#begin()
 " Colorscheme
   Plug 'joshdick/onedark.vim'
   Plug 'EdenEast/nightfox.nvim'
+  Plug 'savq/melange'
   "autocompletar parentesis
   Plug 'windwp/nvim-autopairs'
   

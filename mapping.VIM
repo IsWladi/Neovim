@@ -24,15 +24,15 @@ nnoremap <leader>r :so %<CR>
 nnoremap <leader>t :Neotree filesystem reveal right<CR>
 
 "para usar git en nvim
-nnoremap <leader>gv :GV<CR>
-nnoremap <leader>gb :GBrowse<CR>
-nnoremap <leader>ga :Git add
-nnoremap <leader>gc :Git commit -m 
-nnoremap <leader>gp :Git push
-nnoremap <leader>gl :Git pull
-nnoremap <leader>gd :Git diff<CR>
-nnoremap <leader>gs :G<CR> 
-nnoremap <leader>gf :Git fetch<CR>
+nnoremap <leader>v :GV<CR>
+nnoremap <leader>b :GBrowse<CR>
+nnoremap <leader>a :Git add
+nnoremap <leader>c :Git commit -m 
+nnoremap <leader>p :Git push
+nnoremap <leader>l :Git pull
+nnoremap <leader>d :Git diff<CR>
+nnoremap <leader>g :G<CR> 
+nnoremap <leader>f :Git fetch<CR>
 
 "maps para copilot
 "sugerencia anterior 
