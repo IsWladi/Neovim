@@ -46,9 +46,20 @@ imap kk <C-]>
 nnoremap <leader>nt :tabnew
 nnoremap <leader>ct :tabclose<CR>
 nnoremap <leader>ot :tabonly<CR>
+"split 
+nnoremap <leader>st :split
+nnoremap <leader>vt :vsplit 
 "ir a la siguiente pestaña
 nnoremap <leader>u gt<CR> 
 "ir a la pestaña anterior
 nnoremap <leader>y gT<CR> 
+"ir a la pestaña 1
+nnoremap <leader>1 1gt<CR>
+"ir a la pestaña 2
+nnoremap <leader>2 2gt<CR>
+"ir a la pestaña 3
+nnoremap <leader>3 3gt<CR>
+"ir a la pestaña 4
+nnoremap <leader>4 4gt<CR>
 
 
