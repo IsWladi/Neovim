@@ -7,7 +7,7 @@ set relativenumber
 set clipboard+=unnamedplus "copiar y pegar con el portapapeles del sistema operativo
 set encoding=utf-8 " Encoding
 set title  " Muestra el nombre del archivo en la ventana de la terminal
-	set number  " Muestra los números de las líneas
+set number  " Muestra los números de las líneas
 set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
 
 set nowrap  " No dividir la línea si es muy larga
@@ -32,9 +32,6 @@ set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y españ
 set signcolumn=yes
 set termguicolors
 colorscheme melange
-
-
-
 
 
 

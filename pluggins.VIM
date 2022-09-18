@@ -32,6 +32,7 @@ call plug#begin()
   Plug 'nvim-neo-tree/neo-tree.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'MunifTanjim/nui.nvim'
+  Plug 'nanozuki/tabby.nvim'
   
   
 call plug#end()

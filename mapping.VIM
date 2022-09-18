@@ -42,6 +42,13 @@ imap jj <M-]>
 "denegar sugerencia
 imap kk <C-]>
 
-
+"maps para gestionar ventanas
+nnoremap <leader>nt :tabnew
+nnoremap <leader>ct :tabclose<CR>
+nnoremap <leader>ot :tabonly<CR>
+"ir a la siguiente pestaña
+nnoremap <leader>u gt<CR> 
+"ir a la pestaña anterior
+nnoremap <leader>y gT<CR> 
 
 
