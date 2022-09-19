@@ -61,5 +61,13 @@ nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
 "ir a la pestaña 4
 nnoremap <leader>4 4gt<CR>
+"ir a la pestaña 5
+nnoremap <leader>5 5gt<CR>
+"ir a la pestaña 6
+nnoremap <leader>6 6gt<CR>
+"ir a la pestaña 7
+nnoremap <leader>7 7gt<CR>
+"ir a la pestaña 8
+nnoremap <leader>8 8gt<CR>
 
 

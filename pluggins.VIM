@@ -25,14 +25,11 @@ call plug#begin()
   "diseño barrita de abajo
   Plug 'vim-airline/vim-airline'
   
-  "en teoria ayuda para colorear el codigo, pero no me funciono muy bien 
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  
   "navegar por archivos con nvimtree
   Plug 'nvim-neo-tree/neo-tree.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'MunifTanjim/nui.nvim'
   Plug 'nanozuki/tabby.nvim'
-  
+  Plug 'lambdalisue/nerdfont.vim'  
   
 call plug#end()
