@@ -31,5 +31,4 @@ call plug#begin()
   Plug 'MunifTanjim/nui.nvim'
   Plug 'nanozuki/tabby.nvim'
   Plug 'lambdalisue/nerdfont.vim'  
-  
 call plug#end()
