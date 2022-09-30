@@ -1,5 +1,7 @@
 call plug#begin()
  
+  "estilo para el codigo
+  Plug 'sheerun/vim-polyglot'
   "identacion
   Plug 'lukas-reineke/indent-blankline.nvim'
   "Plug para ver que lineas tienen cambios en git
@@ -14,6 +16,12 @@ call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "github copilot
   Plug 'https://github.com/github/copilot.vim'
+  "para cambiar parentesis, llaves, corchetes de forma automatica
+  Plug 'tpope/vim-surround'
+  "buscar archivos
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
 
 " Colorscheme
   Plug 'joshdick/onedark.vim'

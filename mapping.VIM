@@ -65,4 +65,7 @@ nnoremap <leader>7 7gt<CR>
 "ir a la pestaña 8
 nnoremap <leader>8 8gt<CR>
 
+"maps para COC 
+"go to definition
+nmap <silent> gd <Plug>(coc-definition)
 
