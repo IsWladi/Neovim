@@ -4,56 +4,62 @@ imap ii <Esc>
 "para autocompletado 
 imap yy <C-y>
 
-
+"remap hjkl
+nnoremap <C-d> d
+nnoremap d <Left>
+nnoremap h <Down>
+nnoremap t <Up>
+nnoremap n <Right>
 
 "mappings con leader key
 let mapleader = "," " Mapear la tecla <leader> a la coma
 
 "para comandos nativos de neovim
 " Mapear <leader>q para cerrar el buffer actual
-nnoremap <leader>q :q<CR>
+nnoremap <leader>a :q<CR>
 " Mapear <leader>w para guardar el buffer actual
-nnoremap <leader>w :w<CR>
+nnoremap <leader>o :w<CR>
 "mapear <leader>x para cerrar y guardar la ventana actual
 nnoremap <leader>e :x<CR> 
 "map para resetear configuracion de nvim
-nnoremap <leader>r :so %<CR>
+nnoremap <leader>u :so %<CR>
 "para NeoTree
-nnoremap <leader>t :Neotree filesystem reveal right<CR>
+nnoremap <leader>d :Neotree filesystem reveal right<CR>
 "fuzzy finder
-nnoremap <leader>a :FZF<CR>
+nnoremap <leader>h :FZF<CR>
 "fzf Rg
-nnoremap <leader>s :Rg<CR>
+nnoremap <leader>t :Rg<CR>
+
+
 
 "para usar GIT en nvim
 let mapleader = " "
-nnoremap <leader>q :Git fetch<CR>
-nnoremap <leader>w :Git pull
+nnoremap <leader>a :Git fetch<CR>
+nnoremap <leader>o :Git pull
 nnoremap <leader>e :Git add
-nnoremap <leader>r :Git commit -m 
-nnoremap <leader>a :Git push
-nnoremap <leader>s :G<CR> 
-nnoremap <leader>d :GV<CR>
-nnoremap <leader>f :GBrowse<CR>
+nnoremap <leader>u :Git commit -m 
+nnoremap <leader>d :Git push
+nnoremap <leader>h :G<CR> 
+nnoremap <leader>t :GV<CR>
+nnoremap <leader>n :GBrowse<CR>
 "maps para copilot
 "sugerencia anterior 
-imap hh <M-[>
+imap dd <M-[>
 "siguiente sugerencia
-imap jj <M-]>
+imap hh <M-]>
 "denegar sugerencia
-imap kk <C-]>
-
-imap ht <C-y>,
-
+imap tt <C-]>
+"aceptar sugerencia coc
+imap nn <C-y>
 
 "maps para gestionar ventanas
 let mapleader = "."
-nnoremap <leader>q :tabnew
-nnoremap <leader>w :tabclose<CR>
+nnoremap <leader>a :tabnew
+nnoremap <leader>o :tabclose<CR>
 "ir a la siguiente pestaña
-nnoremap <leader>r gt<CR> 
+nnoremap <leader>e gt<CR> 
 "ir a la pestaña anterior
-nnoremap <leader>e gT<CR> 
+nnoremap <leader>u gT<CR> 
 "ir a la pestaña 1
 nnoremap <leader>1 1gt<CR>
 "ir a la pestaña 2

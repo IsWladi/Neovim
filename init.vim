@@ -2,6 +2,8 @@
 so C:\Users\wiuc2\vimcf\pluggins.VIM
 so C:\Users\wiuc2\vimcf\plugginsConfig.VIM
 so C:\Users\wiuc2\vimcf\mapping.VIM
+"so C:\Users\wiuc2\vimcf\extra\dvorakMapping.VIM "para usar dvorak
+"falta muchos arreglos para poder usar nvim con dvorak
 
 set relativenumber
 set clipboard+=unnamedplus "copiar y pegar con el portapapeles del sistema operativo
