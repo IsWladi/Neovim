@@ -1,9 +1,8 @@
 "referenciar a init.vim el arcivo donde instale el plugin"
 so C:\Users\wiuc2\vimcf\pluggins.VIM
 so C:\Users\wiuc2\vimcf\plugginsConfig.VIM
-so C:\Users\wiuc2\vimcf\mapping.VIM
-"so C:\Users\wiuc2\vimcf\extra\dvorakMapping.VIM "para usar dvorak
-"falta muchos arreglos para poder usar nvim con dvorak
+"so C:\Users\wiuc2\vimcf\mapping.VIM
+so C:\Users\wiuc2\vimcf\extra\dvorakMapping.VIM "para usar dvorak, falta mucho que mejorar
 
 set relativenumber
 set clipboard+=unnamedplus "copiar y pegar con el portapapeles del sistema operativo
@@ -12,10 +11,10 @@ set title  " Muestra el nombre del archivo en la ventana de la terminal
 set number  " Muestra los números de las líneas
 set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
 
-"set nowrap  " No dividir la línea si es muy larga
+set nowrap  " No dividir la línea si es muy larga
 
 set cursorline  " Resalta la línea actual
-set colorcolumn=120  " Muestra la columna límite a 120 caracteres
+set colorcolumn=200  " Muestra la columna límite a 120 caracteres
 
 " Indentación a 2 espacios
 set tabstop=2

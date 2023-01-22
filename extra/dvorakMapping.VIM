@@ -5,11 +5,10 @@ imap ii <Esc>
 imap yy <C-y>
 
 "remap hjkl
-nnoremap <C-d> d
-nnoremap d <Left>
-nnoremap h <Down>
-nnoremap t <Up>
-nnoremap n <Right>
+nnoremap r <Left>
+nnoremap t <Down>
+nnoremap n <Up>
+nnoremap s <Right>
 
 "mappings con leader key
 let mapleader = "," " Mapear la tecla <leader> a la coma
