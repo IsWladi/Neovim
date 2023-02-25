@@ -9,7 +9,7 @@
 * renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
 * borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Neovim-Dvorak ." dentro de la carpeta "nvim"
 *instalar vim plug para neovim 
-  *quedara em la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows)*
+  * quedara em la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows)*
 * abrir nvim(saldran algunos errores, es normal, apretar enter y continuar) y poner :PlugInstall para que se instalen todos los pluggins
 * cerrar y abrir neovim, se vera algo así: 
 
@@ -22,7 +22,6 @@
 * Puedes encontrar el repositorio oficial de vim plug en https://github.com/junegunn/vim-plug
 
 ### Para implementar al repo a futuro
-* **implementar mi neovim local a una instalación estandarizada en la documentación de este repo**
 
 * **implementar autopep8 a neovim para formatear codigo python de manera automatica**
   * https://pypi.org/project/autopep8/ 
