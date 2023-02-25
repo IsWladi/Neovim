@@ -1,7 +1,11 @@
 # Configuración de neovim
 *Enfocado en usar neovim con un layout Dvorak*
 
-
+## Estado actual del repositorio
+* Funciona la instalación en windows(no me consta en otros OS)
+* Esta en proceso de prueba, no se asegura compatibilidad de instalación en cualquier pc
+* No funciona el cambio estetico al Plug de nanozuki/tabby
+* Instalación engorrosa, proximamente se habilitara un scripts de powershell para facilitar imprementación de esta configuración de nvim
 ## ¿Cómo implementar?
 * instalar chocolatey https://chocolatey.org/install#individual
 * instalar neovim con chocolatey en poweshell con permisos de administrador con el comando: choco install neovim
