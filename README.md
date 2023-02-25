@@ -7,18 +7,16 @@
 * instalar neovim con chocolatey en poweshell con permisos de administrador con el comando: choco install neovim
 * abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 * renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
-* borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un archivo llamado "init.vim" con este contenido; "call plug#begin()
-Plug 'vim-airline/vim-airline'
-   ![image](https://user-images.githubusercontent.com/83993271/221377993-994ea21a-2240-42c8-abec-f7c6ca4384ed.png)
-
-call plug#end()"
-* instalar vim plug(instalación mediante comando de powershell indicado en documentación) 
-  ![image](https://user-images.githubusercontent.com/83993271/221377593-12ef608d-5d4c-4595-bfea-62bb204e434e.png)
-
-  *quedara em la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows)*
-* abrir nvim y poner :PlugInstall para que se instale el plug "vim-airline" y así probar que todo haya salido correctamente
 * borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Neovim-Dvorak ." dentro de la carpeta "nvim"
-  
+*instalar vim plug para neovim 
+  *quedara em la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows)*
+* abrir nvim(saldran algunos errores, es normal, apretar enter y continuar) y poner :PlugInstall para que se instalen todos los pluggins
+* cerrar y abrir neovim, se vera algo así: 
+
+![image](https://user-images.githubusercontent.com/83993271/221379180-e1292d25-9723-4452-98a7-466e32083409.png)
+
+* NO FUNCIONA copiar archivo extra/presets.lua de este repositorio y reemplazarlo por el  archivo del mismo nombre en esta ubicación "nvim-data\plugged\tabby.nvim\lua\tabby\presets.lua"
+
 ### Referencias agrupadas
 * puedes ver los pasos de instalación de chocolatey en https://chocolatey.org/install#individual
 * Puedes encontrar el repositorio oficial de vim plug en https://github.com/junegunn/vim-plug
