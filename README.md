@@ -5,15 +5,19 @@
 ## ¿Cómo implementar?
 * instalar chocolatey https://chocolatey.org/install#individual
 * instalar neovim con chocolatey en poweshell con permisos de administrador con el comando: choco install neovim
-* comprobar con comando "nvim" 
-* donde se instalo neovim, renombrar la carpeta "nvim-data" como "nvim" y abrir neovim
-* borrar lo que hay ahora dentro de la carpeta"nvim" y crear archivo "init.vim" dentro de la misma
-* instalar vim plug(instalación mediante comando de powershell indicado en documentación oficial de vim-plug) https://github.com/junegunn/vim-plug
-* en init.vim poner esto:
+* abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
+* renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
+* borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un archivo llamado "init.vim" con este contenido; "call plug#begin()
+Plug 'vim-airline/vim-airline'
+   ![image](https://user-images.githubusercontent.com/83993271/221377993-994ea21a-2240-42c8-abec-f7c6ca4384ed.png)
 
-  ![image](https://user-images.githubusercontent.com/83993271/220817042-b2d737c9-af28-4980-bad8-f9a555016b03.png)
+call plug#end()"
+* instalar vim plug(instalación mediante comando de powershell indicado en documentación) 
+  ![image](https://user-images.githubusercontent.com/83993271/221377593-12ef608d-5d4c-4595-bfea-62bb204e434e.png)
 
+  *quedara em la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows)*
 * abrir nvim y poner :PlugInstall para que se instale el plug "vim-airline" y así probar que todo haya salido correctamente
+* borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Neovim-Dvorak ." dentro de la carpeta "nvim"
   
 ### Referencias agrupadas
 * puedes ver los pasos de instalación de chocolatey en https://chocolatey.org/install#individual
