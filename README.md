@@ -15,11 +15,9 @@
 * instalar vim plug para neovim 
   * quedara en la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows) 
 * abrir nvim(saldran algunos errores, es normal, apretar enter y continuar) y poner :PlugInstall para que se instalen todos los pluggins
-* cerrar y abrir neovim, se vera algo así: 
+* cerrar y abrir neovim, se vera algo así(la forma en que se ve puede variar segun la actualización del repositorio): 
 
 ![image](https://user-images.githubusercontent.com/83993271/221379180-e1292d25-9723-4452-98a7-466e32083409.png)
-
-* **NO FUNCIONA** copiar archivo extra/presets.lua de este repositorio y reemplazarlo por el  archivo del mismo nombre en esta ubicación "nvim-data\plugged\tabby.nvim\lua\tabby\presets.lua"
 
 ### Referencias agrupadas
 * puedes ver los pasos de instalación de chocolatey en https://chocolatey.org/install#individual
