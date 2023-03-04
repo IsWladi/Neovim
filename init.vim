@@ -23,8 +23,6 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
 
 " Colorscheme
-  Plug 'joshdick/onedark.vim'
-  Plug 'EdenEast/nightfox.nvim'
   Plug 'savq/melange'
   "autocompletar parentesis
   Plug 'windwp/nvim-autopairs'
@@ -36,7 +34,6 @@ call plug#begin()
   Plug 'nvim-neo-tree/neo-tree.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'MunifTanjim/nui.nvim'
-  Plug 'nanozuki/tabby.nvim'
   Plug 'lambdalisue/nerdfont.vim'  
   
   "para html
@@ -48,14 +45,6 @@ call plug#begin()
 "activar autopair
 lua << EOF
 require("nvim-autopairs").setup {}
-
---tabby config for pestañas
-vim.o.showtabline = 2
-require("tabby").setup({
-    tabline = require("tabby.presets").tab_with_top_win,
-})
-
-
 
 EOF
 
