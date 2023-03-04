@@ -51,74 +51,74 @@ EOF
 
 
 
-"configuración de neovim
+"configuración de neovim"
 
 set relativenumber
-set clipboard+=unnamedplus "copiar y pegar con el portapapeles del sistema operativo
-set encoding=utf-8 " Encoding
-set title  " Muestra el nombre del archivo en la ventana de la terminal
-set number  " Muestra los números de las líneas
-set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
+set clipboard+=unnamedplus "copiar y pegar con el portapapeles del sistema operativo"
+set encoding=utf-8 " Encoding"
+set title  " Muestra el nombre del archivo en la ventana de la terminal"
+set number  " Muestra los números de las líneas"
+set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)"
 
-set nowrap  " No dividir la línea si es muy larga
+set nowrap  " No dividir la línea si es muy larga"
 
-set cursorline  " Resalta la línea actual
-set colorcolumn=200  " Muestra la columna límite a 120 caracteres
+set cursorline  " Resalta la línea actual"
+set colorcolumn=200  " Muestra la columna límite a 120 caracteres"
 
-" Indentación a 2 espacios
+" Indentación a 2 espacios"
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set shiftround
-set expandtab  " Insertar espacios en lugar de <Tab>s
+set expandtab  " Insertar espacios en lugar de <Tab>s"
 
-set hidden  " Permitir cambiar de buffers sin tener que guardarlos
+set hidden  " Permitir cambiar de buffers sin tener que guardarlos"
 
-set ignorecase  " Ignorar mayúsculas al hacer una búsqueda
-set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
+set ignorecase  " Ignorar mayúsculas al hacer una búsqueda"
+set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas"
 
-set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y español
+set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y español"
 
 set signcolumn=yes
 set termguicolors
 colorscheme melange
 
-" mappings dvorak
+" mappings dvorak"
 
-" mapear imap ii para salir de insert mode
+" mapear imap ii para salir de insert mode"
 imap ii <Esc>
 
-"para autocompletado 
+"para autocompletado "
 imap yy <C-y>
 
-"remap hjkl
+"remap hjkl"
 nnoremap r <Left>
 nnoremap t <Down>
 nnoremap n <Up>
 nnoremap s <Right>
 
-"mappings con leader key
-let mapleader = "," " Mapear la tecla <leader> a la coma
+"mappings con leader key"
+let mapleader = ',' "Mapear la tecla <leader> a la coma"
 
-"para comandos nativos de neovim
-" Mapear <leader>q para cerrar el buffer actual
+"para comandos nativos de neovim"
+" Mapear <leader>q para cerrar el buffer actual"
 nnoremap <leader>a :q<CR>
-" Mapear <leader>w para guardar el buffer actual
+"para guardar el archivo"
 nnoremap <leader>o :w<CR>
-"mapear <leader>x para cerrar y guardar la ventana actual
-nnoremap <leader>e :x<CR> 
-"map para resetear configuracion de nvim
+"para formatear codigo python con autopep8"
+nnoremap <leader>e :!autopep8 --in-place %<CR> 
+"map para resetear configuracion de nvim"
 nnoremap <leader>u :so %<CR>
-"para NeoTree
+"para NeoTree"
 nnoremap <leader>d :Neotree filesystem reveal right<CR>
-"fuzzy finder
+"fuzzy finder"
 nnoremap <leader>h :FZF<CR>
-"fzf Rg
+"fzf Rg"
 nnoremap <leader>t :Rg<CR>
 
 
 
-"para usar GIT en nvim
+"para usar GIT en nvim"
 let mapleader = " "
 nnoremap <leader>a :Git fetch<CR>
 nnoremap <leader>o :Git pull
@@ -128,43 +128,27 @@ nnoremap <leader>d :Git push
 nnoremap <leader>h :G<CR> 
 nnoremap <leader>t :GV<CR>
 nnoremap <leader>n :GBrowse<CR>
-"maps para copilot
-"sugerencia anterior 
+"maps para copilot"
+"sugerencia anterior" 
 imap dd <M-[>
-"siguiente sugerencia
+"siguiente sugerencia"
 imap hh <M-]>
-"denegar sugerencia
+"denegar sugerencia"
 imap tt <C-]>
-"aceptar sugerencia coc
+"aceptar sugerencia coc"
 imap nn <C-y>
 
-"maps para gestionar ventanas
+"maps para gestionar ventanas"
 let mapleader = "."
 nnoremap <leader>a :tabnew
 nnoremap <leader>o :tabclose<CR>
-"ir a la siguiente pestaña
+"ir a la siguiente pestaña"
 nnoremap <leader>e gt<CR> 
-"ir a la pestaña anterior
+"ir a la pestaña anterior"
 nnoremap <leader>u gT<CR> 
-"ir a la pestaña 1
-nnoremap <leader>1 1gt<CR>
-"ir a la pestaña 2
-nnoremap <leader>2 2gt<CR>
-"ir a la pestaña 3
-nnoremap <leader>3 3gt<CR>
-"ir a la pestaña 4
-nnoremap <leader>4 4gt<CR>
-"ir a la pestaña 5
-nnoremap <leader>5 5gt<CR>
-"ir a la pestaña 6
-nnoremap <leader>6 6gt<CR>
-"ir a la pestaña 7
-nnoremap <leader>7 7gt<CR>
-"ir a la pestaña 8
-nnoremap <leader>8 8gt<CR>
 
-"maps para COC 
-"go to definition
+"maps para COC" 
+"go to definition"
 nmap <silent> gd <Plug>(coc-definition)
 
 
