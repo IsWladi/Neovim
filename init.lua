@@ -38,6 +38,9 @@ require("lazy").setup({
   
   --navegar por archivos con nvimtree
   {'nvim-neo-tree/neo-tree.nvim'},
+  {'nvim-lua/plenary.nvim'},
+  {'nvim-tree/nvim-web-devicons'},
+  {'MunifTanjim/nui.nvim'},
   
   --para html
   {'mattn/emmet-vim'},
@@ -47,5 +50,7 @@ require("lazy").setup({
 
 --activar autopair
 require("nvim-autopairs").setup {}
+--activar neotree
+require("neo-tree").setup()
 
 
