@@ -30,8 +30,6 @@ require("lazy").setup({
   --para cambiar parentesis, llaves, corchetes de forma automatica
   {'tpope/vim-surround'},
 
-  --Colorscheme
-  {'savq/melange'},
   --autocompletar parentesis
   {'windwp/nvim-autopairs'},
   
