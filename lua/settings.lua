@@ -8,13 +8,12 @@ local g = vim.g
 local opt = vim.opt
 
 --Configuración general
-g.mapleader = ","
 opt.number = true
 opt.relativenumber = true
 opt.mouse = 'a'
 opt.ignorecase = true
 opt.smartcase = true
-opt.hlsearch = false --resaltado de busqueda con /palabra
+opt.hlsearch = true --resaltado de busqueda con /palabra
 opt.wrap = true 
 opt.breakindent = true
 opt.tabstop = 4
