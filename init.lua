@@ -55,6 +55,11 @@ require("lazy").setup({
   {'nvim-lua/plenary.nvim'},
   {'nvim-tree/nvim-web-devicons'},
   {'MunifTanjim/nui.nvim'},
+
+  --buscar en el proyecto
+  {'nvim-telescope/telescope.nvim'},
+  {'nvim-telescope/telescope-fzf-native.nvim'},
+  {'BurntSushi/ripgrep'},
   
   --para html
   {'mattn/emmet-vim'},

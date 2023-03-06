@@ -7,6 +7,15 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- format on save
+function FormatWrite()
+    vim.cmd("w")
+    if vim.bo.filetype == "python" then
+        vim.cmd("!autopep8 --in-place %")
+    end
+
+end
+
 -- mappings
 
 --mappings dvorak
@@ -30,14 +39,12 @@ map("n", "s", "<Right>")
 --para comandos nativos de neovim
 --Mapear <leader>q para cerrar el buffer actual
 map("n", "<leader>a", ":q<CR>")
---para guardar el archivo
-map("n", "<leader>o", ":w<CR>")
---para formatear codigo python con autopep8
-map("n", "<leader>e", ":!autopep8 --in-place %<CR>") 
+--guardar y formatear segun el lenguaje y que este soportado por funcion FormatWrite()
+map("n", "<leader>o", ":lua FormatWrite()<CR>")
+--para NeoTree
+map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
 --map para resetear configuracion de nvim
 map("n", "<leader>u", ":so %<CR>")
---para NeoTree
-map("n", "<leader>d", ":Neotree filesystem reveal right<CR>")
 
 --maps para copilot
 --ugerencia anterior"
@@ -58,7 +65,12 @@ map("n", "<leader>n", "gt<CR>")
 map("n", "<leader>s", "gT<CR>") 
 
 --para lsp
-map("n", "<leader>c", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
-map("n", "<leader>g", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
-map("n", "<leader>h", ":lua vim.lsp.buf.format()<CR>") -- formatear codigo segun lsp NO FUNCIONA 
-map("n", "<leader>l", ":lua vim.lsp.buf.implementation()<CR>") -- goto implementation NO FUNCIONA
+map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
+map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
+
+--telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+--vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+--vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
