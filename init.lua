@@ -1,3 +1,6 @@
+require("settings")
+require("keymaps")
+
 --Lazy install
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -61,3 +64,24 @@ require("lazy").setup({
   --para html
   {'mattn/emmet-vim'},
 })
+
+--Plugins configuration
+
+--activar autopair
+require("nvim-autopairs").setup {}
+--activar neotree
+require("neo-tree").setup()
+--lsp
+require("nvim-lsp-installer").setup()
+require("lsp_signature").setup()
+require("lspconfig")["pyright"].setup {
+  on_attach = function(client, bufnr)
+    require("lsp_signature").on_attach({
+      bind = true,
+      handler_opts = {
+        border = "single"
+      }
+    })
+  end
+}
+
