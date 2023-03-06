@@ -69,8 +69,6 @@ map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion
 map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
 
 --telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
---vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
---vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
+vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
+
