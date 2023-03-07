@@ -63,25 +63,50 @@ require("lazy").setup({
   
   --para html
   {'mattn/emmet-vim'},
+
+  --tema
+  {'folke/tokyonight.nvim'},
 })
 
---Plugins configuration
+local makeConfig = true --poner como false si estas instalando esta configuración para que no hayan errores al instalar los plugins, despues de instalados todos, poner makeConfig como true
+function DoConfig() 
+  if makeConfig == true then
+      --activar autopair
+      require("nvim-autopairs").setup {}
+      --activar neotree
+      require("neo-tree").setup()
 
---activar autopair
-require("nvim-autopairs").setup {}
---activar neotree
-require("neo-tree").setup()
---lsp
-require("nvim-lsp-installer").setup()
-require("lsp_signature").setup()
-require("lspconfig")["pyright"].setup {
-  on_attach = function(client, bufnr)
-    require("lsp_signature").on_attach({
-      bind = true,
-      handler_opts = {
-        border = "single"
-      }
-    })
+      --inicio lsp configuración 
+      require("nvim-lsp-installer").setup()
+      require("lsp_signature").setup()
+      require("lspconfig")["pyright"].setup {
+      on_attach = function(client, bufnr)
+        require("lsp_signature").on_attach({
+          bind = true,
+          handler_opts = {
+            border = "single"
+          }
+        })
+      end
+    }
+
+      --lsp keymaps
+      map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
+      map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
+
+      -- fin lsp configuración
+
+      --inicio telescope config
+      vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
+      vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
+      --fin telescope config
+
+      --tema
+      vim.cmd[[colorscheme tokyonight]]
+      --fin tema
   end
-}
+end
+
+DoConfig()
+
 

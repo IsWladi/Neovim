@@ -64,11 +64,5 @@ map("n", "<leader>n", "gt<CR>")
 --r a la pestaña anterior
 map("n", "<leader>s", "gT<CR>") 
 
---para lsp
-map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
-map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
 
---telescope
-vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
-vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
 
