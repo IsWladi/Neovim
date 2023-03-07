@@ -4,30 +4,25 @@
 ## Estado actual del repositorio
 * Funciona la instalación en windows(no me consta en otros OS)
 * Esta en proceso de prueba, no se asegura compatibilidad de instalación en cualquier pc
-* Instalación engorrosa, proximamente se habilitara un scripts de powershell para facilitar imprementación de esta configuración de nvim
-* autopep8 mapeado en <leader> e (falta implementarlo al guardar solo cuando es extension .py)
+* format on save habilitado para python
+* go to definition y hover funcionando con pyright en archivos python
 ## ¿Cómo implementar?
 * instalar chocolatey https://chocolatey.org/install#individual
 * instalar neovim con chocolatey en poweshell con permisos de administrador con el comando: choco install neovim
+* instalar autopep 8 para format on save con python("pip install autopep8"), referencia; https://pypi.org/project/autopep8/
 * abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 * renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
-* borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Neovim-Dvorak ." dentro de la carpeta "nvim"
-* instalar vim plug para neovim 
-  * quedara en la ubicación "C:\Users\nombreusuario\AppData\Local\nvim-data\site\autoload"(al menos en windows) 
-* abrir nvim(saldran algunos errores, es normal, apretar enter y continuar) y poner :PlugInstall para que se instalen todos los pluggins
-* cerrar y abrir neovim, se vera algo así(la forma en que se ve puede variar segun la actualización del repositorio): 
-* **SOLO SI USAS PYTHON**, instalar autopep8 en consola de comandos con "pip install autopep8" para habilitar el mapeo para formatear <leader> e 
-
-![image](https://user-images.githubusercontent.com/83993271/221379180-e1292d25-9723-4452-98a7-466e32083409.png)
+* borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Neovim-Dvorak ." dentro de la carpeta "nvim". no abrir neovim por ahora, ya que podria causar unos errores(aunque igual lo puedes usar para el paso siguiente, pero no es recomendable)
+* abrir el archivo init.lua del repositorio clonado con un editor de texto y poner el valor de la variable "makeConfig" a "false"
+![image](https://user-images.githubusercontent.com/83993271/223286922-e5cfcab2-0ac6-4ab6-b512-6754ff040854.png)
+* abrir neovim y esperar a que se instalen todos los plugins mediante lazy, cerrar neovim una vez esten listos.
+* cambiar el valor de la variable "makeConfig" a "true"
+* abrir neovim y disfrutar :D, se vera algo así(la forma en que se ve puede variar segun la actualización del repositorio): 
+![image](https://user-images.githubusercontent.com/83993271/223286613-ca9dd9ed-7fab-4585-8858-26b7c65f01a3.png)
 
 ### Referencias agrupadas
 * puedes ver los pasos de instalación de chocolatey en https://chocolatey.org/install#individual
-* Puedes encontrar el repositorio oficial de vim plug en https://github.com/junegunn/vim-plug
 * documentación oficial de autopep8 en https://pypi.org/project/autopep8/
 
 ### Para implementar al repo a futuro
-
-* **implementar autopep8 a neovim para formatear codigo python de manera automatica**
-  * https://pypi.org/project/autopep8/ 
-  * https://github.com/python-mode/python-mode 
-  * https://stackoverflow.com/questions/15285032/autopep8-with-vim*
+* format on save habilitado para javaScript, html y css
