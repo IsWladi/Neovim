@@ -64,6 +64,12 @@ require("lazy").setup({
   --para html
   {'mattn/emmet-vim'},
 
+  --pestañas
+  {'ap/vim-buftabline'},
+
+  --tema
+  {'ellisonleao/gruvbox.nvim'},
+
 })
 
 local makeConfig = true --poner como false si estas instalando esta configuración para que no hayan errores al instalar los plugins, despues de instalados todos, poner makeConfig como true
@@ -98,6 +104,11 @@ function DoConfig()
       vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
       vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
       --fin telescope config
+      
+      --tema
+      vim.o.background = "dark" -- or "light" for light mode
+      vim.cmd([[colorscheme gruvbox]])
+      --fin tema
   end
 end
 
