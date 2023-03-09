@@ -46,6 +46,7 @@ require("lazy").setup({
 
   --para cambiar parentesis, llaves, corchetes de forma automatica
   {'tpope/vim-surround'},
+  {'tpope/vim-repeat'}, --para repetir con "." para comandos no nativos de nvim
 
   --diseño barrita de abajo
   {'vim-airline/vim-airline'},
@@ -83,16 +84,10 @@ function DoConfig()
       --inicio lsp configuración 
       require("nvim-lsp-installer").setup()
       require("lsp_signature").setup()
-      require("lspconfig")["pyright"].setup {
-      on_attach = function(client, bufnr)
-        require("lsp_signature").on_attach({
-          bind = true,
-          handler_opts = {
-            border = "single"
-          }
-        })
-      end
-    }
+      require'lspconfig'.jedi_language_server.setup{} --python
+      require'lspconfig'.tsserver.setup{} --javaScript, typeScript
+      require'lspconfig'.html.setup{} --html
+      require'lspconfig'.cssls.setup{} --css
 
       --lsp keymaps
       map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
