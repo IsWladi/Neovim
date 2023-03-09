@@ -9,9 +9,20 @@ end
 
 -- format on save
 function FormatWrite()
+    local ft = vim.bo.filetype
     vim.cmd("w")
-    if vim.bo.filetype == "python" then
+    --autopep8 python
+    if ft == "python" then
         vim.cmd("!autopep8 --in-place %")
+    --prettier html css js markdown
+    elseif ft == "html" then
+        vim.cmd("!npx prettier --write %")
+    elseif ft == "css" then
+        vim.cmd("!npx prettier --write %")
+    elseif ft == "javascript" then
+        vim.cmd("!npx prettier --write %")
+    elseif ft == "markdown" then
+        vim.cmd("!npx prettier --write %")
     end
 
 end
