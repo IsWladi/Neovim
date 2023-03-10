@@ -31,16 +31,7 @@ require("lazy").setup({
   {'neovim/nvim-lspconfig'},
   {'williamboman/nvim-lsp-installer'},
   {'windwp/nvim-autopairs'}, 
-  {'hrsh7th/nvim-cmp'}, 
-  {'hrsh7th/cmp-buffer'}, 
-  --{'hrsh7th/cmp-ruta'}, 
-  {'hrsh7th/cmp-nvim-lua'}, 
-  {'hrsh7th/cmp-nvim-lsp'}, 
-  {'saadparwaiz1/cmp_luasnip'}, 
-  {'onsails/lspkind-nvim'}, 
-  {'hrsh7th/cmp-nvim-lsp-signature-help'}, 
-  {'ray-x/lsp_signature.nvim'},
-
+  {'ms-jpq/coq_nvim'},
   --github copilot
   {'https://github.com/github/copilot.vim'},
 
@@ -83,11 +74,12 @@ function DoConfig()
 
       --inicio lsp configuración 
       require("nvim-lsp-installer").setup()
-      require("lsp_signature").setup()
       require'lspconfig'.jedi_language_server.setup{} --python
       require'lspconfig'.tsserver.setup{} --javaScript, typeScript
       require'lspconfig'.html.setup{} --html
       require'lspconfig'.cssls.setup{} --css
+      --lsp completado con COQ
+      vim.cmd("COQnow")
 
       --lsp keymaps
       map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
