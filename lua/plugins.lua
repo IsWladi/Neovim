@@ -9,10 +9,26 @@ return{
   {'mhinz/vim-signify'},
 
   --lsp para autocompletado
-  {'neovim/nvim-lspconfig'},
-  {'williamboman/nvim-lsp-installer'},
-  {'windwp/nvim-autopairs'}, 
-  {'ms-jpq/coq_nvim'},
+  {'neovim/nvim-lspconfig',
+    config = function()
+      require'lspconfig'.jedi_language_server.setup{} --python
+      require'lspconfig'.tsserver.setup{} --javaScript, typeScript
+      require'lspconfig'.html.setup{} --html
+      require'lspconfig'.cssls.setup{} --css
+    end,
+  },
+  {'williamboman/nvim-lsp-installer',
+    config = function()
+      require("nvim-lsp-installer").setup()
+    end,
+  },
+
+  {'windwp/nvim-autopairs',
+    config = function()
+      require("nvim-autopairs").setup()
+    end,
+  }, 
+  {'ms-jpq/coq_nvim', cmd = "COQnow"},
 
   --github copilot
   {'https://github.com/github/copilot.vim',
@@ -30,7 +46,11 @@ return{
   {'vim-airline/vim-airline'},
   
   --navegar por archivos con nvimtree
-  {'nvim-neo-tree/neo-tree.nvim'},
+  {'nvim-neo-tree/neo-tree.nvim',
+    config = function()
+      require("neo-tree").setup()
+    end,
+  },
   {'nvim-lua/plenary.nvim'},
   {'nvim-tree/nvim-web-devicons'},
   {'MunifTanjim/nui.nvim'},
@@ -47,5 +67,10 @@ return{
   {'ap/vim-buftabline'},
 
   --tema
-  {'ellisonleao/gruvbox.nvim'},
+  --{'ellisonleao/gruvbox.nvim',
+    --cmd = "colorscheme gruvbox",
+    --config = function()  
+      --vim.o.background = "dark" -- or "light" for light mode
+    --end,
+  --},
 }
