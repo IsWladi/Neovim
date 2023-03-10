@@ -1,5 +1,20 @@
 return{
-    --lsp para autocompletado
+  --harpoon marks
+  {'ThePrimeagen/harpoon',
+    config = function() --hay que probar si funciona
+      vim.api.nvim_set_keymap("n", "<leader>m", [[<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], 
+        { noremap = true, silent = true, expr = false })
+
+      vim.api.nvim_set_keymap("n", "<leader>ma", [[<Cmd>lua require("harpoon.mark").add_file()<CR>]], 
+        { noremap = true, silent = true, expr = false })
+
+      vim.api.nvim_set_keymap("n", "<leader>mn", [[<Cmd>lua require("harpoon.ui").nav_next()<CR>]], 
+        { noremap = true, silent = true, expr = false })
+      
+  end,
+  },
+
+  --lsp para autocompletado
   {'neovim/nvim-lspconfig'},
   {'williamboman/nvim-lsp-installer'},
   {'ms-jpq/coq_nvim'},
@@ -22,7 +37,7 @@ return{
 
   --github copilot
   {'https://github.com/github/copilot.vim',
-  config = function() --hay que probar si funciona
+  config = function() 
       vim.g.copilot_no_tab_map = true
       vim.api.nvim_set_keymap("i", "<C-N>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
   end,
