@@ -58,14 +58,6 @@ map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
 map("n", "<leader>u", ":so %<CR>")
 
 --maps para copilot
---ugerencia anterior"
-map("i", "dd", "<M-[>")
---iguiente sugerencia
-map("i", "hh", "<M-]>")
---enegar sugerencia
-map("i", "tt", "<C-]>")
---ceptar sugerencia coc
-map("i", "nn", "<C-y>")
 
 --aps para gestionar ventanas
 map("n", "<leader>r", ":tabnew")
