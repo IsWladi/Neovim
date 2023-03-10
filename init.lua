@@ -80,6 +80,7 @@ function DoConfig()
       require'lspconfig'.cssls.setup{} --css
       --lsp completado con COQ
       vim.cmd("COQnow")
+      --vim.cmd('source coqKeymaps.vim')
 
       --lsp keymaps
       map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
