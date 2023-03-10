@@ -1,5 +1,6 @@
 require("settings")
 require("keymaps")
+local makeConfig = true --poner como false si estas instalando esta config, despues de instalados todos, poner makeConfig como true
 
 --Lazy install
 
@@ -16,9 +17,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins") --instalar los plugins de lua/plugins y algunas de sus configuraciones
 
-local makeConfig = true --poner como false si estas instalando esta configuración para que no hayan errores al instalar los plugins, despues de instalados todos, poner makeConfig como true
 function DoConfig() 
   if makeConfig == true then
       --lsp keymaps
@@ -31,6 +31,22 @@ function DoConfig()
       vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
       vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
       --fin telescope config
+
+      --lsp
+      require("nvim-lsp-installer").setup()
+      require'lspconfig'.jedi_language_server.setup{} --python
+      require'lspconfig'.tsserver.setup{} --javaScript, typeScript
+      require'lspconfig'.html.setup{} --html
+      require'lspconfig'.cssls.setup{} --css
+
+      --lsp completado con COQ
+      vim.cmd("COQnow")
+
+      --tema
+      vim.o.background = "dark" -- or "light" for light mode
+      vim.cmd([[colorscheme gruvbox]])
+      --fin tema
+
   end
 end
 

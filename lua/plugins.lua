@@ -1,4 +1,9 @@
 return{
+    --lsp para autocompletado
+  {'neovim/nvim-lspconfig'},
+  {'williamboman/nvim-lsp-installer'},
+  {'ms-jpq/coq_nvim'},
+
   --estilo para el codigo
   {'sheerun/vim-polyglot'},
 
@@ -7,21 +12,6 @@ return{
 
   --Plug para ver que lineas tienen cambios en git
   {'mhinz/vim-signify'},
-
-  --lsp para autocompletado
-  {'neovim/nvim-lspconfig',
-    config = function()
-      require'lspconfig'.jedi_language_server.setup{} --python
-      require'lspconfig'.tsserver.setup{} --javaScript, typeScript
-      require'lspconfig'.html.setup{} --html
-      require'lspconfig'.cssls.setup{} --css
-    end,
-  },
-  {'williamboman/nvim-lsp-installer',
-    config = function()
-      require("nvim-lsp-installer").setup()
-    end,
-  },
 
   {'windwp/nvim-autopairs',
     config = function()
@@ -34,7 +24,7 @@ return{
   {'https://github.com/github/copilot.vim',
   config = function() --hay que probar si funciona
       vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+      vim.api.nvim_set_keymap("i", "<C-N>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
   end,
   },
 
@@ -67,10 +57,5 @@ return{
   {'ap/vim-buftabline'},
 
   --tema
-  --{'ellisonleao/gruvbox.nvim',
-    --cmd = "colorscheme gruvbox",
-    --config = function()  
-      --vim.o.background = "dark" -- or "light" for light mode
-    --end,
-  --},
+  {'ellisonleao/gruvbox.nvim'},
 }
