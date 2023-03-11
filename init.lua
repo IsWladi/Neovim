@@ -1,6 +1,5 @@
 require("settings")
 require("keymaps")
-local makeConfig = true --poner como false si estas instalando esta config, despues de instalados todos, poner makeConfig como true
 
 --Lazy install
 
@@ -19,37 +18,33 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins") --instalar los plugins de lua/plugins y algunas de sus configuraciones
 
-function DoConfig() 
-  if makeConfig == true then
-      --lsp keymaps
-      map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
-      map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
+--una vez instalados los plugins se carga la configuracion de los mismos
+--lsp keymaps
+map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
+map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
 
-      -- fin lsp configuración
+-- fin lsp configuración
 
-      --inicio telescope config
-      vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
-      vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
-      --fin telescope config
+--inicio telescope config
+vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
+vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
+--fin telescope config
 
-      --lsp
-      require("nvim-lsp-installer").setup()
-      require'lspconfig'.jedi_language_server.setup{} --python
-      require'lspconfig'.tsserver.setup{} --javaScript, typeScript
-      require'lspconfig'.html.setup{} --html
-      require'lspconfig'.cssls.setup{} --css
+--lsp
+require("nvim-lsp-installer").setup()
+require'lspconfig'.jedi_language_server.setup{} --python
+require'lspconfig'.tsserver.setup{} --javaScript, typeScript
+require'lspconfig'.html.setup{} --html
+require'lspconfig'.cssls.setup{} --css
 
-      --lsp completado con COQ
-      vim.cmd("COQnow")
+--lsp completado con COQ
+vim.cmd("COQnow")
 
-      --tema
-      vim.o.background = "dark" -- or "light" for light mode
-      vim.cmd([[colorscheme gruvbox]])
-      --fin tema
+--tema
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+--fin tema
 
-  end
-end
 
-DoConfig()
 
 
