@@ -15,9 +15,27 @@ return{
   },
 
   --lsp para autocompletado
-  {'neovim/nvim-lspconfig'},
-  {'williamboman/nvim-lsp-installer'},
-  {'ms-jpq/coq_nvim'},
+  {'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
+  },
 
   --estilo para el codigo
   {'sheerun/vim-polyglot'},
@@ -33,15 +51,9 @@ return{
       require("nvim-autopairs").setup()
     end,
   }, 
-  {'ms-jpq/coq_nvim', cmd = "COQnow"},
 
   --github copilot
-  {'https://github.com/github/copilot.vim',
-  config = function() 
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-N>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-  end,
-  },
+  {'https://github.com/github/copilot.vim'},
 
   --para cambiar parentesis, llaves, corchetes de forma automatica
   {'tpope/vim-surround'},
