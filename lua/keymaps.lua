@@ -57,8 +57,6 @@ map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
 --map para resetear configuracion de nvim
 map("n", "<leader>u", ":so %<CR>")
 
---maps para copilot
-
 --aps para gestionar ventanas
 map("n", "<leader>r", ":tabnew")
 map("n", "<leader>t", ":tabclose<CR>")
@@ -66,6 +64,13 @@ map("n", "<leader>t", ":tabclose<CR>")
 map("n", "<leader>n", "gt<CR>") 
 --r a la pestaña anterior
 map("n", "<leader>s", "gT<CR>") 
+
+--bajar y subir media pagina
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+--buscar y centrar con N
+vim.keymap.set("n", "N", "Nzz")
+
 
 
 
