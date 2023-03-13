@@ -53,7 +53,12 @@ return{
   }, 
 
   --github copilot
-  {'https://github.com/github/copilot.vim'},
+  {'https://github.com/github/copilot.vim',
+      init = function() 
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap("i", "<C-N>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+      end,
+  },
 
   --para cambiar parentesis, llaves, corchetes de forma automatica
   {'tpope/vim-surround'},
