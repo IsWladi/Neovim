@@ -16,6 +16,11 @@ return{
   end,
   },
 
+  --telescope
+  {'nvim-telescope/telescope.nvim',
+    tag = '0.1.0'
+  },
+
   --lsp para autocompletado
   {'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
@@ -55,12 +60,7 @@ return{
   }, 
 
   --github copilot
-  {'https://github.com/github/copilot.vim',
-      init = function() 
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-N>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-      end,
-  },
+  {'https://github.com/github/copilot.vim'},
 
   --para cambiar parentesis, llaves, corchetes de forma automatica
   {'tpope/vim-surround'},
