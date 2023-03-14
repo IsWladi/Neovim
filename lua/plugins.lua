@@ -2,14 +2,16 @@ return{
   --harpoon marks
   {'ThePrimeagen/harpoon',
     config = function() --hay que probar si funciona
-      vim.api.nvim_set_keymap("n", "<leader>m", [[<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], 
-        { noremap = true, silent = true, expr = false })
+      local mark = require("harpoon.mark")
+      local ui = require("harpoon.ui")
 
-      vim.api.nvim_set_keymap("n", "<leader>ma", [[<Cmd>lua require("harpoon.mark").add_file()<CR>]], 
-        { noremap = true, silent = true, expr = false })
+      vim.keymap.set("n", "<leader>h", mark.add_file)
+      vim.keymap.set("n", "<C-h>", ui.toggle_quick_menu)
 
-      vim.api.nvim_set_keymap("n", "<leader>mn", [[<Cmd>lua require("harpoon.ui").nav_next()<CR>]], 
-        { noremap = true, silent = true, expr = false })
+      vim.keymap.set("n", "<C-r>", function() ui.nav_file(1) end)
+      vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+      vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
+      vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
       
   end,
   },
@@ -77,11 +79,6 @@ return{
   {'nvim-tree/nvim-web-devicons'},
   {'MunifTanjim/nui.nvim'},
 
-  --buscar en el proyecto
-  {'nvim-telescope/telescope.nvim'},
-  {'nvim-telescope/telescope-fzf-native.nvim'},
-  {'BurntSushi/ripgrep'},
-  
   --para html
   {'mattn/emmet-vim'},
 

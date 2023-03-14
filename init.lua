@@ -19,21 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins") --instalar los plugins de lua/plugins y algunas de sus configuraciones
 
 --una vez instalados los plugins se carga la configuracion de los mismos
---lsp keymaps
-
--- fin lsp configuración
-
---inicio telescope config
-vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
-vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
---fin telescope config
-
---lsp
-
---tema
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
---fin tema
 
 --lsp
 
@@ -110,6 +95,23 @@ vim.diagnostic.config({
 --snips
 --inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
+--tema
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+require('gruvbox').setup({
+    disable_background = true
+})
 
+function ColorMyPencils(color) 
+	color = color or "gruvbox"
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+end
+
+ColorMyPencils()
+--fin tema
 
 
