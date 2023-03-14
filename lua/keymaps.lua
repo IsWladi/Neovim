@@ -48,10 +48,16 @@ map("n", "n", "<Up>")
 map("n", "s", "<Right>")
 
 --para comandos nativos de neovim
+
+--visual bloque
+map("n", "<leader>vb", "<CR><A>v")
+
 --Mapear <leader>q para cerrar el buffer actual
 map("n", "<leader>a", ":q<CR>")
 --guardar y formatear segun el lenguaje y que este soportado por funcion FormatWrite()
 map("n", "<leader>o", ":lua FormatWrite()<CR>")
+--guardar sin formatear
+map("n", "<leader>oo", ":w<CR>")
 --para NeoTree
 map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
 --map para resetear configuracion de nvim
