@@ -2,22 +2,58 @@ return{
   --harpoon marks
   {'ThePrimeagen/harpoon',
     config = function() --hay que probar si funciona
-      vim.api.nvim_set_keymap("n", "<leader>m", [[<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], 
-        { noremap = true, silent = true, expr = false })
+      local mark = require("harpoon.mark")
+      local ui = require("harpoon.ui")
 
-      vim.api.nvim_set_keymap("n", "<leader>ma", [[<Cmd>lua require("harpoon.mark").add_file()<CR>]], 
-        { noremap = true, silent = true, expr = false })
+      vim.keymap.set("n", "<leader>h", mark.add_file)
+      vim.keymap.set("n", "<C-h>", ui.toggle_quick_menu)
 
-      vim.api.nvim_set_keymap("n", "<leader>mn", [[<Cmd>lua require("harpoon.ui").nav_next()<CR>]], 
-        { noremap = true, silent = true, expr = false })
+      vim.keymap.set("n", "<C-r>", function() ui.nav_file(1) end)
+      vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+      vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
+      vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
       
   end,
   },
 
+  --telescope
+  {'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
+    config = function()
+      --telescope
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+      --vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+      vim.keymap.set('n', '<leader>fg', function()
+        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+      end)
+      --vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+      --fin telescope
+    end,
+  },
+
   --lsp para autocompletado
-  {'neovim/nvim-lspconfig'},
-  {'williamboman/nvim-lsp-installer'},
-  {'ms-jpq/coq_nvim'},
+  {'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
+  },
 
   --estilo para el codigo
   {'sheerun/vim-polyglot'},
@@ -33,15 +69,9 @@ return{
       require("nvim-autopairs").setup()
     end,
   }, 
-  {'ms-jpq/coq_nvim', cmd = "COQnow"},
 
   --github copilot
-  {'https://github.com/github/copilot.vim',
-  config = function() 
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-N>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-  end,
-  },
+  {'https://github.com/github/copilot.vim'},
 
   --para cambiar parentesis, llaves, corchetes de forma automatica
   {'tpope/vim-surround'},
@@ -60,11 +90,6 @@ return{
   {'nvim-tree/nvim-web-devicons'},
   {'MunifTanjim/nui.nvim'},
 
-  --buscar en el proyecto
-  {'nvim-telescope/telescope.nvim'},
-  {'nvim-telescope/telescope-fzf-native.nvim'},
-  {'BurntSushi/ripgrep'},
-  
   --para html
   {'mattn/emmet-vim'},
 

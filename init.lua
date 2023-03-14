@@ -19,32 +19,93 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins") --instalar los plugins de lua/plugins y algunas de sus configuraciones
 
 --una vez instalados los plugins se carga la configuracion de los mismos
---lsp keymaps
-map("n", "<leader>g", ":lua vim.lsp.buf.hover()<CR>") -- mostrar documentacion 
-map("n", "<leader>c", ":lua vim.lsp.buf.definition()<CR>") -- goto definition 
-
--- fin lsp configuración
-
---inicio telescope config
-vim.keymap.set('n', '<leader>f', ":Telescope find_files<CR>")
-vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
---fin telescope config
 
 --lsp
-require("nvim-lsp-installer").setup()
-require'lspconfig'.jedi_language_server.setup{} --python
-require'lspconfig'.tsserver.setup{} --javaScript, typeScript
-require'lspconfig'.html.setup{} --html
-require'lspconfig'.cssls.setup{} --css
 
---lsp completado con COQ
-vim.cmd("COQnow")
+local lsp = require("lsp-zero")
+
+lsp.preset("recommended")
+
+lsp.ensure_installed({
+  'tsserver',
+  'jedi_language_server',
+  'html',
+  'cssls',
+})
+
+-- Fix Undefined global 'vim'
+lsp.configure('lua-language-server', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
+
+
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ['<C-e>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-u>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  ["<C-Space>"] = cmp.mapping.complete(),
+})
+
+cmp_mappings['<Tab>'] = nil
+cmp_mappings['<S-Tab>'] = nil
+
+lsp.setup_nvim_cmp({
+  mapping = cmp_mappings
+})
+
+lsp.set_preferences({
+    suggest_lsp_servers = false,
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I'
+    }
+})
+
+lsp.on_attach(function(client, bufnr)
+  local opts = {buffer = bufnr, remap = false}
+
+  vim.keymap.set("n", "<leader>g", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("n", "<leader>x", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("i", "<leader>z", function() vim.lsp.buf.signature_help() end, opts)
+end)
+
+lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true
+})
+
+--snips
+--inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
 --tema
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+require('gruvbox').setup({
+    disable_background = true
+})
+
+function ColorMyPencils(color) 
+	color = color or "gruvbox"
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+end
+
+ColorMyPencils()
 --fin tema
-
-
 
 
