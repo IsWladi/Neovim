@@ -50,7 +50,7 @@ map("n", "s", "<Right>")
 --para comandos nativos de neovim
 
 --visual bloque
-map("n", "<leader>vb", "<CR><A>v")
+map("n", "<leader>vb", "<C><A>v")
 
 --Mapear <leader>q para cerrar el buffer actual
 map("n", "<leader>a", ":q<CR>")
