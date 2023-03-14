@@ -1,14 +1,15 @@
-# Configuración de neovim
+# Mi configuración de neovim
 
-*Enfocado en usar neovim con un layout Dvorak*
+*Enfocado en usar neovim con un layout Dvorak, configuración personal*
 
 ## Estado actual del repositorio
 
 - Funciona la instalación en windows(no me consta en otros OS)
 - Esta en proceso de prueba, no se asegura compatibilidad de instalación en cualquier pc
 - format on save habilitado para python, JavaScript, css, html y markdown(no funciona con lsp, sino con autopep8 y prettier)
-- go to definition y hover en archivos .py, .js, .html, .css
-- autocompletado con COQ
+- go to definition y hover segun servers lsp instalados
+- autocompletado
+- instalacion sencilla
 
 ## ¿Cómo implementar?
 
