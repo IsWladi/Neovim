@@ -91,7 +91,9 @@ return{
   {'MunifTanjim/nui.nvim'},
 
   --para html
-  {'mattn/emmet-vim'},
+  {'mattn/emmet-vim',
+    ft = {"html", "css"}
+  },
 
   --pestañas
   {'ap/vim-buftabline'},
