@@ -35,11 +35,6 @@ end
 
 local g = vim.g
 g.mapleader = ","
---mapear imap ii para salir de insert mode
-map("i", "ii", "<Esc>")
-
---para autocompletado 
-map("i", "yy", "<C-y>")
 
 --remap hjkl
 map("n", "r", "<Left>")
@@ -54,9 +49,9 @@ map("n", "s", "<Right>")
 --Mapear <leader>q para cerrar el buffer actual
 map("n", "<leader>a", ":q<CR>")
 --guardar y formatear segun el lenguaje y que este soportado por funcion FormatWrite()
-map("n", "<leader>o", ":lua FormatWrite()<CR>")
+map("n", "<leader>oo", ":lua FormatWrite()<CR>")
 --guardar sin formatear
-map("n", "<leader>oo", ":w<CR>")
+map("n", "<leader>o", ":w<CR>")
 --para NeoTree
 map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
 --map para resetear configuracion de nvim
