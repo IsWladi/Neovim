@@ -1,0 +1,2 @@
+--lines without ";" in the end of the lines
+--/\v.*[^;]$
