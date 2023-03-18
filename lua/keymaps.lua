@@ -59,7 +59,7 @@ end
 --Map leader
 
 local g = vim.g
-g.mapleader = " "
+g.mapleader = ","
 
 --remap hjkl
 map("n", "r", "<Left>")
