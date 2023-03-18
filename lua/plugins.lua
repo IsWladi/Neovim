@@ -43,21 +43,7 @@ return{
       {'hrsh7th/cmp-nvim-lua'},
 
       -- Snippets
-      {'L3MON4D3/LuaSnip',
-        config = function()
-          local ls = require("luasnip")
-          ls.config.set_config({
-            history = true
-          })
-          -- <c-e> is my expansion key
-          -- this will expand the current item or jump to the next item within the snippet.
-          vim.keymap.set({ "i", "s" }, "<C-e>", function()
-          if ls.expand_or_jumpable() then
-           ls.expand_or_jump()
-          end
-          end, { silent = true })
-        end,
-},
+      {'L3MON4D3/LuaSnip'},
       {'rafamadriz/friendly-snippets'},
     }
   },

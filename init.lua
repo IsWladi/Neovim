@@ -108,4 +108,40 @@ end
 ColorMyPencils()
 --fin tema
 
+--lua snippets
+local ls = require "luasnip"
+local t = ls.text_node
+local i = ls.insert_node
+local s = ls.snippet
+
+ls.config.set_config {
+  history = true
+}
+
+ls.add_snippets("sql", {
+s("function", {
+    t("CREATE OR REPLACE FUNCTION FN_"), i(1,"fname"), t("( "), i(2, "param"), t(" )"), t(" RETURN "), i(3, "type"), t(" IS"),
+    t({"", "-- variable declarations", ""}),
+    t({"BEGIN", ""}), 
+    t("-- function body"),
+    t({"" ,"RETURN "}), i(4, "value"), t(" ;"),
+    t({"","END ;"})
+  }),
+s("procedure", {
+    t("CREATE OR REPLACE PROCEDURE PROC_"), i(1,"pname"), t("( "), i(2, "param"), t(" )"), t(" IS"),
+    t({"", "-- variable declarations", ""}),
+    t({"BEGIN", ""}), 
+    t("-- procedure body"),
+    t({"","END ;", ""})
+      })
+})
+
+-- <c-e> is my expansion key
+-- this will expand the current item or jump to the next item within the snippet.
+vim.keymap.set({ "i", "s" }, "<C-e>", function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true })
+
 
