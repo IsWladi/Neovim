@@ -52,10 +52,6 @@ function HarpoonFile4()
     ui.nav_file(4)
 end
 
--- mappings
-
---mappings dvorak
-
 --Map leader
 
 local g = vim.g
@@ -68,8 +64,6 @@ map("n", "n", "<Up>")
 map("n", "s", "<Right>")
 
 --para comandos nativos de neovim
-
---visual bloque is ctrl + alt + v
 
 --Mapear <leader>q para cerrar el buffer actual
 map("n", "<leader>a", ":q<CR>")
@@ -102,5 +96,6 @@ map("n", "<C-t>", ":lua HarpoonFile2()<CR>")
 map("n", "<C-n>", ":lua HarpoonFile3()<CR>")
 map("n", "<C-s>", ":lua HarpoonFile4()<CR>")
 
-
-
+--para normal mode y visual mode, sustituciones con very very magic
+map("n", "<leader>/", ":%s/\\v//g")
+map("v", "<leader>/", ":s/\\v//")
