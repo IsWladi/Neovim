@@ -120,18 +120,31 @@ ls.config.set_config {
 
 ls.add_snippets("sql", {
 s("function", {
-    t("CREATE OR REPLACE FUNCTION FN_"), i(1,"fname"), t("( "), i(2, "param"), t(" )"), t(" RETURN "), i(3, "type"), t(" IS"),
+    t("-- "), i(4,"A short description of the function"),
+    t({"","CREATE OR REPLACE FUNCTION FN_"}), i(1,"fname"), t("( "), i(2, "param_name TYPE"), t(" )"), t(" RETURN "), i(3, "type"), t(" IS"),
     t({"", "-- variable declarations", ""}),
     t({"BEGIN", ""}), 
     t("-- function body"),
-    t({"" ,"RETURN "}), i(4, "value"), t(" ;"),
+    t({"" ,"RETURN "}), t("TRUE"), t(" ;"),
     t({"","END ;"})
   }),
 s("procedure", {
-    t("CREATE OR REPLACE PROCEDURE PROC_"), i(1,"pname"), t("( "), i(2, "param"), t(" )"), t(" IS"),
+    t("-- "), i(3,"A short description of the procedure"),
+    t({"","CREATE OR REPLACE PROCEDURE PROC_"}), i(1,"procedure_name"), t("( "), i(2, "param_name TYPE"), t(" )"), t(" IS"),
     t({"", "-- variable declarations", ""}),
     t({"BEGIN", ""}), 
     t("-- procedure body"),
+    t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
+    t({"","END ;", ""})
+      }),
+s("anonym", {
+    t("-- "), i(1,"A short description of the anonymous block"),
+    t({"","SET SERVEROUTPUT ON ;"}),
+    t({"","DECLARE"}),
+    t({"", "-- variable declarations", ""}),
+    t({"BEGIN", ""}), 
+    t("-- anonymous function body"),
+    t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
     t({"","END ;", ""})
       })
 })
