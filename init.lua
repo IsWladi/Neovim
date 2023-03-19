@@ -77,7 +77,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>g", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>x", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("i", "<leader>z", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()
@@ -108,53 +107,5 @@ end
 ColorMyPencils()
 --fin tema
 
---lua snippets
-local ls = require "luasnip"
-local t = ls.text_node
-local i = ls.insert_node
-local s = ls.snippet
-
-ls.config.set_config {
-  history = true
-}
-
-ls.add_snippets("sql", {
-s("function", {
-    t("-- "), i(4,"A short description of the function"),
-    t({"","CREATE OR REPLACE FUNCTION FN_"}), i(1,"fname"), t("( "), i(2, "param_name TYPE"), t(" )"), t(" RETURN "), i(3, "type"), t(" IS"),
-    t({"", "-- variable declarations", ""}),
-    t({"BEGIN", ""}), 
-    t("-- function body"),
-    t({"" ,"RETURN "}), t("TRUE"), t(" ;"),
-    t({"","END ;"})
-  }),
-s("procedure", {
-    t("-- "), i(3,"A short description of the procedure"),
-    t({"","CREATE OR REPLACE PROCEDURE PROC_"}), i(1,"procedure_name"), t("( "), i(2, "param_name TYPE"), t(" )"), t(" IS"),
-    t({"", "-- variable declarations", ""}),
-    t({"BEGIN", ""}), 
-    t("-- procedure body"),
-    t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
-    t({"","END ;", ""})
-      }),
-s("anonym", {
-    t("-- "), i(1,"A short description of the anonymous block"),
-    t({"","SET SERVEROUTPUT ON ;"}),
-    t({"","DECLARE"}),
-    t({"", "-- variable declarations", ""}),
-    t({"BEGIN", ""}), 
-    t("-- anonymous function body"),
-    t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
-    t({"","END ;", ""})
-      })
-})
-
--- <c-e> is my expansion key
--- this will expand the current item or jump to the next item within the snippet.
-vim.keymap.set({ "i", "s" }, "<C-e>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  end
-end, { silent = true })
 
 
