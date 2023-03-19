@@ -27,28 +27,28 @@ function FormatWrite()
 
 end
 
--- open harpoon file on a tabnew
+-- open harpoon file on a buffer
 function HarpoonFile1()
     local ui = require("harpoon.ui")
-    vim.cmd("tabnew")
+    --vim.cmd("tabnew")
     ui.nav_file(1)
 end
 
 function HarpoonFile2()
     local ui = require("harpoon.ui")
-    vim.cmd("tabnew")
+    --vim.cmd("tabnew")
     ui.nav_file(2)
 end
 
 function HarpoonFile3()
     local ui = require("harpoon.ui")
-    vim.cmd("tabnew")
+    --vim.cmd("tabnew")
     ui.nav_file(3)
 end
 
 function HarpoonFile4()
     local ui = require("harpoon.ui")
-    vim.cmd("tabnew")
+    --vim.cmd("tabnew")
     ui.nav_file(4)
 end
 
@@ -64,25 +64,14 @@ map("n", "n", "<Up>")
 map("n", "s", "<Right>")
 
 --para comandos nativos de neovim
-
---Mapear <leader>q para cerrar el buffer actual
-map("n", "<leader>a", ":q<CR>")
---guardar y formatear segun el lenguaje y que este soportado por funcion FormatWrite()
+--buffers
+map('n', '<leader>n', ':bnext<CR>')
+map('n', '<leader>a', ':bdelete<CR>')
+map('n', '<leader>aa', ':q<CR>')
+map('n', '<leader>o', ':w<CR>')
 map("n", "<leader>oo", ":lua FormatWrite()<CR>")
---guardar sin formatear
-map("n", "<leader>o", ":w<CR>")
---para NeoTree
 map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
---map para resetear configuracion de nvim
 map("n", "<leader>u", ":so %<CR>")
-
---aps para gestionar ventanas
-map("n", "<leader>r", ":tabnew")
-map("n", "<leader>t", ":tabclose<CR>")
---r a la siguiente pestaña
-map("n", "<leader>n", "gt<CR>") 
---r a la pestaña anterior
-map("n", "<leader>s", "gT<CR>") 
 
 --bajar y subir media pagina
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
