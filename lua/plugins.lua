@@ -85,9 +85,14 @@ return{
                   t("-- anonymous function body"),
                   t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
                   t({"","END ;", ""})
+                }),
+              s("cursor", {
+                  t("-- "), i(1,"A short description of the cursor"),
+                  t({"","CURSOR cur_"}), i(2,"cursor_name"), i(3, "(param_name TYPE)"), t(" IS"),
+                  t({"", "  SELECT "}), i(4, "*"), t(" FROM "), i(5, "table_name"), t(" ;")
                 })
-            })
-
+		  })
+            
           -- <c-e> is my expansion key
           -- this will expand the current item or jump to the next item within the snippet.
           vim.keymap.set({ "i", "s" }, "<C-e>", function()
