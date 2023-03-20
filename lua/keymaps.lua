@@ -53,8 +53,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 --buscar y centrar con m en vez de n
 vim.keymap.set("n", "m", "nzz")
-vim.keymap.set("n", "nh", ":nohl<CR>")
+vim.keymap.set("n", "M", "Nzz")
+--para normal mode, no highlight
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 --para normal mode y visual mode, sustituciones con very very magic
 map("n", "<leader>/", ":%s/\\v//g")
-map("v", "<leader>/", ":s/\\v//")
+map("v", "<leader>/", ":s/\\v//g")
