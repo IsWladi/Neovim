@@ -27,31 +27,6 @@ function FormatWrite()
 
 end
 
--- open harpoon file on a buffer
-function HarpoonFile1()
-    local ui = require("harpoon.ui")
-    --vim.cmd("tabnew")
-    ui.nav_file(1)
-end
-
-function HarpoonFile2()
-    local ui = require("harpoon.ui")
-    --vim.cmd("tabnew")
-    ui.nav_file(2)
-end
-
-function HarpoonFile3()
-    local ui = require("harpoon.ui")
-    --vim.cmd("tabnew")
-    ui.nav_file(3)
-end
-
-function HarpoonFile4()
-    local ui = require("harpoon.ui")
-    --vim.cmd("tabnew")
-    ui.nav_file(4)
-end
-
 --Map leader
 
 local g = vim.g
@@ -76,14 +51,9 @@ map("n", "<leader>u", ":so %<CR>")
 --bajar y subir media pagina
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
---buscar y centrar con N
-vim.keymap.set("n", "N", "Nzz")
-
---para moverse entre workspace contextual al proyecto con harpoon
-map("n", "<C-r>", ":lua HarpoonFile1()<CR>")
-map("n", "<C-t>", ":lua HarpoonFile2()<CR>")
-map("n", "<C-n>", ":lua HarpoonFile3()<CR>")
-map("n", "<C-s>", ":lua HarpoonFile4()<CR>")
+--buscar y centrar con m en vez de n
+vim.keymap.set("n", "m", "nzz")
+vim.keymap.set("n", "nh", ":nohl<CR>")
 
 --para normal mode y visual mode, sustituciones con very very magic
 map("n", "<leader>/", ":%s/\\v//g")
