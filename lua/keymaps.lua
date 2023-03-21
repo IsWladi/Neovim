@@ -23,6 +23,8 @@ function FormatWrite()
         vim.cmd("!npx prettier --write %")
     elseif ft == "markdown" then
         vim.cmd("!npx prettier --write %")
+    else 
+        vim.cmd("%s/\\v^?\\s+$//g") --remove spaces at the end of the lines and empty lines(but not delete the line)
     end
 
 end
