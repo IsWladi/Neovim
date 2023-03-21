@@ -49,13 +49,19 @@ return {
                 })
       })
             
-          -- <c-e> is my expansion key
-          -- this will expand the current item or jump to the next item within the snippet.
+          -- is my expansion key
           vim.keymap.set({ "i", "s" }, "<C-e>", function()
             if ls.expand_or_jumpable() then
               ls.expand_or_jump()
             end
           end, { silent = true })
+          -- is my jump forward keymap
+          vim.keymap.set({ "i", "s" }, "<C-o>", function()
+            if ls.jumpable(-1) then
+              ls.jump(-1)
+            end
+          end, { silent = true })
+
         end
       },
 }

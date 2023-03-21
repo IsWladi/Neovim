@@ -86,9 +86,6 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
---snips
---inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-
 --tema
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
