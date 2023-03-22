@@ -24,7 +24,7 @@
 ### Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 - renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
-- borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Neovim-Dvorak ." dentro de la carpeta "nvim"
+- borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Nvim ." dentro de la carpeta "nvim"
 - abrir neovim y esperar a que se instalen todos los plugins mediante lazy y los servers de lsp(se instalan automaticos, hay que esperar, se puede ver con :MasonLog).
 - reiniciar neovim
 
