@@ -41,7 +41,4 @@ return{
 
   --pestañas
   {'ap/vim-buftabline'},
-
-  --tema
-  {'ellisonleao/gruvbox.nvim'},
 }
