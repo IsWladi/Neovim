@@ -1,3 +1,6 @@
+DATO: en linea de comandos, si apretas <C-r> y pones el nombre de un registro, se inserta el contenido del
+registro en la linea de comandos. ej: %s/hello world/<C-r>a/g
+
 Anclas:
 
 ^: Coincide con el inicio de una línea
@@ -12,7 +15,7 @@ Cuantificadores:
 
 Conjuntos de caracteres:
 
-[...]: Define un conjunto de caracteres para coincidir. Por ejemplo [abc] o [a-z] 
+[...]: Define un conjunto de caracteres para coincidir. Por ejemplo [abc] o [a-z]
 [^...]: Define un conjunto de caracteres para no coincidir. Por ejemplo [^abc] coincide con cualquier carácter que no sea a, b o c
 
 Alternancia y agrupamiento:
