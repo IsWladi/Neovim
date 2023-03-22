@@ -66,3 +66,7 @@ map("v", "<leader>/", ":s/\\v//g")
 -- change tabulations
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+--move lines
+map("n","<A-n>",":m .+1<CR>==")
+map("n","<A-t>",":m .-2<CR>==")
