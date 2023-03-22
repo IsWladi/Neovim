@@ -1,7 +1,10 @@
 return {
   {"tpope/vim-fugitive",
   keys = {
-    { "g", ":Git<cr>" },
+    { "<leader>g", ":Git<cr>" },
+    {"<leader>gf", ":Git fetch<cr>"},
+    {"<leader>gl", ":Git pull<cr>"},
+    { "<leader>gp", ":Git push<cr>"},
   },
   },
 }

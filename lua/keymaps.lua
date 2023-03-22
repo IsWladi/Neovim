@@ -62,3 +62,7 @@ vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 --para normal mode y visual mode, sustituciones con very very magic
 map("n", "<leader>/", ":%s/\\v//g")
 map("v", "<leader>/", ":s/\\v//g")
+
+-- change tabulations
+map("v", "<", "<gv")
+map("v", ">", ">gv")
