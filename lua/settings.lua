@@ -8,6 +8,7 @@ local g = vim.g
 local opt = vim.opt
 
 --Configuración general
+
 opt.number = true
 opt.relativenumber = true
 opt.mouse = 'a'
