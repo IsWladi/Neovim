@@ -9,10 +9,10 @@ end
 
 -- format on save
 function FormatWrite()
-    local ft = vim.bo.filetype
+    local ft   = vim.bo.filetype
     vim.cmd("w")
     --autopep8 python
-    if ft == "python" then
+    if ft     == "python" then
         vim.cmd("!autopep8 --in-place %")
     --prettier html css js markdown
     elseif ft == "html" then
@@ -31,7 +31,7 @@ end
 
 --Map leader
 
-local g = vim.g
+local g     = vim.g
 g.mapleader = ","
 
 --remap hjkl
@@ -42,20 +42,19 @@ map("n", "s", "<Right>")
 
 --para comandos nativos de neovim
 --buffers
-map('n', '<leader>n', ':bnext<CR>')
-map('n', '<leader>a', ':bdelete<CR>')
+map('n', '<leader>n',  ':bnext<CR>')
+map('n', '<leader>a',  ':bdelete<CR>')
 map('n', '<leader>aa', ':q<CR>')
-map('n', '<leader>o', ':w<CR>')
+map('n', '<leader>o',  ':w<CR>')
 map("n", "<leader>oo", ":lua FormatWrite()<CR>")
-map("n", "<leader>e", ":Neotree filesystem reveal right<CR>")
-map("n", "<leader>u", ":so %<CR>")
+map("n", "<leader>u",  ":so %<CR>")
 
 --bajar y subir media pagina
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>",      "<C-d>zz")
+vim.keymap.set("n", "<C-u>",      "<C-u>zz")
 --buscar y centrar con m en vez de n
-vim.keymap.set("n", "m", "nzz")
-vim.keymap.set("n", "M", "Nzz")
+vim.keymap.set("n", "m",          "nzz")
+vim.keymap.set("n", "M",          "Nzz")
 --para normal mode, no highlight
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 

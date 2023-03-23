@@ -24,15 +24,6 @@ return{
   --diseño barrita de abajo
   {'vim-airline/vim-airline'},
   
-  --navegar por archivos con nvimtree
-  {'nvim-neo-tree/neo-tree.nvim',
-    config = function()
-      require("neo-tree").setup()
-    end,
-  },
-  {'nvim-lua/plenary.nvim'},
-  {'nvim-tree/nvim-web-devicons'},
-  {'MunifTanjim/nui.nvim'},
 
   --para html
   {'mattn/emmet-vim',
@@ -41,4 +32,7 @@ return{
 
   --pestañas
   {'ap/vim-buftabline'},
+
+  --depends on plugin(in case of)
+  {'nvim-lua/plenary.nvim'},
 }
