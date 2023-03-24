@@ -19,13 +19,16 @@
 ### Dependencias obligatorias
   - instalar python https://www.python.org/
   - instalar autopep 8 para format on save con python("pip install autopep8"), referencia; https://pypi.org/project/autopep8/
-  - instalar node.js https://nodejs.org/en/ y despues instalar prettier para format on save con JavaScript, css, html y markdown       https://prettier.io/docs/en/install.html
-
+  - instalar node.js https://nodejs.org/en/ para instalar prettier con el gestor de paquetes npm
+    - instalar prettier para format on save con JavaScript, css, html y markdown https://prettier.io/docs/en/install.html
+  - instar mingw para treesitter; choco install mingw (in admin powershell), despues de instalado ejecutar refreshenv(in admin powershell) 
+    - https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
+    
 ### Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 - renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
 - borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un "git clone https://github.com/Wladimir3984/Nvim ." dentro de la carpeta "nvim"
-- abrir neovim y esperar a que se instalen todos los plugins mediante lazy y los servers de lsp(se instalan automaticos, hay que esperar, se puede ver con :MasonLog).
+- abrir neovim y esperar a que se instalen plugins, servers de lsp(se instalan automaticos, hay que esperar, se puede ver con :MasonLog) y languages de treesitter
 - reiniciar neovim
 
 ![image](https://user-images.githubusercontent.com/83993271/227046631-6e233aa1-c803-4487-963d-f21a87d29fd7.png)
@@ -39,6 +42,7 @@
 - documentación oficial de autopep8 en https://pypi.org/project/autopep8/
 - documentación oficial de node.js https://nodejs.org/en/
 - documentación oficial de prettier en https://prettier.io/
+- documentación para soporte de treesitter en Windows en https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
 
 
 ### Para implementar al repo a futuro
