@@ -21,8 +21,8 @@ opt.expandtab      = false
 opt.encoding       = "utf-8"
 opt.clipboard      = "unnamedplus"
 opt.termguicolors  = true
-opt.hlsearch       = true --resaltado de busqueda con /palabra
---opt.incsearch = true --resaltado de busqueda mientras se escribe con h1search false
+opt.hlsearch       = false --resaltado de busqueda con /palabra
+opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn    = "140" --columna de marco para no exceder largo de linea
 
 --si el buffer actual es un archivo llamado "keymap.c", entonces se setea wrap a false
