@@ -76,3 +76,11 @@ map('v', '>', '>gv')
 --move lines
 map('n','<A-n>',':m .+1<CR>==')
 map('n','<A-t>',':m .-2<CR>==')
+
+--tests
+
+-- Crea un archivo
+vim.api.nvim_set_keymap('n', '<leader>cf', [[:lua require('utils').create_file()<CR>]], { noremap = true, silent = true })
+
+-- Renombra un archivo
+vim.api.nvim_set_keymap('n', '<leader>rf', [[:lua require('utils').rename_file()<CR>]], { noremap = true, silent = true })
