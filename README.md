@@ -16,13 +16,16 @@
 - instalar chocolatey https://chocolatey.org/install#individual
 - instalar [neovim](https://neovim.io/) con chocolatey en poweshell con permisos de administrador `choco install neovim` 
 
-### Dependencias obligatorias 
+### Dependencias
   - instalar [python](https://www.python.org/)
   - instalar [autopep 8](https://pypi.org/project/autopep8/) para format on save con python `pip install autopep8`
   - instalar [node.js](https://nodejs.org/en/) para instalar prettier con el gestor de paquetes npm
     - instalar [prettier](https://prettier.io/docs/en/install.html) para format on save con JavaScript, css, html y markdown 
   - instar mingw para treesitter; `choco install mingw` (in admin powershell), despues de instalado ejecutar `refreshenv`(in admin powershell) 
     - [treesitter soporte para Windows](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)
+  - instalar [ripgrep](https://github.com/BurntSushi/ripgrep#installation) y [fzf](https://github.com/junegunn/fzf#windows) para telescope
+    - `choco install ripgrep`
+    - `choco install fzf`
     
 ### Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
