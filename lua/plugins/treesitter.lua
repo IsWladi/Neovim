@@ -34,7 +34,7 @@ return {
           init_selection = '<c-space>',
           node_incremental = '<c-space>',
           scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
+          node_decremental = '<M-s>',
         },
       },
       textobjects = {
@@ -43,8 +43,6 @@ return {
             lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
             keymaps = {
               -- You can use the capture groups defined in textobjects.scm
-              ['aa'] = '@parameter.outer',
-              ['ia'] = '@parameter.inner',
               ['af'] = '@function.outer',
               ['if'] = '@function.inner',
               ['ac'] = '@class.outer',
@@ -58,17 +56,9 @@ return {
               [']m'] = '@function.outer',
               [']]'] = '@class.outer',
             },
-            goto_next_end = {
-              [']M'] = '@function.outer',
-              [']['] = '@class.outer',
-            },
             goto_previous_start = {
               ['[m'] = '@function.outer',
               ['[['] = '@class.outer',
-            },
-            goto_previous_end = {
-              ['[M'] = '@function.outer',
-              ['[]'] = '@class.outer',
             },
           },
         },
@@ -79,3 +69,27 @@ return {
 
 --doc
  
+--incremental_selection: Este módulo te permite seleccionar partes del código de manera incremental.
+--
+--init_selection: Este atajo de teclado inicia la selección incremental en la posición actual del cursor. En este caso, se asigna a <c-space>.
+--node_incremental: Este atajo de teclado aumenta la selección al siguiente nivel. En este caso, se asigna a <c-space>.
+--scope_incremental: Este atajo de teclado aumenta la selección al siguiente nivel de ámbito. En este caso, se asigna a <c-s>.
+--node_decremental: Este atajo de teclado disminuye la selección al nivel anterior. En este caso, se asigna a <M-space>.
+
+
+--textobjects.select: Este módulo te permite seleccionar objetos de texto específicos en tu código.
+--
+--af: Selecciona la función que está alrededor del cursor.
+--if: Selecciona la función que está dentro del cursor.
+--ac: Selecciona la clase que está alrededor del cursor.
+--ic: Selecciona la clase que está dentro del cursor.
+
+
+--textobjects.move: Este módulo te permite moverte entre objetos de texto específicos en tu código.
+--
+--goto_next_start: Mueve el cursor al inicio del siguiente objeto de texto.
+--]m: Mueve el cursor al inicio de la siguiente función.
+--]]: Mueve el cursor al inicio de la siguiente clase.
+--goto_previous_start: Mueve el cursor al inicio del objeto de texto anterior.
+--[m: Mueve el cursor al inicio de la función anterior.
+-- [[: Mueve el cursor al inicio de la clase anterior.
