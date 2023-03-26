@@ -49,7 +49,7 @@ map('n', '<leader><leader>a', ':%bd|e#|bd#') --borrar todos los buffers excepto 
 
 map('n', '<leader>o',         ':w<CR>') --guardar
 map('n', '<leader><leader>o', ':wa<CR>') --guardar todos los buffers
-map("n", "<leader>fs",        ':lua FormatWrite()<CR>') --guardar y formatear
+vim.api.nvim_set_keymap('n', '<leader>fw', [[:lua require('utils').formatWrite()<CR>]], { noremap = true, silent = true })
 
 map('n', '<leader>n',         ':bnext<CR>')
 map('n', '<leader>t',         ':bprevious<CR>')
@@ -84,3 +84,6 @@ vim.api.nvim_set_keymap('n', '<leader>cf', [[:lua require('utils').create_file()
 
 -- Renombra un archivo
 vim.api.nvim_set_keymap('n', '<leader>rf', [[:lua require('utils').rename_file()<CR>]], { noremap = true, silent = true })
+
+-- Elimina un archivo
+vim.api.nvim_set_keymap('n', '<leader>df', [[:lua require('utils').delete_current_file()<CR>]], { noremap = true, silent = true })
