@@ -87,3 +87,6 @@ vim.api.nvim_set_keymap('n', '<leader>rf', [[:lua require('utils').rename_file()
 
 -- Elimina un archivo
 vim.api.nvim_set_keymap('n', '<leader>df', [[:lua require('utils').delete_current_file()<CR>]], { noremap = true, silent = true })
+
+-- Telescope test 
+--vim.api.nvim_set_keymap('n', '<leader>gt', [[:lua require('utils').search_git_root()<CR>]], { noremap = true, silent = true })

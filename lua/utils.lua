@@ -76,4 +76,27 @@ function M.formatWrite()
 
 end
 
+-- Función para buscar el directorio raíz del repositorio de Git
+function M.find_git_root()
+  local path = vim.loop.cwd()
+  local i = 0
+  while path:match('.:\\') and i < 10 do
+    if vim.fn.isdirectory(path .. '/.git') == 1 then
+      return path
+    end
+    path = vim.fn.fnamemodify(path, ':h')
+    i = i + 1
+  end
+end
+
+-- Función para buscar en todo el directorio de trabajo del repositorio de Git con Telescope
+function M.search_git_root()
+  local git_root = M.find_git_root()
+  if git_root then
+    require('telescope.builtin').find_files({ cwd = git_root })
+  else
+    print('No se encontró el directorio raíz de Git')
+  end
+end
+
 return M
