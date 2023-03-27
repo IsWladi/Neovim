@@ -116,4 +116,15 @@ function M.isGitRepository()
   end
 end
 
+
+function M.save_delete_buffers_except_current()
+  local answer = vim.fn.input("¿Guadar y borrar todos los buffers excepto el actual? (y/n): ")
+  if answer == "y" then
+    vim.cmd(":wa")
+    vim.cmd(":%bd|e#|bd#")
+  else
+    print("Operación cancelada.")
+  end
+end
+
 return M
