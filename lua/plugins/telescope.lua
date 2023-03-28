@@ -12,12 +12,12 @@ return {
     config = function()
       --telescope
       local builtin = require('telescope.builtin')
-      vim.api.nvim_set_keymap('n', '<leader>f', [[:lua require('utils').search_git_root()<CR>]], { noremap = true, silent = true })
-      vim.keymap.set('n', '<leader>fa', builtin.find_files, {})
+      vim.api.nvim_set_keymap('n', '<leader>f', [[:lua require('utils').search_git_root()<CR>]], { noremap = true, silent = true, desc = '[telescope] Search files in the current git repository' })
+      vim.keymap.set('n', '<leader>fa', builtin.find_files, {desc = '[telescope] Find files to subdirectories'})
+      vim.keymap.set('n', '<leader>fk', builtin.keymaps, {desc = '[telescope] Show keymaps'})
       vim.keymap.set('n', '<leader>fg', function()
         builtin.grep_string({ search = vim.fn.input("buscame algo po > ") })
-      end)
-      --vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+      end, {desc = '[telescope] Finde lines with grep'})
       --fin telescope
     end,
   },
