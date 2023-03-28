@@ -15,6 +15,7 @@ return {
       vim.api.nvim_set_keymap('n', '<leader>f', [[:lua require('utils').search_git_root()<CR>]], { noremap = true, silent = true, desc = '[telescope] Search files in the current git repository' })
       vim.keymap.set('n', '<leader>fa', builtin.find_files, {desc = '[telescope] Find files to subdirectories'})
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, {desc = '[telescope] Show keymaps'})
+      vim.keymap.set('n', '<leader>fb', builtin.git_branches, {desc = '[telescope] Make branch actions'})
       vim.keymap.set('n', '<leader>fg', function()
         builtin.grep_string({ search = vim.fn.input("buscame algo po > ") })
       end, {desc = '[telescope] Finde lines with grep'})
