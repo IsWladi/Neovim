@@ -14,9 +14,6 @@ return{
     end,
   }, 
 
-  --github copilot
-  {'https://github.com/github/copilot.vim'},
-
   --diseño barrita de abajo
   {'vim-airline/vim-airline'},
   
