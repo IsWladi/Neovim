@@ -9,6 +9,8 @@
 - Funcionalidades de lsp
 - autocompletado
 - instalacion sencilla
+- integración de git
+- telescope
 
 ## ¿Cómo implementar?
 
