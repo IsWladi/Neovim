@@ -20,6 +20,8 @@ function M.rename_file()
   if oldname ~= '' then
     local newname = vim.fn.input('renombrar > ')
     if newname ~= '' then
+      local current_dir = vim.fn.expand('%:p:h')
+      newname = current_dir .. '/' .. newname
       os.rename(oldname, newname)
       vim.cmd('file ' .. newname)
       vim.cmd('w!')
