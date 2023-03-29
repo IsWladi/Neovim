@@ -30,6 +30,13 @@ return{
             }
           end
       },
+      {'nvim-telescope/telescope-dap.nvim',
+          config = function()
+              require('telescope').load_extension('dap')
+              vim.api.nvim_set_keymap('n', '<leader>tdc', ":lua require('telescope').extensions.dap.commands{}<CR>", {noremap = true, silent = true, desc = "[dap telescope] List of commands with telescope"})
+              vim.api.nvim_set_keymap('n', '<leader>tdb', ":lua require('telescope').extensions.dap.list_breakpoints{}<CR>", {noremap = true, silent = true, desc = "[dap telescope] List of breakpoints with telescope"})
+          end
+      },
       {'mfussenegger/nvim-dap-python',
         config = function()
             require('dap-python').setup('~/debugpy/Scripts/python')
