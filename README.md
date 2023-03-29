@@ -11,6 +11,7 @@
 - instalacion sencilla
 - integración de git
 - telescope
+- Debug with debbug adapter protocol
 
 ## ¿Cómo implementar?
 
@@ -28,6 +29,10 @@
   - instalar [ripgrep](https://github.com/BurntSushi/ripgrep#installation) y [fzf](https://github.com/junegunn/fzf#windows) para telescope
     - `choco install ripgrep`
     - `choco install fzf`
+  - instalar debugpy para debbug:
+    - `python -m venv debugpy` en users/usuario/
+    - `debugpy\Scripts\activate`en users/usuario/ para activar el entorno virtual de python
+    - con el venv activado: `python -m pip install --upgrade debugpy`
     
 ### Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
