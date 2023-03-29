@@ -1,5 +1,31 @@
 local M = {}
 
+--check for externs tools
+
+function M.check_for_tools()
+  local prettier_installed = vim.fn.executable("prettier") == 1
+  local autopep8_installed = vim.fn.executable("autopep8") == 1
+
+  if not prettier_installed then
+    local choice = vim.fn.input("Prettier no está instalado. ¿Desea instalarlo? (s/n): ")
+    if choice:lower() == "s" then
+        vim.cmd([[!powershell -Command "Start-Process powershell -Verb runAs -ArgumentList 'npm install --global prettier'"]])
+    end
+  end
+
+  if not autopep8_installed then
+    local choice = vim.fn.input("autopep8 no está instalado. ¿Desea instalarlo? (s/n): ")
+    if choice:lower() == "s" then
+        vim.cmd([[!powershell -Command "Start-Process powershell -Verb runAs -ArgumentList 'pip install autopep8'"]])
+    end
+
+  else
+    print("Prettier y autopep8 están instalados")
+  end
+end
+
+--utilidades para el manejo de archivos
+
 function M.create_file()
   local filename = vim.fn.input('nuevo archivo > ')
   if filename ~= '' then
@@ -55,6 +81,16 @@ function M.delete_current_file()
   end
 end
 
+function M.save_delete_buffers_except_current()
+  local answer = vim.fn.input("¿Guadar y borrar todos los buffers excepto el actual? (y/n): ")
+  if answer == "y" then
+    vim.cmd(":wa")
+    vim.cmd(":%bd|e#|bd#")
+  else
+    print("Operación cancelada.")
+  end
+end
+
 -- format on save
 function M.formatWrite_test()
     local ft = vim.bo.filetype
@@ -76,6 +112,10 @@ function M.formatOnSave()
         print('Error al formatear(posiblemente no tienes prettier o autopep8 instalado)')
     end
 end
+
+--Utilidades para plugins
+
+--TELESCOPE
 
 -- Función para buscar el directorio raíz del repositorio de Git
 function M.find_git_root()
@@ -118,14 +158,5 @@ function M.isGitRepository()
 end
 
 
-function M.save_delete_buffers_except_current()
-  local answer = vim.fn.input("¿Guadar y borrar todos los buffers excepto el actual? (y/n): ")
-  if answer == "y" then
-    vim.cmd(":wa")
-    vim.cmd(":%bd|e#|bd#")
-  else
-    print("Operación cancelada.")
-  end
-end
 
 return M
