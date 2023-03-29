@@ -56,26 +56,25 @@ function M.delete_current_file()
 end
 
 -- format on save
-function M.formatWrite()
-    local ft   = vim.bo.filetype
+function M.formatWrite_test()
+    local ft = vim.bo.filetype
     vim.cmd('w')
-    --autopep8 python
-    if ft     == 'python' then
-        vim.cmd('!autopep8 --in-place %')
-    --prettier html css js markdown
-    elseif ft == 'html' then
-        vim.cmd('!npx prettier --write %')
-    elseif ft == 'css' then
-        vim.cmd('!npx prettier --write %')
-    elseif ft == 'javascript' then
-        vim.cmd('!npx prettier --write %')
-    elseif ft == 'markdown' then
-        vim.cmd('!npx prettier --write %')
+    if ft == 'python' then
+            vim.cmd('!autopep8 --in-place %')
+    elseif ft == 'html' or ft == 'css' or ft == 'javascript' or ft == 'markdown' then
+            vim.cmd('!npx prettier --write %')
     else 
         vim.cmd('%s/\\v^?\\s+$//g') --remove spaces at the end of the lines and empty lines(but not delete the line)
         vim.cmd('w')
     end
+end
 
+function M.formatOnSave()
+    if pcall(M.formatWrite_test) then
+        print('Formato correcto')
+    else
+        print('Error al formatear(posiblemente no tienes prettier o autopep8 instalado)')
+    end
 end
 
 -- Función para buscar el directorio raíz del repositorio de Git

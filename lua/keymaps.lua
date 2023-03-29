@@ -49,7 +49,7 @@ map('n', '<leader><leader>a', [[:lua require('utils').save_delete_buffers_except
 
 map('n', '<leader>o', ':w<CR>', {desc = '[no plugin] Save'}) --guardar
 map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}) --guardar todos los buffers
-map('n', '<leader>fw', [[:lua require('utils').formatWrite()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Format on save' })
+map('n', '<leader>fw', [[:lua require('utils').formatOnSave()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Format on save' })
 
 map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
 map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
