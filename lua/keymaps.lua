@@ -90,3 +90,13 @@ map('n', '<leader>df', [[:lua require('utils').delete_current_file()<CR>]], { no
 
 --checkear herramientas externas
 map('n', '<leader><leader>ch', [[:lua require('utils').check_for_tools()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Check if the external tools are installed and if isn\'t, install it' })
+
+
+map('n', '<leader>cz', [[:lua require('xdeps').check_tools()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Delete current file'})
+
+
+
+
+
+
+
