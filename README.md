@@ -13,20 +13,20 @@
 - telescope
 - Debug with debbug adapter protocol
 
-## ¿Cómo implementar?
+# ¿Cómo implementar?
 
-### Instalar neovim (Windows)
+## Instalar neovim (Windows)
 - instalar chocolatey https://chocolatey.org/install#individual
 - instalar [neovim](https://neovim.io/) con chocolatey en poweshell con permisos de administrador `choco install neovim` 
     
-### Instalar configuración de este repo
+## Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 - renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
 - borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un `git clone https://github.com/Wladimir3984/Nvim .` dentro de la carpeta "nvim"
 - abrir neovim y esperar a que se instalen plugins, servers de lsp(se instalan automaticos, hay que esperar, se puede ver con `:MasonLog`) y languages de treesitter
 - reiniciar neovim
 
-# Dependencias externas de mi configuración
+### Dependencias externas de mi configuración
 - instalar [python](https://www.python.org/)
 - instalar [node.js](https://nodejs.org/en/)
 - instalar debugpy para debbug:
@@ -38,7 +38,7 @@
 ![image](https://user-images.githubusercontent.com/83993271/227046631-6e233aa1-c803-4487-963d-f21a87d29fd7.png)
 
 
-### Referencias agrupadas
+## Referencias agrupadas
 
 - puedes ver los pasos de instalación de chocolatey en https://chocolatey.org/install#individual
 - documentación oficial de neovim https://neovim.io/
@@ -49,6 +49,6 @@
 - documentación para soporte de treesitter en Windows en https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
 
 
-### Para implementar al repo a futuro
+## Para implementar al repo a futuro
 
-- Keymaps que usan las dependencias tengan manejo de excepciones en caso de no estar instaladas 
+- 100% automatización al instalar mi configuración
