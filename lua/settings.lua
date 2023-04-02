@@ -31,13 +31,4 @@ vim.cmd('autocmd BufWritePre * :%s/\\v\\s+$//e') --elimina espacios en blanco al
 vim.cmd('autocmd BufWritePre * :%s/\\v^(\\n\\s*)+$//e') -- elimina lineas al final del archivo
 
 -- Restaurar la posición del cursor y centrar pantalla
-vim.api.nvim_create_autocmd(
-  { "BufReadPost" },
-  {
-    pattern = { "*" },
-    callback = function()
-      vim.api.nvim_exec('silent! normal! g`"zvzz', false)
-    end,
-  }
-)
-
+vim.cmd('autocmd BufReadPost * silent! normal! g`"zvzz')
