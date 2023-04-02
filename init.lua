@@ -45,7 +45,6 @@ lsp.configure('lua-language-server', {
     }
 })
 
-
 local cmp          = require('cmp')
 local cmp_select   = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -75,8 +74,8 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
-  vim.keymap.set("n", "<leader>g", function() vim.lsp.buf.hover() end,        opts)
-  vim.keymap.set("n", "<leader>e", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "<CR>h", function() vim.lsp.buf.hover() end,        opts)
+  vim.keymap.set("n", "<CR>e", function() vim.diagnostic.goto_next() end, opts)
 end)
 
 lsp.setup()
