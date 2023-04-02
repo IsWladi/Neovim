@@ -7,28 +7,6 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- format on save
-function FormatWrite()
-    local ft   = vim.bo.filetype
-    vim.cmd('w')
-    --autopep8 python
-    if ft     == 'python' then
-        vim.cmd('!autopep8 --in-place %')
-    --prettier html css js markdown
-    elseif ft == 'html' then
-        vim.cmd('!npx prettier --write %')
-    elseif ft == 'css' then
-        vim.cmd('!npx prettier --write %')
-    elseif ft == 'javascript' then
-        vim.cmd('!npx prettier --write %')
-    elseif ft == 'markdown' then
-        vim.cmd('!npx prettier --write %')
-    else
-        vim.cmd('%s/\\v^?\\s+$//g') --remove spaces at the end of the lines and empty lines(but not delete the line)
-    end
-
-end
-
 --Map leader
 
 local g     = vim.g
@@ -49,7 +27,6 @@ map('n', '<leader><leader>a', [[:lua require('utils').save_delete_buffers_except
 
 map('n', '<leader>o', ':w<CR>', {desc = '[no plugin] Save'}) --guardar
 map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}) --guardar todos los buffers
-map('n', '<leader>fw', [[:lua require('utils').formatOnSave()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Format on save' })
 
 map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
 map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
@@ -77,13 +54,4 @@ map('v', '>', '>gv', {desc = '[no plugin] Indent right and reselect'})
 --map('n','<A-n>',':m .+1<CR>==')
 --map('n','<A-t>',':m .-2<CR>==')
 
---tests
 
--- Crea un archivo
-map('n', '<leader>cf', [[:lua require('utils').create_file()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Create a file' })
-
--- Renombra un archivo
-map('n', '<leader>rf', [[:lua require('utils').rename_file()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Rename a file' })
-
--- Elimina un archivo
-map('n', '<leader>df', [[:lua require('utils').delete_current_file()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Delete current file' })
