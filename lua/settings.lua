@@ -31,3 +31,19 @@ if fn.expand("%:t") == "keymap.c" then
 else --si no es un archivo llamado "keymap.c", entonces se setea wrap a true
     opt.wrap = true
 end
+
+--auto comandos
+vim.cmd('autocmd BufWritePre * :%s/\\v\\s+$//e') --elimina espacios en blanco al final de cada linea
+vim.cmd('autocmd BufWritePre * :%s/\\v^(\\n\\s*)+$//e') -- elimina lineas al final del archivo
+
+-- Restaurar la posición del cursor y centrar pantalla
+vim.api.nvim_create_autocmd(
+  { "BufReadPost" },
+  {
+    pattern = { "*" },
+    callback = function()
+      vim.api.nvim_exec('silent! normal! g`"zvzz', false)
+    end,
+  }
+)
+
