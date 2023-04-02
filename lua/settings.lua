@@ -25,14 +25,8 @@ opt.hlsearch       = true --resaltado de busqueda con /palabra
 --opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn    = "140" --columna de marco para no exceder largo de linea
 
---si el buffer actual es un archivo llamado "keymap.c", entonces se setea wrap a false
-if fn.expand("%:t") == "keymap.c" then
-    opt.wrap = false
-else --si no es un archivo llamado "keymap.c", entonces se setea wrap a true
-    opt.wrap = true
-end
-
 --auto comandos
+vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
 vim.cmd('autocmd BufWritePre * :%s/\\v\\s+$//e') --elimina espacios en blanco al final de cada linea
 vim.cmd('autocmd BufWritePre * :%s/\\v^(\\n\\s*)+$//e') -- elimina lineas al final del archivo
 
