@@ -30,16 +30,16 @@ return {
       end, {desc = '[telescope] Finde lines with grep'})
 
       --treesiter
-      vim.keymap.set('n', '<leader>ft', builtin.treesitter, {desc = '[telescope] for treesiter'})
+      vim.keymap.set('n', '<leader>ft', builtin.treesitter, {desc = '[telescope] list var, params and functions with treesiter'})
 
       --git
       vim.keymap.set('n', '<leader>fb', builtin.git_branches, {desc = '[telescope] Make branch actions'})
 
       --lsp
-      vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, {desc = '[telescope] go to definition'})
+      vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, {desc = '[telescope] go to implementation'})
       vim.keymap.set('n', '<leader>d', builtin.lsp_definitions, {desc = '[telescope] go to definition'})
-      vim.keymap.set('n', '<leader>e', builtin.diagnostics, {desc = '[telescope] go to definition'})
-      vim.keymap.set('n', '<leader>r', builtin.lsp_references, {desc = '[telescope] go to definition'})
+      vim.keymap.set('n', '<leader>ee', builtin.diagnostics, {desc = '[telescope] diagnostic of all buffers'})
+      vim.keymap.set('n', '<leader>r', builtin.lsp_references, {desc = '[telescope] references of word under cursor'})
     end,
   },
 }
