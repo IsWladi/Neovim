@@ -75,7 +75,6 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
-  vim.keymap.set("n", "<leader>g", function() vim.lsp.buf.definition() end,   opts)
   vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.hover() end,        opts)
   vim.keymap.set("n", "<leader>x", function() vim.diagnostic.goto_next() end, opts)
 end)

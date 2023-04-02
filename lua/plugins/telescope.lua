@@ -25,11 +25,21 @@ return {
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>f', builtin.find_files, {desc = '[telescope] Find files to subdirectories'})
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, {desc = '[telescope] Show keymaps'})
-      vim.keymap.set('n', '<leader>fb', builtin.git_branches, {desc = '[telescope] Make branch actions'})
       vim.keymap.set('n', '<leader>fg', function()
         builtin.grep_string({ search = vim.fn.input("buscame algo po > ") })
       end, {desc = '[telescope] Finde lines with grep'})
-      --fin telescope
+
+      --treesiter
+      vim.keymap.set('n', '<leader>ft', builtin.treesitter, {desc = '[telescope] for treesiter'})
+
+      --git
+      vim.keymap.set('n', '<leader>fb', builtin.git_branches, {desc = '[telescope] Make branch actions'})
+
+      --lsp
+      vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, {desc = '[telescope] go to definition'})
+      vim.keymap.set('n', '<leader>d', builtin.lsp_definitions, {desc = '[telescope] go to definition'})
+      vim.keymap.set('n', '<leader>e', builtin.diagnostics, {desc = '[telescope] go to definition'})
+      vim.keymap.set('n', '<leader>r', builtin.lsp_references, {desc = '[telescope] go to definition'})
     end,
   },
 }
