@@ -25,6 +25,7 @@ return {
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<CR>f', builtin.find_files, {desc = '[telescope] Find files to subdirectories'})
       vim.keymap.set('n', '<CR>k', builtin.keymaps, {desc = '[telescope] Show keymaps'})
+      vim.keymap.set('n', '<CR><Space>', builtin.buffers, {desc = '[telescope] Show currents buffers'})
       vim.keymap.set('n', '<CR>g', function()
         builtin.grep_string({ search = vim.fn.input("buscame algo po > ") })
       end, {desc = '[telescope] Finde lines with grep'})
@@ -33,7 +34,8 @@ return {
       vim.keymap.set('n', '<CR>t', builtin.treesitter, {desc = '[telescope] list var, params and functions with treesiter'})
 
       --git
-      vim.keymap.set('n', '<CR>b', builtin.git_branches, {desc = '[telescope] Make branch actions'})
+      vim.keymap.set('n', '<CR>gb', builtin.git_branches, {desc = '[telescope] Make branch actions'})
+      vim.keymap.set('n', '<CR>gs', builtin.git_status, {desc = '[telescope] List git status'})
 
       --lsp
       vim.keymap.set('n', '<CR>i', builtin.lsp_implementations, {desc = '[telescope] go to implementation'})
