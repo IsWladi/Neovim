@@ -31,17 +31,17 @@ return {
       end, {desc = '[telescope] Finde lines with grep'})
 
       --treesiter
-      vim.keymap.set('n', '<CR>t', builtin.treesitter, {desc = '[telescope] list var, params and functions with treesiter'})
+      vim.keymap.set('n', '<CR>t', builtin.treesitter, {desc = '[TREESITTER telescope] list var, params and functions with treesiter'})
 
       --git
-      vim.keymap.set('n', '<CR>gb', builtin.git_branches, {desc = '[telescope] Make branch actions'})
-      vim.keymap.set('n', '<CR>gs', builtin.git_status, {desc = '[telescope] List git status'})
+      vim.keymap.set('n', '<CR>gb', builtin.git_branches, {desc = '[GIT telescope] Make branch actions'})
+      vim.keymap.set('n', '<CR>gs', builtin.git_status, {desc = '[GIT telescope] List git status'})
 
       --lsp
-      vim.keymap.set('n', '<CR>i', builtin.lsp_implementations, {desc = '[telescope] go to implementation'})
-      vim.keymap.set('n', '<CR>d', builtin.lsp_definitions, {desc = '[telescope] go to definition'})
-      vim.keymap.set('n', '<CR>ee', builtin.diagnostics, {desc = '[telescope] diagnostic of all buffers'})
-      vim.keymap.set('n', '<CR>r', builtin.lsp_references, {desc = '[telescope] references of word under cursor'})
+      vim.keymap.set('n', '<CR>i', builtin.lsp_implementations, {desc = '[LSP telescope] go to implementation'})
+      vim.keymap.set('n', '<CR>d', builtin.lsp_definitions, {desc = '[LSP telescope] go to definition'})
+      vim.keymap.set('n', '<CR>ee', builtin.diagnostics, {desc = '[LSP telescope] diagnostic of all buffers'})
+      vim.keymap.set('n', '<CR>r', builtin.lsp_references, {desc = '[LSP telescope] references of word under cursor'})
     end,
   },
 }
