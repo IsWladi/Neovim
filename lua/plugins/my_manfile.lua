@@ -2,6 +2,7 @@ return{
   {"Wladimir3984/manfile",
     dependencies = {
       {"Wladimir3984/xdeps"},
+      {"stevearc/dressing.nvim"},
     },
     config = function()
       manfile = require("manfile")
