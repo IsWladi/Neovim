@@ -27,8 +27,18 @@ opt.colorcolumn    = "140" --columna de marco para no exceder largo de linea
 
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
-vim.cmd('autocmd BufWritePre * :%s/\\v\\s+$//e') --elimina espacios en blanco al final de cada linea
-vim.cmd('autocmd BufWritePre * :%s/\\v^(\\n\\s*)+$//e') -- elimina lineas al final del archivo
+-- auto delete whitespaces and preserv cursor
+vim.cmd([[
+  function! PreserveCursor()
+    let l:save = winsaveview()
+    %s/\v\s+$//e
+    %s/\v^(\n\s*)+$//e
+    call winrestview(l:save)
+  endfunction
+
+  autocmd BufWritePre * call PreserveCursor()
+]])
 
 -- Restaurar la posición del cursor y centrar pantalla
 vim.cmd('autocmd BufReadPost * silent! normal! g`"zvzz')
+
