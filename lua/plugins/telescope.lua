@@ -5,6 +5,9 @@ return {
 
     dependencies = {
       {"Wladimir3984/gittory",
+        dependencies = {
+            {"rcarriga/nvim-notify"},
+        },
         config = function()
           gittory = require("gittory")
           vim.keymap.set("n", "<CR>ff",
