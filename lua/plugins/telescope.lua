@@ -19,6 +19,11 @@ return {
                         function() gittory.search_git_root(require('telescope.builtin').live_grep) end,
                         { noremap = true, silent = true, desc = '[telescope gittory] live grep' }
                         )
+
+          vim.keymap.set("x", "<CR>",
+                        function() gittory.search_git_root(require('telescope.builtin').grep_string,{use_regex = true}) end,
+                        { noremap = true, silent = true, desc = '[telescope gittory] string grep visual mode with regex' }
+                        )
         end
       }
     },
