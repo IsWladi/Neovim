@@ -12,7 +12,12 @@ return {
           gittory = require("gittory")
           vim.keymap.set("n", "<CR>ff",
                         function() gittory.search_git_root() end,
-                        { noremap = true, silent = true, desc = '[telescope gittory] search git workdirectory' }
+                        { noremap = true, silent = true, desc = '[telescope gittory] find files' }
+                        )
+
+          vim.keymap.set("n", "<CR>fg",
+                        function() gittory.search_git_root(require('telescope.builtin').live_grep) end,
+                        { noremap = true, silent = true, desc = '[telescope gittory] live grep' }
                         )
         end
       }
@@ -20,8 +25,7 @@ return {
     config = function()
       --telescope
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<CR>f', builtin.find_files, {desc = '[telescope] Find files to subdirectories'})
-      vim.keymap.set('n', '<CR>k', builtin.keymaps, {desc = '[telescope] Show keymaps'})
+      vim.keymap.set('n', '<CR>fk', builtin.keymaps, {desc = '[telescope] Show keymaps'})
       vim.keymap.set('n', '<CR><Space>', builtin.buffers, {desc = '[telescope] Show currents buffers'})
       vim.keymap.set('n', '<CR>g', function()
         builtin.grep_string({ search = vim.fn.input("buscame algo po > ") })
