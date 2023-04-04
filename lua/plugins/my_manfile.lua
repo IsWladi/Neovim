@@ -3,6 +3,7 @@ return{
     dependencies = {
       {"Wladimir3984/xdeps"},
       {"stevearc/dressing.nvim"},
+      {"rcarriga/nvim-notify"}
     },
     config = function()
       manfile = require("manfile")
