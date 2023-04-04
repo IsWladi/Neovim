@@ -23,7 +23,7 @@ opt.clipboard      = "unnamedplus"
 opt.termguicolors  = true
 opt.hlsearch       = true --resaltado de busqueda con /palabra
 --opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
-opt.colorcolumn    = "140" --columna de marco para no exceder largo de linea
+opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
