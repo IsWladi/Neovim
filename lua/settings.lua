@@ -32,7 +32,7 @@ vim.cmd([[
   function! PreserveCursor()
     let l:save = winsaveview()
     %s/\v\s+$//e
-    %s/\v^(\n\s*)+$//e
+    %s/\(\n\n\)\+\%$//e
     call winrestview(l:save)
   endfunction
 

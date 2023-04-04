@@ -34,7 +34,6 @@ return{
         'html',
         'cssls',
         'sqlls', --en prueba, se demora en instalar, es pesado parece, no corrige syntaxys
-        --'lua-language-server',
       })
 
       -- Fix Undefined global 'vim'
@@ -54,7 +53,14 @@ return{
         ['<C-o>']        = cmp.mapping.select_prev_item(cmp_select),
         ['<C-e>']        = cmp.mapping.select_next_item(cmp_select),
         ['<M-a>']         = cmp.mapping.confirm({ select = true }),
-        --["<C-Space>"]    = cmp.mapping.complete(),
+        -- desactivar comportamientos indeseados
+        ['<Tab>']   = function(fallback) fallback() end,
+        ['<S-Tab>'] = function(fallback) fallback() end,
+        ['<CR>']    = function(fallback) fallback() end,
+        ['<Up>']    = function(fallback) fallback() end,
+        ['<Down>']  = function(fallback) fallback() end,
+        ['<Left>']  = function(fallback) fallback() end,
+        ['<Right>'] = function(fallback) fallback() end,
       })
 
       cmp_mappings['<Tab>']   = nil
@@ -91,12 +97,8 @@ return{
       lsp.setup()
 
       vim.diagnostic.config({
-          virtual_text = {
-              spacing = 4,
-              severity_limit = "Warning",
-          }
-      })
-
+          virtual_text = true
+})
     end
   },
 }
