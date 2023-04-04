@@ -34,6 +34,7 @@ return{
         'html',
         'cssls',
         'sqlls', --en prueba, se demora en instalar, es pesado parece, no corrige syntaxys
+        --'lua-language-server',
       })
 
       -- Fix Undefined global 'vim'
@@ -90,8 +91,12 @@ return{
       lsp.setup()
 
       vim.diagnostic.config({
-          virtual_text = true
-})
+          virtual_text = {
+              spacing = 4,
+              severity_limit = "Warning",
+          }
+      })
+
     end
   },
 }

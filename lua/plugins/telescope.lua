@@ -1,14 +1,8 @@
 return {
   {'nvim-telescope/telescope.nvim',
+
     tag = '0.1.0',
-    --init = function()
-    --  local telescope = require('telescope')
-    --  telescope.setup{
-    --    defaults = {
-    --      file_ignore_patterns = { '%.git/*' }
-    --    }
-    --  }
-    --end,
+
     dependencies = {
       {"Wladimir3984/gittory",
         config = function()
@@ -42,6 +36,7 @@ return {
       vim.keymap.set('n', '<CR>d', builtin.lsp_definitions, {desc = '[LSP telescope] go to definition'})
       vim.keymap.set('n', '<CR>ee', builtin.diagnostics, {desc = '[LSP telescope] diagnostic of all buffers'})
       vim.keymap.set('n', '<CR>r', builtin.lsp_references, {desc = '[LSP telescope] references of word under cursor'})
+      vim.keymap.set('n', '<CR>s', builtin.lsp_document_symbols, {desc = '[LSP telescope] references of symbols in current buffer'})
     end,
   },
 }
