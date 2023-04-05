@@ -1,5 +1,4 @@
 --Configuración inspirada en pagina https://dev.to/vonheikemen/como-crear-tu-primera-configuracion-de-neovim-usando-lua-dah
-
 --Aliases
 local cmd  = vim.cmd
 local exec = vim.api.nvim_exec
@@ -27,12 +26,13 @@ opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
--- auto delete whitespaces and preserv cursor
+-- auto delete whitespaces at the end of line, end of file, beginning of file and preserv cursor
 vim.cmd([[
   function! PreserveCursor()
     let l:save = winsaveview()
     %s/\v\s+$//e
     %s/\(\n\n\)\+\%$//e
+    1;/./-1g/^$/d
     call winrestview(l:save)
   endfunction
 
