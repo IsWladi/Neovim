@@ -7,7 +7,6 @@ return {
   },
   config = function()
     vim.api.nvim_set_keymap('n', '<leader><leader>odb', ":tab DBUI<CR>", {noremap = true, desc = "[database] Open database interface"})
-    vim.api.nvim_set_keymap('n', '<leader><leader>cdb', ":tabclose<CR>", {noremap = true, desc = "[database] Close database interface"})
     vim.g.db_ui_use_nerd_fonts = 1
     vim.g.db_ui_show_database_icon = 1
     vim.g.db_ui_force_echo_notifications = 1
