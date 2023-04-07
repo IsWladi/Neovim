@@ -1,3 +1,7 @@
+--[[ Ejemplo de conexión a una base de datos con vim-dadbod-ui en oracle
+DBUI_URL=oracle://user:password@iphost:puerto/xe
+DBUI_NAME=database_name ]]
+
 return {
   "kristijanhusak/vim-dadbod-ui",
   dependencies = {
