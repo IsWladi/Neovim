@@ -5,7 +5,7 @@ return{
         {"rcarriga/nvim-notify"},
     },
     keys = {
-      { "<CR>ff", function() require('gittory').search_git_root() end, desc = '[telescope gittory] find files' },
+      { "<CR>f", function() require('gittory').search_git_root() end, desc = '[telescope gittory] find files' },
 
       { "<CR>fg", function() require('gittory').search_git_root(require('telescope.builtin').live_grep) end,
       desc = '[telescope gittory] live grep' },
