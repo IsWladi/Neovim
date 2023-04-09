@@ -49,13 +49,6 @@ return{
          desc = "fzf for telescope"
        },
 
-       { check = "sed",
-         install_command = "choco install sed",
-         method = "windows_admin",
-         father = "choco",
-         desc = "sed for spectre"
-       },
-
        { check = "mingw32-make",
          install_command = "choco install mingw",
          method = "windows_admin",
