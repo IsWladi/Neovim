@@ -42,3 +42,4 @@ vim.cmd([[
 -- Restaurar la posición del cursor y centrar pantalla
 vim.cmd('autocmd BufReadPost * silent! normal! g`"zvzz')
 
+--vim.fn.setreg('d', 'path') --setear registro d con el string 'path', hay que implementar que se setee con el path del archivo actual
