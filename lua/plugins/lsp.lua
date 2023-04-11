@@ -86,7 +86,7 @@ return{
         local diagnostic = "[LSP] Diagnostic"
         local restart = "[LSP] Restart"
 
-        vim.keymap.set("n", "<CR>h", function() vim.lsp.buf.hover() end, {buffer = bufnr, remap = false, desc = hover})
+        --vim.keymap.set("n", "<CR>ho", function() vim.lsp.buf.hover() end, {buffer = bufnr, remap = false, desc = hover})
 
         vim.keymap.set("n", "<CR>e", function() vim.diagnostic.goto_next() end, {buffer = bufnr, remap = false, desc = diagnostic})
 
