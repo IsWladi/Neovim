@@ -26,7 +26,7 @@ return{
                 end,
       mode = "x", desc = '[telescope gittory] string grep visual mode with regex' },
 
-      { "<CR>h", function() require('gittory').telescope_home() end, --testing, too much bugs
+      { "<CR>h", function() require('gittory').telescope_home() end, -- its appear to be okey
        desc = '[telescope gittory] find from home with telescope' },
     },
 
