@@ -30,6 +30,9 @@ return{
 
       { "<CR>h", function() require('gittory').telescope_home() end, -- its appear to be okey
        desc = '[telescope gittory] find from home with telescope' },
+
+      { "<CR>q", function() require('gittory').savecwd_to_clipboard_quit() end, -- its appear to be okey
+       desc = '[telescope gittory] in development, used with ps1' },
     },
 
   }
