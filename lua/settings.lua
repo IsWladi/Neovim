@@ -8,6 +8,7 @@ local opt  = vim.opt
 
 --Configuración general
 
+opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%r│%T"
 opt.number         = true
 opt.relativenumber = true
 opt.mouse          = 'a'
@@ -27,17 +28,25 @@ opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
 -- auto delete whitespaces at the end of line, end of file, beginning of file and preserv cursor
+function delete_blank_lines()
+    local first_line = vim.fn.getline(1)
+    if first_line == "" then
+        vim.cmd([[1;/\S/-d]])
+    end
+end
+
 vim.cmd([[
   function! PreserveCursor()
     let l:save = winsaveview()
     %s/\v\s+$//e
     %s/\(\n\n\)\+\%$//e
-    1;/./-1g/^$/d
+    lua delete_blank_lines()
     call winrestview(l:save)
   endfunction
 
-  autocmd BufWritePre * call PreserveCursor()
+  autocmd BufWritePre * silent! call PreserveCursor()
 ]])
+
 
 -- Restaurar la posición del cursor y centrar pantalla
 vim.cmd('autocmd BufReadPost * silent! normal! g`"zvzz')
