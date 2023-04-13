@@ -31,9 +31,8 @@ return{
       lsp.ensure_installed({
         'tsserver',
         'jedi_language_server',
-        'html',
-        'cssls',
         'sqlls', --en prueba, se demora en instalar, es pesado parece, no corrige syntaxys
+        'tailwindcss',
       })
 
       -- Fix Undefined global 'vim'
