@@ -44,6 +44,7 @@ map("n", "<leader>nh", ":nohl<CR>", {desc = '[no plugin] Remove search highlight
 
 --para normal mode y visual mode, sustituciones con very very magic
 map('n', '<leader>/', ':%s/\\v//g', {desc = '[no plugin] Substitute in normal mode using very magic'})
+map('n', '<leader>n', ':g/.*/normal ', {desc = '[no plugin] put normal commands on regex matches'})
 map('v', '<leader>/', ':s/\\v//g', {desc = '[no plugin] Substitute in visual mode using very magic'})
 
 -- change tabulations
@@ -53,5 +54,3 @@ map('v', '>', '>gv', {desc = '[no plugin] Indent right and reselect'})
 --move lines
 --map('n','<A-n>',':m .+1<CR>==')
 --map('n','<A-t>',':m .-2<CR>==')
-
-
