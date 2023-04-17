@@ -52,3 +52,4 @@ map('v', '(', '<gv', {desc = '[no plugin] Indent left and reselect'})
 map('v', ')', '>gv', {desc = '[no plugin] Indent right and reselect'})
 
 -- live server: browser-sync start --proxy "127.0.0.1:8000" --files "**/*"
+-- CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://172.16.16.6:3000'] in settings.py
