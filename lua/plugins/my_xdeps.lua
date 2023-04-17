@@ -29,6 +29,13 @@ return{
          desc = "prettier for formatting"
        },
 
+       { check = "browser-sync",
+         install_command = "npm install -g browser-sync",
+         method = "windows_admin",
+         father = "node",
+         desc = "browser-sync for live reload"
+       },
+
        { check  = "choco",
          install_command = nil,
          method = "windows_admin",
