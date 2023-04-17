@@ -12,13 +12,14 @@
 - integración de git
 - telescope
 - Debug with debbug adapter protocol
+- Markdown Preview(in live) **open markdown_preview.lua for see an extra step of the installing process**
 
 # ¿Cómo implementar?
 
 ## Instalar neovim (Windows)
 - instalar chocolatey https://chocolatey.org/install#individual
-- instalar [neovim](https://neovim.io/) con chocolatey en poweshell con permisos de administrador `choco install neovim` 
-    
+- instalar [neovim](https://neovim.io/) con chocolatey en poweshell con permisos de administrador `choco install neovim`
+
 ## Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 - renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
