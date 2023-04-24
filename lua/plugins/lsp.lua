@@ -35,7 +35,7 @@ return{
         'tailwindcss',
         'lua_ls',
         'dockerls',
-        'yamlls',
+        'docker_compose_language_service',
       })
 
       -- Fix Undefined global 'vim'
