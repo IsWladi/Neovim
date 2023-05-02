@@ -1,6 +1,4 @@
 return{
-  {'mattn/emmet-vim',
-    ft = {"html", "css"}
-  }
+  {'mattn/emmet-vim'}
 }
 
