@@ -34,6 +34,8 @@ return{
         'sqlls', --en prueba, se demora en instalar, es pesado parece, no corrige syntaxys
         'tailwindcss',
         'lua_ls',
+        'jsonls', -- en prueba
+        'yamlls', -- en prueba
       })
 
       -- Fix Undefined global 'vim'
