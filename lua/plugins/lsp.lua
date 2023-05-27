@@ -34,7 +34,6 @@ return{
         'sqlls', --en prueba, se demora en instalar, es pesado parece, no corrige syntaxys
         'tailwindcss',
         'lua_ls',
-        'dockerls',
       })
 
       -- Fix Undefined global 'vim'
