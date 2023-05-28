@@ -13,6 +13,8 @@ return {
       --git
       vim.keymap.set('n', '<CR>gb', builtin.git_branches, {desc = '[GIT telescope] Make branch actions'})
       vim.keymap.set('n', '<CR>gs', builtin.git_status, {desc = '[GIT telescope] List git status'})
+      vim.keymap.set('n', '<CR>gcb', builtin.git_bcommits, {desc = '[GIT telescope] List git commits'})
+      vim.keymap.set('n', '<CR>gc', builtin.git_commits, {desc = '[GIT telescope] List all git commits'})
 
       --lsp
       vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, {desc = '[LSP telescope] go to implementation'})
