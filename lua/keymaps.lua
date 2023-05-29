@@ -32,7 +32,7 @@ load_env(env_path)
 
 -- Get KB_LAYOUT environment variable
 local kb_layout = vim.env.KB_LAYOUT
-print(kb_layout)
+print("Actual Layout: " .. kb_layout)
 
 -- ******************************** DVORAK LAYOUT ********************************
 
@@ -63,6 +63,13 @@ if vim.env.KB_LAYOUT == "DVORAK" then
     map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
 
     map("n", "<leader>u", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
+
+    -- use jk for replace "r" and till "t"
+    map('n', 'j', 'r')
+    map('n', 'J', 'R')
+    map('n', 'k', 't')
+    map('n', 'K', 'T')
+
 
 -- ******************************** DVORAK LAYOUT ********************************
 
