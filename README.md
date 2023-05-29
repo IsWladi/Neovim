@@ -24,6 +24,7 @@
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
 - renombrar la carpeta "nvim-data" como "nvim" y abrir neovim(comando nvim) para que se genere nuevamente la carpeta "nvim-data" aparte de la de "nvim"
 - borrar lo que hay ahora dentro de la carpeta"nvim" y hacer un `git clone https://github.com/Wladimir3984/Nvim .` dentro de la carpeta "nvim"
+- en el directorio `./lua/` crear un archivo `./lua/.env` y escribir dentro: `KB_LAYOUT=DVORAK` o `KB_LAYOUT=QWERTY` segun sea tu caso
 - abrir neovim y esperar a que se instalen plugins, servers de lsp(se instalan automaticos, hay que esperar, se puede ver con `:MasonLog`) y languages de treesitter
 - reiniciar neovim
 
