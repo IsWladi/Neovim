@@ -10,51 +10,78 @@ end
 --Map leader
 
 local g     = vim.g
-g.mapleader = ','
 
---remap hjkl
-map('n', 'r', '<Left>')
-map('n', 't', '<Down>')
-map('n', 'n', '<Up>')
-map('n', 's', '<Right>')
--- rtns in visual mode
-map('v', 'r', '<Left>')
-map('v', 't', '<Down>')
-map('v', 'n', '<Up>')
-map('v', 's', '<Right>')
--- rtns in operator pending mode
-map('o', 'r', '<Left>')
-map('o', 't', '<Down>')
-map('o', 'n', '<Up>')
-map('o', 's', '<Right>')
+-- ******************************** .ENV CHARGE ********************************
+local function load_env(file)
+    local env_file = vim.fn.findfile(file)
+    if env_file ~= '' then
+        for _, line in ipairs(vim.fn.readfile(env_file)) do
+            local key, value = line:match('^%s*([^%s=]+)%s*=%s*(.-)%s*$')
+            if key and value then
+                vim.env[key] = value
+            end
+        end
+    end
+end
 
---para comandos nativos de neovim
+-- Load .env file
+local home_dir = os.getenv("USERPROFILE")
+local env_path = home_dir .. "/AppData/Local" .. "/nvim/lua/.env"
+load_env(env_path)
+-- ******************************** .ENV CHARGE ********************************
 
--- exit terminal mode
-map('t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true})
+-- Get KB_LAYOUT environment variable
+local kb_layout = vim.env.KB_LAYOUT
+print(kb_layout)
 
---buffers
-map('n', '<leader>q', ':q<CR>', {desc = '[no plugin] Exit'}) --salir
-map('n', '<leader>a', ':bdelete<CR>', {desc = '[no plugin] Delete current buffer'}) --borrar buffer actual
-map('n', '<leader><leader>a', [[:lua require('utils').save_delete_buffers_except_current()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Save and delete all buffers except current'})
+-- ******************************** DVORAK LAYOUT ********************************
 
-map('n', '<leader>o', ':w<CR>', {desc = '[no plugin] Save'}) --guardar
-map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}) --guardar todos los buffers
+if vim.env.KB_LAYOUT == "DVORAK" then
+    g.mapleader = ','
+    --remap hjkl
+    map('n', 'r', '<Left>')
+    map('n', 't', '<Down>')
+    map('n', 'n', '<Up>')
+    map('n', 's', '<Right>')
+    -- rtns in visual mode
+    map('v', 'r', '<Left>')
+    map('v', 't', '<Down>')
+    map('v', 'n', '<Up>')
+    map('v', 's', '<Right>')
+    -- rtns in operator pending mode
+    map('o', 'r', '<Left>')
+    map('o', 't', '<Down>')
+    map('o', 'n', '<Up>')
+    map('o', 's', '<Right>')
 
-map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
-map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
+    --buffers
+    map('n', '<leader>q', ':q<CR>', {desc = '[no plugin] Exit'}) --salir
+    map('n', '<leader>a', ':bdelete<CR>', {desc = '[no plugin] Delete current buffer'}) --borrar buffer actual
+    map('n', '<leader>o', ':w<CR>', {desc = '[no plugin] Save'}) --guardar
+    map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}) --guardar todos los buffers
+    map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
+    map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
 
-map("n", "<leader>u", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
+    map("n", "<leader>u", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
 
---bajar y subir media pagina
-map('n', '<C-d>', '<C-d>zz', {desc = '[no plugin] Scroll down half a page and recenter'})
-map('n', '<C-u>', '<C-u>zz', {desc = '[no plugin] Scroll up half a page and recenter'})
---buscar y centrar con m en vez de n
-map("n", "m", "nzz", {desc = '[no plugin] Search for next match and recenter'})
-map("n", "M", "Nzz", {desc = '[no plugin] Search for previous match and recenter'})
---para normal mode, no highlight
-map("n", "<leader>nh", ":nohl<CR>", {desc = '[no plugin] Remove search highlight'})
+-- ******************************** DVORAK LAYOUT ********************************
 
+-- ******************************** QWERTY LAYOUT ********************************
+elseif vim.env.KB_LAYOUT == "QWERTY" then
+    g.mapleader = ' '
+    --buffers
+    map('n', '<leader>q', ':q<CR>', {desc = '[no plugin] Exit'}) --salir
+    map('n', '<leader>a', ':bdelete<CR>', {desc = '[no plugin] Delete current buffer'}) --borrar buffer actual
+    map('n', '<leader>s', ':w<CR>', {desc = '[no plugin] Save'}) --guardar
+    map('n', '<leader><leader>s', ':wa<CR>', {desc = '[no plugin] Save all buffers'}) --guardar todos los buffers
+    map('n', '<leader>k', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
+    map('n', '<leader>j', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
+
+    map("n", "<leader>f", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
+end
+-- ******************************** QWERTY LAYOUT ********************************
+
+-- ******************************** NO KB_LAYOUT DEPENDENT ********************************
 --para normal mode y visual mode, sustituciones con very very magic
 map('n', '<leader>/', ':%s/\\v//g', {desc = '[no plugin] Substitute in normal mode using very magic'})
 map('n', '<leader>//', ':g/.*/normal ', {desc = '[no plugin] put normal commands on regex matches'})
@@ -80,5 +107,16 @@ map('n', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default re
 map('x', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default register'})
 -- NO overwriting default register section
 
--- live server: browser-sync start --proxy "127.0.0.1:8000" --files "**/*"
--- CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://172.16.16.6:3000'] in settings.py
+-- exit terminal mode
+map('t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true})
+
+--bajar y subir media pagina
+map('n', '<C-d>', '<C-d>zz', {desc = '[no plugin] Scroll down half a page and recenter'})
+map('n', '<C-u>', '<C-u>zz', {desc = '[no plugin] Scroll up half a page and recenter'})
+--buscar y centrar con m en vez de n
+map("n", "m", "nzz", {desc = '[no plugin] Search for next match and recenter'})
+map("n", "M", "Nzz", {desc = '[no plugin] Search for previous match and recenter'})
+--para normal mode, no highlight
+map("n", "<leader>nh", ":nohl<CR>", {desc = '[no plugin] Remove search highlight'})
+
+-- ******************************** NO KB_LAYOUT DEPENDENT ********************************
