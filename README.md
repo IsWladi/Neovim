@@ -1,18 +1,12 @@
 # Mi configuración de neovim
 
-*Enfocado en usar neovim con un layout Dvorak, configuración personal*
+*Configuración personal*
 
 ## Estado actual del repositorio
-
-- Funciona la instalación en windows(no me consta en otro OS)
+- Soporte para usar teclado Dvorak o Qwerty(se configura en un .env, ver pasos de instalación)
+- Funciona la instalación en windows(en Ubuntu funciona pero no es apto todavía, hay que configurar algunos detalles)
+- Instalacion sencilla y portable
 - format on save habilitado para python, JavaScript, css, html y markdown(no funciona con lsp, sino con autopep8 y prettier)
-- Funcionalidades de lsp
-- autocompletado
-- instalacion sencilla y con automatización
-- integración de git
-- telescope
-- Debug with debbug adapter protocol
-- Markdown Preview(in live) **open markdown_preview.lua for see an extra step of the installing process**
 
 # ¿Cómo implementar?
 
@@ -27,6 +21,7 @@
 - en el directorio `./lua/` crear un archivo `./lua/.env` y escribir dentro: `KB_LAYOUT=DVORAK` o `KB_LAYOUT=QWERTY` segun sea tu caso
 - abrir neovim y esperar a que se instalen plugins, servers de lsp(se instalan automaticos, hay que esperar, se puede ver con `:MasonLog`) y languages de treesitter
 - reiniciar neovim
+- Para habilitar Markdown Preview abre `markdown_preview.lua` para ver un paso adicional del proceso de instalación.
 
 ### Dependencias externas de mi configuración
 - instalar [python](https://www.python.org/)
