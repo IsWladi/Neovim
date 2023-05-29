@@ -11,8 +11,10 @@
 # ¿Cómo implementar?
 
 ## Instalar neovim (Windows)
-- instalar chocolatey https://chocolatey.org/install#individual
-- instalar [neovim](https://neovim.io/) con chocolatey en poweshell con permisos de administrador `choco install neovim`
+- Recomendado: descargar el .zip para windows del repositorio de nvim para tener la ultima version
+- Deprecado:
+  - Instalar chocolatey https://chocolatey.org/install#individual
+  - Instalar [neovim](https://neovim.io/) con chocolatey en poweshell con permisos de administrador `choco install neovim`
 
 ## Instalar configuración de este repo
 - abrir neovim con el comando nvim para que se genere la carpeta "nvim-data" en C:\Users\nombreusuario\AppData\Local(posiblemente la ubicación puede variar)
@@ -26,14 +28,9 @@
 ### Dependencias externas de mi configuración
 - instalar [python](https://www.python.org/)
 - instalar [node.js](https://nodejs.org/en/)
-- instalar debugpy para debbug:
-  - `python -m venv debugpy` en users/usuario/
-  - `debugpy\Scripts\activate`en users/usuario/ para activar el entorno virtual de python
-  - con el venv activado: `python -m pip install --upgrade debugpy`
-- `<leader><leader>ch` para instalar dependencias secundarias
+- `<leader><leader>ch` para instalar dependencias que necesitan algunos plugins(ej: fzf, compilador de C, etc. Estan definidas en `my_xdeps.lua`)
 
-![image](https://user-images.githubusercontent.com/83993271/227046631-6e233aa1-c803-4487-963d-f21a87d29fd7.png)
-
+![image](https://github.com/Wladimir3984/Nvim/assets/83993271/0008a0e6-cf03-4e5a-8b32-0df4f5434e53)
 
 ## Referencias agrupadas
 
@@ -48,4 +45,4 @@
 
 ## Para implementar al repo a futuro
 
-- 100% automatización al instalar mi configuración
+- Compatibilidad con Windows y Ubuntu(quiza haga algo similar al .env con el tipo de layout)
