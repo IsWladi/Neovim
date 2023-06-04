@@ -100,18 +100,18 @@ map('v', ')', '>gv', {desc = '[no plugin] Indent right and reselect'})
 
 -- NO overwriting default register section, use "x" if you want to delete with overwrite default register
 -- "p" command
-map('x', 'p', 'pgvy', {desc = '[no plugin] Paste over visually selected area without overwriting default register'})
+map('v', 'p', 'pgvy', {desc = '[no plugin] Paste over visually selected area without overwriting default register'})
 -- "c" command
-map('x', 'c', '\"_c', {desc = '[no plugin] Change selected text without overwriting default register'})
+map('v', 'c', '\"_c', {desc = '[no plugin] Change selected text without overwriting default register'})
 map('n', 'C', '\"_C', {desc = '[no plugin] Change to end of line without overwriting default register'})
-map('x', 'C', '\"_C', {desc = '[no plugin] Change to end of line without overwriting default register'})
+map('v', 'C', '\"_C', {desc = '[no plugin] Change to end of line without overwriting default register'})
 map('n', 'cc', '\"_cc', {desc = '[no plugin] Change whole line without overwriting default register'})
-map('x', 'cc', '\"_cc', {desc = '[no plugin] Change whole line without overwriting default register'})
+map('v', 'cc', '\"_cc', {desc = '[no plugin] Change whole line without overwriting default register'})
 -- "d" command
 map('n', 'd', '\"_d', {desc = '[no plugin] Delete without overwriting default register'})
-map('x', 'd', '\"_d', {desc = '[no plugin] Delete without overwriting default register'})
+map('v', 'd', '\"_d', {desc = '[no plugin] Delete without overwriting default register'})
 map('n', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default register'})
-map('x', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default register'})
+map('v', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default register'})
 -- NO overwriting default register section
 
 -- exit terminal mode
