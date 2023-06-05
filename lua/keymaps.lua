@@ -32,7 +32,6 @@ load_env(env_path)
 
 -- Get KB_LAYOUT environment variable
 local kb_layout = vim.env.KB_LAYOUT
-print("Actual Layout: " .. kb_layout)
 
 -- ******************************** DVORAK LAYOUT ********************************
 
