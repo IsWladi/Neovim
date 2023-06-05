@@ -8,7 +8,7 @@ return{
         {"nvim-telescope/telescope.nvim"},
         {"rcarriga/nvim-notify"},
     },
-    keys = {
+    --[[ keys = {
 
       { "<CR>f", function()
                         require('gittory').search_git_root() -- For default use find_files
@@ -31,9 +31,7 @@ return{
       { "<CR>h", function() require('gittory').telescope_home() end, -- its appear to be okey
        desc = '[telescope gittory] find from home with telescope' },
 
-      { "<CR>q", function() require('gittory').savecwd_to_clipboard_quit() end, -- its appear to be okey
-       desc = '[telescope gittory] in development, used with ps1' },
-    },
+    }, ]]
 
   }
 

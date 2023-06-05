@@ -6,6 +6,9 @@ return {
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<CR>fk', builtin.keymaps, {desc = '[telescope] Show keymaps'})
       vim.keymap.set('n', '<CR><Space>', builtin.buffers, {desc = '[telescope] Show currents buffers'})
+      vim.keymap.set('n', '<CR>f', builtin.find_files, {desc = '[telescope] Show currents buffers'})
+      vim.keymap.set('n', '<CR>fg', builtin.live_grep, {desc = '[telescope] Show currents buffers'})
+      vim.api.nvim_set_keymap('v', '<CR>', ':lua require("telescope.builtin").grep_string({ use_regex = true })<CR>', { noremap = true, silent = true })
 
       --treesiter
       vim.keymap.set('n', '<CR>ft', builtin.treesitter, {desc = '[TREESITTER telescope] list var, params and functions with treesiter'})
@@ -24,3 +27,4 @@ return {
     end,
   },
 }
+
