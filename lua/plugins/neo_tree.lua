@@ -7,9 +7,7 @@ return{
       {"MunifTanjim/nui.nvim"},
     },
     keys = {
-      {"<leader>e", ":Neotree action=focus reveal toggle<CR>"},
-      {"<leader>ee", ":Neotree action=close<CR>"},
-      {"<leader>eg", ":Neotree source=git_status<CR>"},
+      {"<leader>e", ":Neotree action=focus position=float reveal<CR>"},
     },
     }
   }
