@@ -25,8 +25,11 @@ opt.hlsearch       = true --resaltado de busqueda con /palabra
 --opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 
+--para format on save con prettier(corregir error para .yml)
+vim.cmd('au BufRead,BufNewFile *.yml set filetype=yaml')
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
+
 -- auto delete whitespaces at the end of line, end of file, beginning of file and preserv cursor
 function delete_blank_lines()
     local first_line = vim.fn.getline(1)

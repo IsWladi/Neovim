@@ -124,5 +124,7 @@ map("n", "m", "nzz", {desc = '[no plugin] Search for next match and recenter'})
 map("n", "M", "Nzz", {desc = '[no plugin] Search for previous match and recenter'})
 --para normal mode, no highlight
 map("n", "<leader>nh", ":nohl<CR>", {desc = '[no plugin] Remove search highlight'})
+-- format on save
+map('n', '<leader>fw', [[:lua require('format_on_save').formatWrite()<CR>]], { noremap = true, silent = true, desc = '[no plugin] Format on save' })
 
 -- ******************************** NO KB_LAYOUT DEPENDENT ********************************
