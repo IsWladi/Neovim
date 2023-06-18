@@ -8,7 +8,11 @@ return{
         {"rcarriga/nvim-notify"},
     },
     init = function()
-      require('gittory').setup()
+      local gittory = require('gittory')
+      gittory.setup{
+          notify = "yes",
+          atStartUp = "yes"
+        }
     end,
   }
 
