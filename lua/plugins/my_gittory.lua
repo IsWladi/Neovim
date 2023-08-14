@@ -1,10 +1,9 @@
 return{
   {"Wladimir3984/gittory",
 
-    branch = "dev", -- for development
+    branch = "main", -- for development
 
     dependencies = {
-        {"nvim-telescope/telescope.nvim"},
         {"rcarriga/nvim-notify"},
     },
     init = function()
