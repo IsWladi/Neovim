@@ -1,5 +1,20 @@
 return {
   {'ThePrimeagen/harpoon',
+    lazy = true,
+    keys = {
+      {"<Space>ha"},
+      {"<Space>hm"},
+      {"<Space>r"},
+      {"<Space>t"},
+      {"<Space>n"},
+      {"<Space>s"},
+      {"<M-h>a"},
+      {"<M-h>m"},
+      {"<M-h>h"},
+      {"<M-h>j"},
+      {"<M-h>k"},
+      {"<M-h>l"}
+    },
     config = function()
       local mark = require("harpoon.mark")
       local ui = require("harpoon.ui")

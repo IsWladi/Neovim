@@ -1,5 +1,6 @@
 return {
         {'L3MON4D3/LuaSnip',
+        lazy = true,
         config = function()
 
           --lua snippets
@@ -15,10 +16,10 @@ return {
           ls.add_snippets("sql", {
               s("function", {
                   t("-- "), i(1,"A short description of the function"),
-                  t({"","CREATE OR REPLACE FUNCTION FN_"}), i(2,"fname"), t("( "), i(3, "param_name TYPE"), t(" )"), 
+                  t({"","CREATE OR REPLACE FUNCTION FN_"}), i(2,"fname"), t("( "), i(3, "param_name TYPE"), t(" )"),
                   t(" RETURN "), i(4, "TYPE"), t(" IS"),
                   t({"", "-- variable declarations", ""}),
-                  t({"BEGIN", ""}), 
+                  t({"BEGIN", ""}),
                   t("-- function body"),
                   t({"" ,"RETURN "}), t("TRUE"), t(" ;"),
                   t({"","END ;"})
@@ -27,7 +28,7 @@ return {
                   t("-- "), i(1,"A short description of the procedure"),
                   t({"","CREATE OR REPLACE PROCEDURE PROC_"}), i(2,"procedure_name"), t("( "), i(3, "param_name TYPE"), t(" )"), t(" IS"),
                   t({"", "-- variable declarations", ""}),
-                  t({"BEGIN", ""}), 
+                  t({"BEGIN", ""}),
                   t("-- procedure body"),
                   t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
                   t({"","END ;", ""})
@@ -37,7 +38,7 @@ return {
                   t({"","SET SERVEROUTPUT ON ;"}),
                   t({"","DECLARE"}),
                   t({"", "-- variable declarations", ""}),
-                  t({"BEGIN", ""}), 
+                  t({"BEGIN", ""}),
                   t("-- anonymous function body"),
                   t({"", "DBMS_OUTPUT.PUT_LINE('+++++++++++++') ;"}),
                   t({"","END ;", ""})
@@ -48,7 +49,7 @@ return {
                   t({"", "  SELECT "}), i(4, "*"), t(" FROM "), i(5, "table_name"), t(" ;")
                 })
       })
-            
+
           -- is my expansion key
           vim.keymap.set({ "i", "s" }, "<C-e>", function()
             if ls.expand_or_jumpable(1) then

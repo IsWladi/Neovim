@@ -1,5 +1,9 @@
 return{
 {"Wladimir3984/xdeps",
+  lazy = true,
+  keys ={
+    {"<leader><leader>ch"}
+  },
   config = function()
     xdeps = require("xdeps")
     xdeps.tools = {

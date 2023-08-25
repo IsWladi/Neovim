@@ -6,6 +6,8 @@ return {
     "nvim-treesitter/nvim-treesitter-refactor",
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
+  lazy = false,
+  priority = 900,
   config = function()
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"

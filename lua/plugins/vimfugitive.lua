@@ -1,6 +1,16 @@
 return {
   {"tpope/vim-fugitive",
-  lazy = false,
+    lazy = true,
+    keys = {
+      {"<leader>gg"},
+      {"<leader>gf"},
+      {"<leader>gl"},
+      {"<leader>gp"},
+      {"<leader>gs"},
+      {"<leader>gb"},
+      {"<leader>gd"},
+      {"<leader>gr"}
+    },
   config = function()
   vim.keymap.set("n", "<leader>gg" , ":Git<cr>", {desc               = '[GIT] Open Git'})
   vim.keymap.set("n", "<leader>gf", ":Git fetch --all -p<cr>", {desc = '[GIT] Fetch all and prune from Git'})

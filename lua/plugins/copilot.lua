@@ -1,5 +1,7 @@
 return{
   {'https://github.com/github/copilot.vim',
+    lazy = false,
+    priority = 500,
     config = function()
       vim.api.nvim_set_keymap('n', '<Space>c', ':Copilot panel<CR>', {noremap = true, desc = "[copilot] panel of solutions"})
       vim.api.nvim_set_keymap('n', '<Space>cn', ']]', {noremap = true, desc = "[copilot] next solution"})

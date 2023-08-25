@@ -9,5 +9,6 @@ return{
     keys = {
       {"<leader>e", ":Neotree action=focus position=float reveal<CR>"},
     },
+    lazy = true,
     }
   }

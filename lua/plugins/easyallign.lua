@@ -1,5 +1,6 @@
 return{
   {"junegunn/vim-easy-align",
+    lazy = true,
     config = function ()
       -- Start interactive EasyAlign in visual mode (e.g. vipga)
       map('x', 'ga', '<Plug>(EasyAlign)')

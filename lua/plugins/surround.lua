@@ -2,7 +2,6 @@ return{
 {'tpope/vim-surround',
   dependencies = {
     {'tpope/vim-repeat'}
-
 }
 }
 }
@@ -19,6 +18,4 @@ return{
 --  "hello"                   ysWfprint<cr>     print("hello")
 --  "hello"                   ysWFprint<cr>     print( "hello" )
 --  "hello"                   ysW<C-f>print<cr> (print "hello")
- 
-
 

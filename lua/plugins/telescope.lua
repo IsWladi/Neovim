@@ -1,6 +1,23 @@
 return {
   {'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
+    lazy = true,
+    keys = {
+      {"<CR>fk"},
+      {"<CR><Space>"},
+      {"<CR>f"},
+      {"<CR>fg"},
+      {"<CR>", mode = "v"},
+      {"<CR>ft"},
+      {"<CR>gb"},
+      {"<CR>gs"},
+      {"<CR>gcb"},
+      {"<CR>gc"},
+      {"<leader>i"},
+      {"<leader>d"},
+      {"<leader>ee"},
+      {"<leader>r"}
+    },
     config = function()
       --telescope
       local builtin = require('telescope.builtin')

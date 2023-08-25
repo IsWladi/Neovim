@@ -1,6 +1,8 @@
 return{
 	  --lsp para autocompletado
   {'neovim/nvim-lspconfig',
+    lazy = false,
+    priority = 1000,
     dependencies = {
       {'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
