@@ -1,4 +1,5 @@
 return {
+  -- Para marcar archivos y navegar entre ellos de manera rapida, se complementa bien con gittory.
   {'ThePrimeagen/harpoon',
     lazy = true,
     keys = {

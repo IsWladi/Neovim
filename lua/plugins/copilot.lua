@@ -1,4 +1,5 @@
 return{
+  -- Copilot es un plugin que nos ayuda a escribir codigo de manera mas rapida.
   {'https://github.com/github/copilot.vim',
     lazy = false,
     priority = 500,

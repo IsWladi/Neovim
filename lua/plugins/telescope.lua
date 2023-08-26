@@ -1,4 +1,5 @@
 return {
+  -- Para buscar archivos con fzf y rg de manera rapida
   {'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
     lazy = true,

@@ -1,7 +1,8 @@
 return{
+  -- Para setear el current working directory segun la raiz del proyecto si esta con git.
   {"Wladimir3984/gittory",
 
-    branch = "main", -- for development
+    branch = "main",
 
     dependencies = {
         {"rcarriga/nvim-notify"},
