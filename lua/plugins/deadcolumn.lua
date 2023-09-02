@@ -1,6 +1,8 @@
 return{
   { 'Bekaboo/deadcolumn.nvim',
-  lazy =false,
-  priority = 100,
+  lazy =true,
+  keys = {
+    {'i', mode = 'n'}
+  },
   },
 }
