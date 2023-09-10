@@ -6,17 +6,11 @@ return{
   {'lukas-reineke/indent-blankline.nvim'},
 
   --Plug para ver que lineas tienen cambios en git
-  {'mhinz/vim-signify'},   
-
-  {'windwp/nvim-autopairs',
-    config = function()
-      require("nvim-autopairs").setup()
-    end,
-  }, 
+  {'mhinz/vim-signify'},
 
   --diseño barrita de abajo
   {'vim-airline/vim-airline'},
-  
+
   --pestañas
   {'ap/vim-buftabline'},
 
