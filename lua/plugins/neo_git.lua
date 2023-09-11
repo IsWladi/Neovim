@@ -7,6 +7,10 @@ return {
     "sindrets/diffview.nvim",        -- optional
     "ibhagwan/fzf-lua",              -- optional
   },
-  config = true
+  config = true,
+  lazy = true,
+  keys = {
+      {"<leader>gg", ":Neogit<CR>"}
+    },
 }
 }
