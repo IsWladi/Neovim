@@ -1,6 +1,6 @@
 return {
   {"tpope/vim-fugitive",
-    enabled = false,
+    enabled = true,
     lazy = true,
     keys = {
       {"<leader>gg"},
