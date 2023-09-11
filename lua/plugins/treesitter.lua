@@ -1,17 +1,16 @@
 return {
   {"nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  event = "VeryLazy",
   dependencies = {
     "nvim-treesitter/playground",
     "nvim-treesitter/nvim-treesitter-refactor",
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
-  lazy = false,
-  priority = 900,
   config = function()
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
-      ensure_installed = { "vim", "javascript", "python", "lua", "html", "yaml","json", "markdown"},
+      ensure_installed = { "vim", "javascript", "python", "lua", "luadoc", "html", "yaml","json", "markdown"},
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
@@ -30,14 +29,9 @@ return {
         additional_vim_regex_highlighting = false,
 
       },
-      incremental_selection = {
+      indent = {
         enable = true,
-        keymaps = {
-          init_selection = '<c-space>',
-          node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-          node_decremental = '<M-s>',
-        },
+        disable = {"python", "html", "yaml"},
       },
       textobjects = {
           select = {
@@ -45,10 +39,17 @@ return {
             lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
             keymaps = {
               -- You can use the capture groups defined in textobjects.scm
+              ['as'] = '@class.outer',
+              ['is'] = '@class.inner',
+
               ['af'] = '@function.outer',
               ['if'] = '@function.inner',
-              ['ac'] = '@class.outer',
-              ['ic'] = '@class.inner',
+
+              ['al'] = '@loop.outer',
+              ['il'] = '@loop.inner',
+
+              ['ac'] = '@conditional.outer',
+              ['ic'] = '@conditional.inner',
             },
           },
         },
