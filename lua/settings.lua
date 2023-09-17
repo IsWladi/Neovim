@@ -15,14 +15,15 @@ opt.mouse          = 'a'
 opt.ignorecase     = true
 opt.smartcase      = true
 opt.breakindent    = true
-opt.tabstop        = 4
-opt.shiftwidth     = 4
-opt.expandtab      = false
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.encoding       = "utf-8"
 opt.clipboard      = "unnamedplus"
 opt.termguicolors  = true
 opt.hlsearch       = true --resaltado de busqueda con /palabra
---opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
+opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 
 --para format on save con prettier(corregir error para .yml)
