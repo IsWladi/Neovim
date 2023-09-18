@@ -1,18 +1,19 @@
-local opt = vim.opt
+local opt = vim.o
 
 --Configuración general
 
-opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T "
+-- opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T "
 opt.number         = true
 opt.relativenumber = true
 opt.mouse          = 'a'
 opt.ignorecase     = true
 opt.smartcase      = true
 opt.breakindent    = true
-opt.expandtab      = true
+opt.expandtab      = true -- no esta funcionando
 opt.tabstop        = 4
 opt.softtabstop    = 4
 opt.shiftwidth     = 4
+opt.smartindent    = true
 opt.encoding       = "utf-8"
 opt.clipboard      = "unnamedplus"
 opt.termguicolors  = true

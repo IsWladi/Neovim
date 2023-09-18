@@ -1,5 +1,6 @@
 return {
   {"nvim-treesitter/nvim-treesitter",
+  enabled = true,
   build = ":TSUpdate",
   event = "VeryLazy",
   dependencies = {
@@ -31,7 +32,6 @@ return {
       },
       indent = {
         enable = true,
-        disable = {"python", "html", "yaml"},
       },
       textobjects = {
           select = {

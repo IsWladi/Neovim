@@ -1,10 +1,8 @@
 return{
-  --estilo para el codigo
-  {'sheerun/vim-polyglot'},
-
   --identacion
   {'lukas-reineke/indent-blankline.nvim',
-		enabled = true,
+	        enabled = true,
+                config = true,
 	},
 
   --Plug para ver que lineas tienen cambios en git
