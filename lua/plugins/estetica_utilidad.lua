@@ -3,7 +3,9 @@ return{
   {'sheerun/vim-polyglot'},
 
   --identacion
-  {'lukas-reineke/indent-blankline.nvim'},
+  {'lukas-reineke/indent-blankline.nvim',
+		enabled = true,
+	},
 
   --Plug para ver que lineas tienen cambios en git
   {'mhinz/vim-signify'},

@@ -1,10 +1,4 @@
---Configuración inspirada en pagina https://dev.to/vonheikemen/como-crear-tu-primera-configuracion-de-neovim-usando-lua-dah
---Aliases
-local cmd  = vim.cmd
-local exec = vim.api.nvim_exec
-local fn   = vim.fn
-local g    = vim.g
-local opt  = vim.opt
+local opt = vim.opt
 
 --Configuración general
 
@@ -15,10 +9,10 @@ opt.mouse          = 'a'
 opt.ignorecase     = true
 opt.smartcase      = true
 opt.breakindent    = true
-opt.expandtab = true
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.expandtab      = true
+opt.tabstop        = 4
+opt.softtabstop    = 4
+opt.shiftwidth     = 4
 opt.encoding       = "utf-8"
 opt.clipboard      = "unnamedplus"
 opt.termguicolors  = true
