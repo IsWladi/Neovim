@@ -5,7 +5,7 @@ return {
     opts = {
       suggestion = {
         keymap = {
-          accept = "<M-r>",
+          accept = "<C-a>",
         },
         auto_trigger = true,
       },

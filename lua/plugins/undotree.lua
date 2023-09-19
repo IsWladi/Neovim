@@ -1,5 +1,7 @@
 return {
   {'mbbill/undotree',
+    lazy = false,
+    priority = 1500,
     keys = {
       {"<leader>ut"}
     },
@@ -8,7 +10,7 @@ return {
       --focus on the window when opened, use let g:undotree_SetFocusWhenToggle = 0
       vim.g.undotree_SetFocusWhenToggle = 1
       if vim.fn.has("persistent_undo") == 1 then
-        local target_path = vim.fn.expand("~/.nvim/undodir")
+        local target_path = vim.fn.expand("~\\.nvim\\undodir")
 
         -- create the directory and any parent directories
         -- if the location does not exist.
