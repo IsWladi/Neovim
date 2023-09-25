@@ -21,7 +21,7 @@ opt.hlsearch       = true --resaltado de busqueda con /palabra
 opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 opt.undofile = true
-opt.undodir = "~/.nvim/undodir"
+opt.undodir = "C:/Users/isaac/.nvim/undodir"
 
 --para format on save con prettier(corregir error para .yml)
 vim.cmd('au BufRead,BufNewFile *.yml set filetype=yaml')
