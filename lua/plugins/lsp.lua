@@ -38,6 +38,7 @@ return{
         'jsonls', -- en prueba
         'dockerls', -- funciona bien, corrige sintaxis
         'yamlls',
+        'html',
       })
 
       -- Fix Undefined global 'vim'
