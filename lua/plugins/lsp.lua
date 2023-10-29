@@ -1,8 +1,7 @@
 return{
 	  --lsp para autocompletado
   {'neovim/nvim-lspconfig',
-    lazy = false,
-    priority = 1000,
+    event = "VeryLazy",
     dependencies = {
       {'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -15,6 +14,8 @@ return{
           {'hrsh7th/nvim-cmp'},
           {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-path'},
+          {'hrsh7th/cmp-cmdline'},
+          {'hrsh7th/cmp-git'},
           {'saadparwaiz1/cmp_luasnip'},
           {'hrsh7th/cmp-nvim-lsp'},
           {'hrsh7th/cmp-nvim-lua'},
@@ -72,7 +73,40 @@ return{
       cmp_mappings['<S-Tab>'] = nil
 
       lsp.setup_nvim_cmp({
-        mapping = cmp_mappings
+        mapping = cmp_mappings,
+        sources = {
+          {name = 'nvim_lsp'},
+          {name = 'path'},
+          {name = 'buffer'},
+          {name = 'luasnip'},
+        }
+      })
+
+      -- Set configuration for specific filetype.
+      cmp.setup.filetype('gitcommit', {
+        sources = cmp.config.sources({
+          { name = 'git' },   -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+        }, {
+            { name = 'buffer' },
+          })
+      })
+
+      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+            { name = 'cmdline' }
+          })
       })
 
       lsp.set_preferences({
