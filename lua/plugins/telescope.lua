@@ -17,8 +17,22 @@ return {
       {"<leader>i"},
       {"<leader>d"},
       {"<leader>ee"},
-      {"<leader>r"}
+      {"<leader>r"},
+      -- it´s for manage files and folders in replacement of neotree
+      {"<leader>bb",
+      function()
+        require("telescope").extensions.file_browser.file_browser({ path = "%:h:p", select_buffer = true })
+      end,
+      desc = "Telescope file browser"
+    }
     },
+
+    event = 'VeryLazy',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+       },
+
     config = function()
       --telescope
       local builtin = require('telescope.builtin')
