@@ -48,6 +48,7 @@ local hint = [[
  _c_: Run To Cursor ^
  _h_: Show information of the variable under the cursor ^
  _x_: Stop Debbuging ^
+ _t_: toggle dap ui ^
  ^^                                                      _<Esc>_
 ]]
 
@@ -96,6 +97,11 @@ hydra {
         dap.clear_breakpoints()
       end,
     },
+    {
+      "t",
+      function()
+        dapui.toggle()
+      end,},
 
     { "<Esc>", nil, { exit = true } },
   },
