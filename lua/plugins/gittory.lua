@@ -11,7 +11,7 @@ return{
     },
     config = true,
     opts = {
-          notify = "yes",
+          notify = "not",
           atStartUp = "yes"
     },
   }
