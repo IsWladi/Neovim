@@ -1,7 +1,6 @@
 return {
   -- Para buscar archivos con fzf y rg de manera rapida
   {'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
     lazy = true,
     keys = {
       {"<CR>fk"},
@@ -18,13 +17,6 @@ return {
       {"<leader>d"},
       {"<leader>ee"},
       {"<leader>r"},
-      -- it´s for manage files and folders in replacement of neotree
-      {"<leader>bb",
-      function()
-        require("telescope").extensions.file_browser.file_browser({ path = "%:h:p", select_buffer = true })
-      end,
-      desc = "Telescope file browser"
-    }
     },
 
     event = 'VeryLazy',

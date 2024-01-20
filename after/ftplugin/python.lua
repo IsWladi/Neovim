@@ -3,5 +3,6 @@ local set = vim.bo
 
 set.tabstop = 4
 set.softtabstop = 4
-set.expandtab = false
+set.expandtab = true
 set.shiftwidth = 4
+
