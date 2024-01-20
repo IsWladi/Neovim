@@ -37,7 +37,6 @@
   "oil.nvim": { "branch": "master", "commit": "dd432e76d01eda08b8658415588d011009478469" },
   "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
-  "telescope-file-browser.nvim": { "branch": "master", "commit": "6f735a63dc24b9aed527cd505a31864223c8a6d8" },
   "telescope.nvim": { "branch": "master", "commit": "24778fd72fcf39a0b1a6f7c6f4c4e01fef6359a2" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "25c13e0ce167db0255456cac10158b27d2be30c0" },
   "undotree": { "branch": "master", "commit": "36ff7abb6b60980338344982ad4cdf03f7961ecd" },

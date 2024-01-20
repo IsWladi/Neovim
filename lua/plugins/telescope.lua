@@ -22,11 +22,34 @@ return {
     event = 'VeryLazy',
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
        },
 
     config = function()
       --telescope
+      telescope = require('telescope')
+      telescope.setup({
+        pickers = {
+          live_grep = {
+            prompt_title = "🔎 Live Grep 🔎",
+            prompt_prefix= "👀 ",
+          },
+          find_files = {
+            prompt_title = "🔎 Find Files 🔎",
+            prompt_prefix= "👀 ",
+            find_command = {
+              "rg",
+              "--no-ignore",
+              "--hidden",
+              "--files",
+              "-g",
+              "!**/node_modules/*",
+              "-g",
+              "!**/.git/*",
+            },
+          },
+        }
+      })
+
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<CR>fk', builtin.keymaps, {desc = '[telescope] Show keymaps'})
       vim.keymap.set('n', '<CR><Space>', builtin.buffers, {desc = '[telescope] Show currents buffers'})
