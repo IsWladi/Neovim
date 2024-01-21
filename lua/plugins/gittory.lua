@@ -1,17 +1,13 @@
 return{
   -- Para setear el current working directory segun la raiz del proyecto si esta con git.
-  {"IsWladi/Gittory",
-
-    enabled = true,
-
-    branch = "dev",
-
+  {dir = "~/workspace/Gittory/",
     dependencies = {
         {"rcarriga/nvim-notify"}, -- optional
     },
     config = true,
+
     opts = {
-          notify = "not",
+          notify = "yes",
           atStartUp = "yes"
     },
   }
