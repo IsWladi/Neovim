@@ -38,7 +38,6 @@ return {
             prompt_prefix= "👀 ",
             find_command = {
               "rg",
-              "--no-ignore",
               "--hidden",
               "--files",
               "-g",
