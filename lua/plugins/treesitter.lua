@@ -9,7 +9,6 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   config = function()
-    require 'nvim-treesitter.install'.compilers = { "clang" }
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
       ensure_installed = { "vim", "javascript", "python", "lua", "luadoc", "html", "yaml","json", "markdown"},

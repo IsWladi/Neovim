@@ -11,7 +11,7 @@ return {
       end)
       --focus on the window when opened, use let g:undotree_SetFocusWhenToggle = 0
       -- vim.g.undotree_SetFocusWhenToggle = 1 --esto me daba error
+
     end,
   },
 }
-

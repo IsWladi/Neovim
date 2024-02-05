@@ -33,7 +33,7 @@ return{
 
       lsp.ensure_installed({
         'tsserver',
-        'jedi_language_server',
+        'jedi_language_server', -- apt install python3.10-venv
         'tailwindcss',
         'lua_ls',
         'jsonls', -- en prueba
