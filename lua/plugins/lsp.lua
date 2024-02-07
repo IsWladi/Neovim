@@ -42,7 +42,6 @@ return{
         'html',
       })
 
-      -- Fix Undefined global 'vim'
       lsp.configure('lua-language-server', {
           settings = {
               Lua = {
@@ -51,6 +50,10 @@ return{
                   }
               }
           }
+      })
+
+      lsp.configure('tailwindcss', {
+        filetypes = { 'css' }
       })
 
       local cmp          = require('cmp')
