@@ -2,16 +2,13 @@ return {
   {'mbbill/undotree',
     enabled = true,
     keys = {
-      {"<leader>ut"}
+      {"<leader>u"}
     },
     config = function()
-      vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
-      vim.keymap.set('n', '<leader>ut', function ()
+      vim.keymap.set('n', '<leader>u', function ()
+              vim.g.undotree_SetFocusWhenToggle = 1
               vim.cmd.UndotreeToggle()
       end)
-      --focus on the window when opened, use let g:undotree_SetFocusWhenToggle = 0
-      -- vim.g.undotree_SetFocusWhenToggle = 1 --esto me daba error
-
     end,
   },
 }

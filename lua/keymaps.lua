@@ -36,7 +36,7 @@ map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}
 map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
 map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
 
-map("n", "<leader>u", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
+-- map("n", "<leader>u", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
 
 -- use jk for replace "r" and till "t"
 map('n', 'j', 'r')
