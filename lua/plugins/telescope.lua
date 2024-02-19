@@ -9,7 +9,7 @@ return {
       {"<CR>fg"},
       {"<CR>", mode = "v"},
       {"<CR>ft"},
-      {"<CR>gb"},
+      {"<CR>b"},
       {"<CR>gs"},
       {"<CR>gcb"},
       {"<CR>gc"},
@@ -60,7 +60,7 @@ return {
       vim.keymap.set('n', '<CR>ft', builtin.treesitter, {desc = '[TREESITTER telescope] list var, params and functions with treesiter'})
 
       --git
-      vim.keymap.set('n', '<CR>gb', builtin.git_branches, {desc = '[GIT telescope] Make branch actions'})
+      vim.keymap.set('n', '<CR>b', builtin.git_branches, {desc = '[GIT telescope] Make branch actions'})
       vim.keymap.set('n', '<CR>gs', builtin.git_status, {desc = '[GIT telescope] List git status'})
       vim.keymap.set('n', '<CR>gcb', builtin.git_bcommits, {desc = '[GIT telescope] List git commits'})
       vim.keymap.set('n', '<CR>gc', builtin.git_commits, {desc = '[GIT telescope] List all git commits'})
