@@ -1,7 +1,7 @@
-return{
+--[[ return{
   -- Para setear el current working directory segun la raiz del proyecto si esta con git.
   {"IsWladi/Gittory",
-    branch = "main",
+    branch = "dev",
     dependencies = {
         {"rcarriga/nvim-notify"}, -- optional
     },
@@ -13,9 +13,9 @@ return{
     },
   }
 
-}
+} ]]
 
---[[ return{
+return{
   -- Para setear el current working directory segun la raiz del proyecto si esta con git.
   {dir = "~/workspace/Gittory/",
     dependencies = {
@@ -29,4 +29,4 @@ return{
     },
   }
 
-} ]]
+}
