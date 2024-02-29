@@ -79,11 +79,11 @@ return{
         mapping = cmp_mappings,
         sources = {
           {name = 'nvim_lsp'},
-          {name = 'path'},
-          {name = 'buffer'},
           {name = 'luasnip'},
+          {name = 'path'},
           {name = 'cmp_git'},
           {name = 'nvim_lua'},
+          {name = 'buffer'},
         }
       })
 
@@ -93,6 +93,8 @@ return{
           { name = 'cmp_git' },   -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
         }, {
             { name = 'buffer' },
+          }, {
+            { name = 'luasnip' },
           })
       })
 

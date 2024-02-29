@@ -1,6 +1,9 @@
 return {
         {'L3MON4D3/LuaSnip',
         enabled = true,
+        dependencies = {
+          'rafamadriz/friendly-snippets'
+        },
         config = function()
 
           --lua snippets
@@ -12,6 +15,8 @@ return {
           ls.config.set_config {
             history = true
           }
+
+          require("luasnip.loaders.from_vscode").lazy_load()
 
           ls.add_snippets("sql", {
               s("function", {
