@@ -83,6 +83,7 @@ return{
           {name = 'buffer'},
           {name = 'luasnip'},
           {name = 'cmp_git'},
+          {name = 'nvim_lua'},
         }
       })
 
