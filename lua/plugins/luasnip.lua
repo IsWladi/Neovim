@@ -56,14 +56,14 @@ return {
       })
 
           -- is my expansion key
-          vim.keymap.set({ "i", "s" }, "<C-e>", function()
+          vim.keymap.set({ "i", "s" }, "<M-e>", function()
             if ls.expand_or_jumpable(1) then
               ls.expand_or_jump(1)
             end
           end, { silent = true, desc = "[snippets] go to next" })
 
           -- is my jump forward keymap
-          vim.keymap.set({ "i", "s" }, "<C-o>", function()
+          vim.keymap.set({ "i", "s" }, "<M-o>", function()
             if ls.jumpable(-1) then
               ls.jump(-1)
             end

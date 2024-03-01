@@ -61,7 +61,7 @@ return{
       local cmp_mappings = lsp.defaults.cmp_mappings({
         ['<C-o>']        = cmp.mapping.select_prev_item(cmp_select),
         ['<C-e>']        = cmp.mapping.select_next_item(cmp_select),
-        ['<M-a>']         = cmp.mapping.confirm({ select = true }),
+        ['<C-a>']         = cmp.mapping.confirm({ select = true }),
         -- desactivar comportamientos indeseados
         ['<Tab>']   = function(fallback) fallback() end,
         ['<S-Tab>'] = function(fallback) fallback() end,
