@@ -1,11 +1,14 @@
 return {
   {
     "nvim-neorg/neorg",
+    ft = "norg",
+    keys = {
+      { "<leader>N" },
+    },
     build = ":Neorg sync-parsers",
-    lazy = false, -- specify lazy = false because some lazy.nvim distributions set lazy = true by default
-    -- tag = "*",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      vim.keymap.set('n', '<leader>N', ':Neorg workspace notes<CR>', {desc = '[neorg] Open note´s workspace'})
       require("neorg").setup {
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour

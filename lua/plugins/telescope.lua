@@ -1,7 +1,6 @@
 return {
   -- Para buscar archivos con fzf y rg de manera rapida
   {'nvim-telescope/telescope.nvim',
-    lazy = true,
     keys = {
       {"<CR>fk"},
       {"<CR><Space>"},
@@ -19,7 +18,6 @@ return {
       {"<leader>r"},
     },
 
-    event = 'VeryLazy',
     dependencies = {
       "nvim-lua/plenary.nvim",
        },

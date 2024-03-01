@@ -16,5 +16,5 @@ return{
   {'ap/vim-buftabline'},
 
   --depends on plugin(in case of)
-  {'nvim-lua/plenary.nvim'},
+  {'nvim-lua/plenary.nvim', lazy = true},
 }

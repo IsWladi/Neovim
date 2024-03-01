@@ -1,5 +1,6 @@
 return {
   {"nat-418/boole.nvim",
+    keys = {"<C-a>", "<C-x>"},
     config = function ()
       require('boole').setup({
         mappings = {
