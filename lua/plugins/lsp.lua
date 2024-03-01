@@ -1,7 +1,6 @@
 return{
 	  --lsp para autocompletado
   {'neovim/nvim-lspconfig',
-    event = {"BufReadPre", "BufNewFile"},
     dependencies = {
       {'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -12,7 +11,6 @@ return{
 
           -- Autocompletion
           {'hrsh7th/nvim-cmp',
-          event = "InsertEnter",
           dependencies = {
             {'hrsh7th/cmp-buffer'},
             {'hrsh7th/cmp-path'},
