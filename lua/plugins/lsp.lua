@@ -80,6 +80,7 @@ return{
         sources = {
           {name = 'nvim_lsp'},
           {name = 'luasnip'},
+          {name = 'copilot'},
           {name = 'path'},
           {name = 'cmp_git'},
           {name = 'nvim_lua'},
