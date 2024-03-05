@@ -1,7 +1,9 @@
-local dap, dapui, hydra = require "dap", require "dapui", require "hydra"
+local dap, dapui = require "dap", require "dapui"
 
 -- Setup Virtual Text
-require("nvim-dap-virtual-text").setup {}
+require("nvim-dap-virtual-text").setup({
+  commented = true,
+})
 
 -- Signs
 vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
@@ -36,73 +38,6 @@ dapui.setup {
 }
 
 -- Events Listeners
-dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open {}
-end
-
-local hint = [[
- Nvim DAP
- _d_: Start/Continue  _j_: StepOver _k_: StepOut _l_: StepInto ^
- _bp_: Toogle Breakpoint  _bc_: Conditional Breakpoint ^
- _?_: log point ^
- _c_: Run To Cursor ^
- _h_: Show information of the variable under the cursor ^
- _x_: Stop Debbuging ^
- _t_: toggle dap ui ^
- ^^                                                      _<Esc>_
-]]
-
-hydra {
-  name = "dap",
-  hint = hint,
-  mode = "n",
-  config = {
-    color = "blue",
-    invoke_on_body = true,
-    hint = {
-      border = "rounded",
-      position = "bottom",
-    },
-  },
-  body = "<leader>d",
-  heads = {
-    { "d", dap.continue },
-    { "bp", dap.toggle_breakpoint },
-    { "l", dap.step_into },
-    { "j", dap.step_over },
-    { "k", dap.step_out },
-    { "h", dapui.eval },
-    { "c", dap.run_to_cursor },
-    {
-      "bc",
-      function()
-        vim.ui.input({ prompt = "Condition: " }, function(condition)
-          dap.set_breakpoint(condition)
-        end)
-      end,
-    },
-    {
-      "?",
-      function()
-        vim.ui.input({ prompt = "Log: " }, function(log)
-          dap.set_breakpoint(nil, nil, log)
-        end)
-      end,
-    },
-    {
-      "x",
-      function()
-        dap.terminate()
-        dapui.close {}
-        dap.clear_breakpoints()
-      end,
-    },
-    {
-      "t",
-      function()
-        dapui.toggle()
-      end,},
-
-    { "<Esc>", nil, { exit = true } },
-  },
-}
+dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+dap.listeners.before.event_exited['dapui_config'] = dapui.close
