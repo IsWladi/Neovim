@@ -1,28 +1,19 @@
---[[ return{
-  -- Para setear el current working directory segun la raiz del proyecto si esta con git.
-  {"IsWladi/Gittory",
-    branch = "dev",
-    dependencies = {
-        {"rcarriga/nvim-notify"}, -- optional
-    },
-    config = true,
-
-    opts = {
-          notify = "yes",
-          atStartUp = "yes"
-    },
-  }
-
-} ]]
-
 return{
-  -- Para setear el current working directory segun la raiz del proyecto si esta con git.
-  {dir = "~/workspace/Gittory/",
-    config = true,
-
+  {dir = "~/workspace/Gittory/", -- for development purposes use local path instead of github
     opts = {
-          notify = "yes",
-          atStartUp = "yes"
+          atStartUp = true,
+          notifySettings = {
+            enabled = true,
+            -- availableNotifyPlugins = "" -- you can change the order of the plugins
+            -- availableNotifyPlugins = {} -- you can change the order of the plugins
+            -- availableNotifyPlugins = {""} -- you can change the order of the plugins
+            -- availableNotifyPlugins =  {"print"} -- you can change the order of the plugins
+            -- availableNotifyPlugins =  {"notify"} -- you can change the order of the plugins
+            -- availableNotifyPlugins =  {"fidget"} -- you can change the order of the plugins
+            -- availableNotifyPlugins =  {"notify", "fidget"} -- you can change the order of the plugins
+            -- availableNotifyPlugins =  {"fidget", "notify"} -- you can change the order of the plugins
+            availableNotifyPlugins =  {"fidget", "notify", "print"} -- you can change the order of the plugins
+          }
     },
   }
 
