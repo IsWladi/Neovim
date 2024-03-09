@@ -25,8 +25,6 @@ opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 opt.undofile       = true
 opt.undodir        = os.getenv("HOME") .. "/.vim/undodir"
 
---para format on save con prettier(corregir error para .yml)
-vim.cmd('au BufRead,BufNewFile *.yml set filetype=yaml')
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
 
