@@ -37,14 +37,6 @@ map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}
 map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
 map('n', '<leader>t', ':bprevious<CR>', {desc = '[no plugin] Go to previous buffer'})
 
--- map("n", "<leader>u", ':so %<CR>', {desc = '[no plugin] Reload file'}) --recargar archivo
-
--- use jk for replace "r" and till "t"
-map('n', 'j', 'r')
-map('n', 'J', 'R')
-map('n', 'k', 't')
-map('n', 'K', 'T')
-
 --para normal mode y visual mode, sustituciones con very very magic
 map('n', '<leader>/', ':%s/\\v//g', {desc = '[no plugin] Substitute in normal mode using very magic'})
 map('n', '<leader>//', ':g/.*/normal ', {desc = '[no plugin] put normal commands on regex matches'})
