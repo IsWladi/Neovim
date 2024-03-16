@@ -38,6 +38,7 @@ return{
         'dockerls', -- funciona bien, corrige sintaxis
         'yamlls',
         'html',
+        "jdtls",
       })
 
       lsp.configure('lua-language-server', {
