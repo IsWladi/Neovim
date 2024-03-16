@@ -133,10 +133,15 @@ return{
         local hover = "[LSP] Hover"
         local diagnostic = "[LSP] Diagnostic"
         local restart = "[LSP] Restart"
+        local definition = "[LSP] Definition"
+        local type_definition = "[LSP] Type Definition"
+        local implementation = "[LSP] Implementation"
 
-        --vim.keymap.set("n", "<CR>ho", function() vim.lsp.buf.hover() end, {buffer = bufnr, remap = false, desc = hover})
-
-        vim.keymap.set("n", "<CR>e", function() vim.diagnostic.goto_next() end, {buffer = bufnr, remap = false, desc = diagnostic})
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {buffer = 0, remap = false, desc = hover})
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {buffer = 0, remap = false, desc = definition})
+        vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, {buffer = 0, remap = false, desc = type_definition})
+        vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, {buffer = 0, remap = false, desc = implementation})
+        vim.keymap.set("n", "<CR>e", function() vim.diagnostic.goto_next() end, {buffer = 0, remap = false, desc = diagnostic})
 
         vim.keymap.set("n", "<CR>lr", ":LspRestart<cr>", { noremap = true, desc = restart })
         --vim.keymap.set("n", "<CR>vrn", vim.lsp.buf.rename, { buffer = 0 }) -- no me funciona con .py, habra que probar con otros lenguajes
