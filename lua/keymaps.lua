@@ -47,10 +47,10 @@ map('v', '(', '<gv', {desc = '[no plugin] Indent left and reselect'})
 map('v', ')', '>gv', {desc = '[no plugin] Indent right and reselect'})
 
 -- paste the last yanked text
-map("n", "p", '"0p', {desc = '[no plugin] Paste from register 0'})
-map("n", "P", '"0P', {desc = '[no plugin] Paste from register 0'})
-map("v", "p", '"0p', {desc = '[no plugin] Paste from register 0'})
-map("v", "P", '"0P', {desc = '[no plugin] Paste from register 0'})
+map("n", "<leader>p", '"0p', {desc = '[no plugin] Paste from register 0'})
+map("n", "<leader>P", '"0P', {desc = '[no plugin] Paste from register 0'})
+map("v", "<leader>p", '"0p', {desc = '[no plugin] Paste from register 0'})
+map("v", "<leader>P", '"0P', {desc = '[no plugin] Paste from register 0'})
 -- paste the last yanked text
 
 -- exit terminal mode
