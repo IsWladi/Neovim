@@ -31,6 +31,7 @@ map('o', 's', '<Right>')
 --buffers
 map('n', '<leader>q', ':q<CR>', {desc = '[no plugin] Exit'}) --salir
 map('n', '<leader>a', ':bdelete<CR>', {desc = '[no plugin] Delete current buffer'}) --borrar buffer actual
+map('n', '<leader>A', ':bdelete!<CR>', {desc = '[no plugin] Force delete current buffer'}) --borrar buffer actual
 map('n', '<leader>o', ':w<CR>', {desc = '[no plugin] Save'}) --guardar
 map('n', '<leader><leader>o', ':wa<CR>', {desc = '[no plugin] Save all buffers'}) --guardar todos los buffers
 map('n', '<leader>n', ':bnext<CR>', {desc = '[no plugin] Go to next buffer'})
@@ -53,21 +54,12 @@ map('v', '<leader>/', ':s/\\v//g', {desc = '[no plugin] Substitute in visual mod
 map('v', '(', '<gv', {desc = '[no plugin] Indent left and reselect'})
 map('v', ')', '>gv', {desc = '[no plugin] Indent right and reselect'})
 
--- NO overwriting default register section, use "x" if you want to delete with overwrite default register
--- "p" command
-map('v', 'p', 'pgvy', {desc = '[no plugin] Paste over visually selected area without overwriting default register'})
--- "c" command
-map('v', 'c', '\"_c', {desc = '[no plugin] Change selected text without overwriting default register'})
-map('n', 'C', '\"_C', {desc = '[no plugin] Change to end of line without overwriting default register'})
-map('v', 'C', '\"_C', {desc = '[no plugin] Change to end of line without overwriting default register'})
-map('n', 'cc', '\"_cc', {desc = '[no plugin] Change whole line without overwriting default register'})
-map('v', 'cc', '\"_cc', {desc = '[no plugin] Change whole line without overwriting default register'})
--- "d" command
-map('n', 'd', '\"_d', {desc = '[no plugin] Delete without overwriting default register'})
-map('v', 'd', '\"_d', {desc = '[no plugin] Delete without overwriting default register'})
-map('n', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default register'})
-map('v', 'D', '\"_D', {desc = '[no plugin] Delete without overwriting default register'})
--- NO overwriting default register section
+-- paste the last yanked text
+map("n", "p", '"0p', {desc = '[no plugin] Paste from register 0'})
+map("n", "P", '"0P', {desc = '[no plugin] Paste from register 0'})
+map("v", "p", '"0p', {desc = '[no plugin] Paste from register 0'})
+map("v", "P", '"0P', {desc = '[no plugin] Paste from register 0'})
+-- paste the last yanked text
 
 -- exit terminal mode
 map('t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true})
