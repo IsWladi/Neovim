@@ -136,15 +136,16 @@ return{
         local definition = "[LSP] Definition"
         local type_definition = "[LSP] Type Definition"
         local implementation = "[LSP] Implementation"
+        local rename = "[LSP] Rename"
+        local code_action = "[LSP] Code Action"
 
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {buffer = 0, remap = false, desc = hover})
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {buffer = 0, remap = false, desc = definition})
         vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, {buffer = 0, remap = false, desc = type_definition})
         vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, {buffer = 0, remap = false, desc = implementation})
         vim.keymap.set("n", "<CR>e", function() vim.diagnostic.goto_next() end, {buffer = 0, remap = false, desc = diagnostic})
-
-        vim.keymap.set("n", "<CR>lr", ":LspRestart<cr>", { noremap = true, desc = restart })
-        --vim.keymap.set("n", "<CR>vrn", vim.lsp.buf.rename, { buffer = 0 }) -- no me funciona con .py, habra que probar con otros lenguajes
+        vim.keymap.set("n", "<CR>r", function() vim.lsp.buf.rename() end, {buffer = 0, remap = false, desc = rename})
+        vim.keymap.set("n", "<CR>ca", function() vim.lsp.buf.code_action() end, {buffer = 0, remap = false, desc = code_action})
       end)
 
       lsp.setup()
