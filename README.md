@@ -20,3 +20,15 @@ Open Neovim with this config:
 NVIM_APPNAME=IsWladi/Neovim/ nvim
 ```
 
+## Chrome extension - Vimium keymaps
+
+```
+    # Insert your preferred key mappings here.
+    map t scrollDown
+    map n scrollUp
+    map f LinkHints.activateModeToOpenInNewTab
+    map F LinkHints.activateMode
+    map s nextTab
+    map S previousTab
+```
+
