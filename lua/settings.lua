@@ -23,7 +23,8 @@ opt.hlsearch       = true --resaltado de busqueda con /palabra
 opt.incsearch      = true --resaltado de busqueda mientras se escribe con h1search false
 opt.colorcolumn    = "120" --columna de marco para no exceder largo de linea
 opt.undofile       = true
-opt.undodir        = os.getenv("HOME") .. "/.vim/undodir"
+local home = os.getenv("HOME") or os.getenv("USERPROFILE")
+opt.undodir = home .. "/.vim/undodir"
 
 --auto comandos
 vim.cmd("autocmd BufReadPost * lua require('wrap').set_wrap()") -- auto wrap
