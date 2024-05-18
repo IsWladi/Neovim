@@ -6,19 +6,35 @@
 
 ## Install Instructions
 
-> Install requires Neovim 0.9+. Always review the code before installing a configuration.
+> Install requires Neovim 0.10+. Always review the code before installing a configuration.
 
-Clone the repository and install the plugins:
+- Download the tarball
+    ```sh
+    wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
+    ```
 
-```sh
-git clone git@github.com:IsWladi/Neovim ~/.config/IsWladi/Neovim
-```
+- Uncompress the file and move
+    ```sh
+    tar xzvf nvim-linux64.tar.gz
+    sudo mv nvim-linux64 /usr/local/
+    rm nvim-linux64.tar.gz
+    ```
 
-Open Neovim with this config:
+- Create a symbolic link
+    ```sh
+    sudo ln -s /usr/local/nvim-linux64/bin/nvim /usr/local/bin/nvim
+    ```
 
-```sh
-NVIM_APPNAME=IsWladi/Neovim/ nvim
-```
+- Add an alias for nvim in the ~/.zshrc:
+    ```sh
+    alias n="nvim"
+    ```
+
+- Clone the repository and install the plugins
+    ```sh
+    git clone git@github.com:IsWladi/Neovim ~/.config/nvim
+    nvim
+    ```
 
 ## Chrome extension - Vimium keymaps
 
