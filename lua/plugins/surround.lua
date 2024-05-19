@@ -1,22 +1,14 @@
 return{
-{'tpope/vim-surround',
-  keys = {"c", "d", "y", "S"},
-  dependencies = {
-    {'tpope/vim-repeat'}
-}
-}
-}
---doc
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+        --+++++++++++++++
+      })
+    end
+  }
 
---  Old text                  Command     New text ~
---  "Hello *world!"           ds"         Hello world!
---  [123+4*56]/2              cs])        (123+456)/2
---  "Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
---  if *x>3 {                 ysW(        if ( x>3 ) {
---  my $str = *whee!;         vllllS'     my $str = 'whee!';
-
---  Old text                  Command           New text ~
---  "hello"                   ysWfprint<cr>     print("hello")
---  "hello"                   ysWFprint<cr>     print( "hello" )
---  "hello"                   ysW<C-f>print<cr> (print "hello")
-
+}
