@@ -60,7 +60,7 @@ return{
       local cmp_mappings = lsp.defaults.cmp_mappings({
         ['<C-o>']        = cmp.mapping.select_prev_item(cmp_select),
         ['<C-e>']        = cmp.mapping.select_next_item(cmp_select),
-        ['<C-a>']         = cmp.mapping.confirm({ select = true }),
+        ['<C-a>']        = cmp.mapping.confirm({ select = true }),
         -- desactivar comportamientos indeseados
         ['<Tab>']   = function(fallback) fallback() end,
         ['<S-Tab>'] = function(fallback) fallback() end,
@@ -74,17 +74,40 @@ return{
       cmp_mappings['<Tab>']   = nil
       cmp_mappings['<S-Tab>'] = nil
 
+      -- Fix mappings for luasnip with dvorak movement keys
+      _G.is_snippet_running = false -- flag to check if a snippet is running
+      local utils = require('lua.utils')
+      cmp.event:on('confirm_done', function() -- when a completion is confirmed: disable rtns remap
+        utils.disable_rtns_mappings()
+        _G.is_snippet_running = true -- it means that a snippet is running or a completion is confirmed
+      end)
+      -- when ESC is pressed: enable rtns remap
+      vim.keymap.set({'i', 'v'}, '<Esc>', function ()
+          if _G.is_snippet_running then -- only call the function when is necessary
+              _G.is_snippet_running = false
+              utils.enable_rtns_mappings()
+              print('Snippet has been finished!')
+          end
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+      end, { noremap = true, silent = false })
+      -- Fix mappings for luasnip with dvorak movement keys
+
       lsp.setup_nvim_cmp({
         mapping = cmp_mappings,
         sources = {
           {name = 'nvim_lsp'},
           {name = 'luasnip'},
-          {name = 'copilot'},
           {name = 'path'},
           {name = 'cmp_git'},
           {name = 'nvim_lua'},
           {name = 'buffer'},
-        }
+        },
+        -- Enable luasnip to handle snippet expansion for nvim-cmp
+        snippet = {
+          expand = function(args)
+            require ( "luasnip").lsp_expand(args.body)
+          end,
+        },
       })
 
       -- Set configuration for specific filetype.

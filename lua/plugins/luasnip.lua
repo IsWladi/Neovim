@@ -1,5 +1,8 @@
 return {
         {'L3MON4D3/LuaSnip',
+        dependencies = {
+          { "rafamadriz/friendly-snippets" }
+        },
         event = {"BufReadPre", "BufNewFile"},
         config = function()
 
@@ -14,6 +17,7 @@ return {
           }
 
           require("luasnip.loaders.from_vscode").load_standalone({path = "~/.config/nvim/snippets/gitcommit.code-snippets"})
+          require("luasnip.loaders.from_vscode").lazy_load()
 
           ls.add_snippets("sql", {
               s("function", {
@@ -65,7 +69,6 @@ return {
               ls.jump(-1)
             end
           end, { silent = true, desc = "[snippets] go to previus" })
-
         end
       },
 }
