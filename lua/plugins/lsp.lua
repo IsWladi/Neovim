@@ -76,7 +76,7 @@ return{
 
       -- Fix mappings for luasnip with dvorak movement keys
       _G.is_snippet_running = false -- flag to check if a snippet is running
-      local utils = require('lua.utils')
+      local utils = require('utils')
       cmp.event:on('confirm_done', function() -- when a completion is confirmed: disable rtns remap
         utils.disable_rtns_mappings()
         _G.is_snippet_running = true -- it means that a snippet is running or a completion is confirmed
@@ -86,7 +86,6 @@ return{
           if _G.is_snippet_running then -- only call the function when is necessary
               _G.is_snippet_running = false
               utils.enable_rtns_mappings()
-              print('Snippet has been finished!')
           end
           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
       end, { noremap = true, silent = false })
