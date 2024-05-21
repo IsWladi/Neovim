@@ -1,5 +1,4 @@
 # Neovim/
 
-**my lightweight nvim configuration for testing purposes**
-
-`export NVIM_APPNAME="lightweight-nvim"`
+**my one-file nvim configuration for testing purposes**
+NVIM_APPNAME=minimal-nvim-config nvim
