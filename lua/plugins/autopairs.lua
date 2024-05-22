@@ -1,21 +1,19 @@
 return {
   {
-    -- Deactivated because of incompatibility my config of luasnip and cmp :c
     'altermo/ultimate-autopair.nvim',
-    enabled=false,
+    enabled = true,
     event={'InsertEnter','CmdlineEnter'},
     branch='v0.6', --recommended as each new version will have breaking changes
     opts={
-      --Config goes here
+      -- fastwarp make some freaky things with the pairs, so I disabled it because I don't use it
+      fastwarp={
+        enable=false,
+        map='<A-f>', --string or table
+        rmap='<A-F>', --string or table
+        cmap='<A-f>', --string or table
+        rcmap='<A-F>', --string or table
+      }
     },
-  },
-  {
-    'windwp/nvim-autopairs',
-    enabled = true,
-    event = "InsertEnter",
-    opts = {
-    } -- this is equalent to setup({}) function
   }
-
 }
 
