@@ -5,6 +5,7 @@ return {
     "rcarriga/nvim-dap-ui",
     "anuvyklack/hydra.nvim",
     "mfussenegger/nvim-dap-python",
+    "nvim-neotest/nvim-nio",
   },
   keys = { { "<F5>"},
            {"<F1>"},
