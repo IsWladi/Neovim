@@ -48,3 +48,13 @@
     map S previousTab
 ```
 
+## Java Spring Boot Debugging
+- execute the API in debug mode
+    ```sh
+    mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+    ```
+
+- open the main class of the project to load lsp
+- open the Controller class and set a breakpoint
+- press <F5> to start debugging
+- call the endpoint with the browser or Postman
