@@ -55,7 +55,7 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = "/opt/jdk/jdk-17.0.11/bin/java",
+            path = "/opt/jdk/jdk-17.0.11/",
           },
         }
       },
