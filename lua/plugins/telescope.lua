@@ -62,12 +62,6 @@ return {
       vim.keymap.set('n', '<CR>gs', builtin.git_status, {desc = '[GIT telescope] List git status'})
       vim.keymap.set('n', '<CR>gcb', builtin.git_bcommits, {desc = '[GIT telescope] List git commits'})
       vim.keymap.set('n', '<CR>gc', builtin.git_commits, {desc = '[GIT telescope] List all git commits'})
-
-      --lsp
-      vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, {desc = '[LSP telescope] go to implementation'})
-      vim.keymap.set('n', '<leader>d', builtin.lsp_definitions, {desc = '[LSP telescope] go to definition'})
-      vim.keymap.set('n', '<leader>ee', builtin.diagnostics, {desc = '[LSP telescope] diagnostic of all buffers'})
-      vim.keymap.set('n', '<leader>r', builtin.lsp_references, {desc = '[LSP telescope] references of word under cursor'})
     end,
   },
 }
