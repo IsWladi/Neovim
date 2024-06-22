@@ -22,6 +22,14 @@ return {
 
     dap.configurations.java = {
       {
+        name = "Debug Attach MedMath (5005)";
+        type = 'java';
+        request = 'attach';
+        hostName = "127.0.0.1";
+        port = 5005;
+        mainClass = 'com.iswladi.apimedmath.apimedmath.ApimedmathApplication';
+      },
+      {
         name = "Debug Launch (2GB)";
         type = 'java';
         request = 'launch';
@@ -34,13 +42,6 @@ return {
         request = 'attach';
         hostName = "127.0.0.1";
         port = 8000;
-      },
-      {
-        name = "Debug Attach (5005)";
-        type = 'java';
-        request = 'attach';
-        hostName = "127.0.0.1";
-        port = 5005;
       },
       {
         name = "My Custom Java Run Configuration",
