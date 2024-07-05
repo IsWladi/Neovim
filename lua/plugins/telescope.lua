@@ -1,23 +1,6 @@
 return {
   -- Para buscar archivos con fzf y rg de manera rapida
   {'nvim-telescope/telescope.nvim',
-    keys = {
-      {"<CR>fk"},
-      {"<CR><Space>"},
-      {"<CR>f"},
-      {"<CR>fg"},
-      {"<CR>", mode = "v"},
-      {"<CR>ft"},
-      {"<CR>b"},
-      {"<CR>gs"},
-      {"<CR>gcb"},
-      {"<CR>gc"},
-      {"<leader>i"},
-      {"<leader>d"},
-      {"<leader>ee"},
-      {"<leader>r"},
-    },
-
     dependencies = {
       "nvim-lua/plenary.nvim",
        },

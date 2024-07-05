@@ -46,12 +46,13 @@ map('v', '<leader>/', ':s/\\v//g', {desc = '[no plugin] Substitute in visual mod
 map('v', '(', '<gv', {desc = '[no plugin] Indent left and reselect'})
 map('v', ')', '>gv', {desc = '[no plugin] Indent right and reselect'})
 
--- paste the last yanked text
-map("n", "<leader>p", '"0p', {desc = '[no plugin] Paste from register 0'})
-map("n", "<leader>P", '"0P', {desc = '[no plugin] Paste from register 0'})
-map("v", "<leader>p", '"0p', {desc = '[no plugin] Paste from register 0'})
-map("v", "<leader>P", '"0P', {desc = '[no plugin] Paste from register 0'})
--- paste the last yanked text
+-- Paste without yanking
+vim.keymap.set({"n", "v"}, "<leader>p", function ()
+  local val = vim.fn.getreg("+")
+  vim.api.nvim_command([[normal! p]])
+  vim.fn.setreg("+", val)
+end, {})
+-- Paste without yanking
 
 -- exit terminal mode
 map('t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true})

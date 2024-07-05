@@ -17,4 +17,7 @@ return{
 
   --depends on plugin(in case of)
   {'nvim-lua/plenary.nvim', lazy = true},
+
+  --icons
+  {'nvim-tree/nvim-web-devicons'},
 }
