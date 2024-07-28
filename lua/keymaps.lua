@@ -47,7 +47,7 @@ map('v', '(', '<gv', {desc = '[no plugin] Indent left and reselect'})
 map('v', ')', '>gv', {desc = '[no plugin] Indent right and reselect'})
 
 -- Paste without yanking
-vim.keymap.set({"n", "v"}, "<leader>p", function ()
+vim.keymap.set({"n", "v"}, "p", function ()
   local val = vim.fn.getreg("+")
   vim.api.nvim_command([[normal! p]])
   vim.fn.setreg("+", val)
