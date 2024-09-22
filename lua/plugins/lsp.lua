@@ -39,6 +39,7 @@ return{
         'yamlls',
         'html',
         "jdtls",
+        "rust_analyzer"
       })
 
 
